@@ -1,0 +1,32 @@
+<ion-view view-title="Ranking">
+  <ion-content>
+    <ul class="list">
+      <li class="item ranking-row ranking-row-header">
+        <div class="row">
+          <div class="col col-10">#</div>
+          <div class="col"></div>
+          <div class="col col-10">MP</div>
+          <div class="col col-10">G</div>
+          <div class="col col-10">P</div>
+        </div>
+      </li>
+      <li class="item ranking-row" ng-repeat="r in rankings" ng-class="$index % 2 == 0 ? 'ranking-row-even' : ''">
+        <div class="row">
+          <div class="col col-10">{{$index+1}}.</div>
+          <div class="col">{{r.name}}</div>
+          <div class="col col-10">{{r.matchesPlayed}}</div>
+          <div class="col col-10">{{r.goalsScored}}</div>
+          <div class="col col-10">{{r.points}}</div>
+        </div>
+      </li>
+    </ul>
+
+   
+  </ion-content>
+
+ <div class="bar bar-footer">
+   
+  <!--<button class="button button-clear">Right</button>-->
+</div>
+
+</ion-view>
