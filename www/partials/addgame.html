@@ -1,7 +1,7 @@
 <ion-view view-title="Add game">
     <!--<ion-content></ion-content>-->
     <ion-slides options="swiperOptions" slider="swiper" ion-wizard>
-        <ion-slide-page ion-wizard-step class="has-header">
+        <ion-slide-page ion-wizard-step class="has-header" >
             <!--next-condition="(players | filter:{checked:true}).length == 4 && select.dateSelected != 0"-->
             <div class="row">
                 <div class="col">
@@ -31,13 +31,31 @@
         </ion-slide-page>
 
         <ion-slide-page ion-wizard-step class="has-header">
-            2
+            <ul class="list">
+                <li class="item" ng-repeat="g in games">
+                    <div class="row" style="font-size: 18px">
+                        <div class="col text-center">{{(players | filter: {$id: g.team1Player1Id})[0].name}}<br/>{{(players | filter: {$id: g.team1Player2Id})[0].name}}
+                        </div>
+                        <div class="col text-center"><br/>VS</div>
+                        <div class="col text-center">{{(players | filter: {$id: g.team2Player1Id})[0].name}}<br/>{{(players | filter: {$id: g.team2Player2Id})[0].name}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <select ng-model="g.team1Score" style="font-size: 18px">
+                                <option ng-repeat="ps in possibleScores" value="{{ps}}">{{ps}}</option>
+                            </select>
+                        </div>
+                        <div class="col text-center"></div>
+                        <div class="col text-center">
+                            <select ng-model="g.team2Score" style="font-size: 18px">
+                                <option ng-repeat="ps in possibleScores" value="{{ps}}">{{ps}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            
         </ion-slide-page>
-
-        <ion-slide-page ion-wizard-step class="has-header">
-            3
-        </ion-slide-page>
-
     </ion-slides>
     <div class="bar bar-footer bar-footer-wizard">
         <div class="row">
@@ -46,6 +64,7 @@
             </div>
             <div class="col">
                 <button class="button button-balanced wizard-button" style="float: right;" ion-wizard-next>Next</button>
+                <button class="button button-balanced wizard-button" style="float: right;" ng-click="saveGame()" ng-show="(players | filter:{checked:true}).length == 4 && (games[0].team1Score != '0' || games[0].team2Score != '0') && (games[1].team1Score != '0' || games[1].team2Score != '0') && (games[2].team1Score != '0' || games[2].team2Score != '0')">Save</button>
             </div>
         </div>
     </div>
