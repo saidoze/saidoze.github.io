@@ -26,7 +26,7 @@
           <ion-content>
             <ion-list>
               <ion-item ng-repeat="item in gamedates | orderBy:'dateval'">
-                {{item.dateval | date:'dd/MM/yyyy'}} 
+                {{item.dateval | date:'dd LLLL yyyy'}} 
               <ion-option-button class="button-assertive" ng-click="remove(item)">Remove</ion-option-button>
               </ion-item>
             </ion-list>

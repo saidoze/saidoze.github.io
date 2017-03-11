@@ -1,4 +1,4 @@
-leagueRankingApp.controller('AddGameController', function ($scope, $ionicSideMenuDelegate, $location, myConfig, $firebaseObject, $ionicLoading, $firebaseArray, $state) {
+leagueRankingApp.controller('AddGameController', function ($scope, $ionicSideMenuDelegate, $location, myConfig, $firebaseObject, $ionicLoading, $firebaseArray, $state, $ionicHistory) {
   var gamedatesList = $firebaseArray(firebase.database().ref('gamedates'));
   var playersList = $firebaseArray(firebase.database().ref('players'));
   var gamesList = $firebaseArray(firebase.database().ref('games'));
@@ -27,11 +27,13 @@ leagueRankingApp.controller('AddGameController', function ($scope, $ionicSideMen
   }
 
   $scope.$watch("gamesSaved",
-        function handleFooChange( newValue, oldValue ) {
-          if(newValue == 3)
-            $state.go($state.current, {}, {reload: true});
-            //$window.location.reload();
+      function handleFooChange( newValue, oldValue ) {
+        if(newValue == 3){
+          $scope.gamesSaved = 0;
+          $ionicLoading.hide();
+          $state.reload();
         }
+      }
   );
 
   playersList.$loaded()

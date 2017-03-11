@@ -35,6 +35,7 @@ var leagueRankingApp = angular.module('leagueRankingApp', ['ionic', 'firebase', 
         templateUrl: 'partials/gamedates.html'
       })
       .state('addGame', {
+        cache: false,
         url: '/add-game',
         controller: 'AddGameController',
         templateUrl: 'partials/addgame.html'

@@ -1,50 +1,72 @@
-leagueRankingApp.controller('RankingController', function ($scope, $ionicSideMenuDelegate, $location, myConfig, $firebaseObject, $ionicLoading) {
-    var ref = firebase.database().ref();
-    var fb = $firebaseObject(ref);
+leagueRankingApp.controller('RankingController', function ($scope, $ionicSideMenuDelegate, $location, myConfig, $firebaseObject, $ionicLoading, $firebaseArray) {
+    var playersList = $firebaseArray(firebase.database().ref('players'));
+    var gamesList = $firebaseArray(firebase.database().ref('games'));
+
+    $scope.players;
+    $scope.dbgames;
+
+    $ionicLoading.show({ template: '<ion-spinner class="spinner-calm"></ion-spinner>' });
+
+    playersList.$loaded()
+    .then(function (data) {
+      console.log("loaded playerList:", data);
+      $ionicLoading.hide();
+      $scope.players = data;
+    })
+    .catch(function (error) {
+      console.error("Error:", error);
+    });
+  gamesList.$loaded()
+    .then(function (data) {
+      console.log("loaded gamesList:", data);
+      $scope.dbgames = data;
+    })
+    .catch(function (error) {
+      console.error("Error:", error);
+    });
+
+    function createRanking() {
+      _.each($scope.players, function(g) {g.points = 0; g.matchesPlayed = 0;});
+
+      _.each($scope.dbgames, function(g) {
+        console.log(g);
+        console.log(g.team1Player1Id);
+        var _team1Player1 = _.findWhere($scope.players, {$id: g.team1Player1Id});
+        var _team1Player2 = _.findWhere($scope.players, {$id: g.team1Player2Id});
+        var _team2Player1 = _.findWhere($scope.players, {$id: g.team2Player1Id});
+        var _team2Player2 = _.findWhere($scope.players, {$id: g.team2Player2Id});
+        console.log(_team1Player1);
+        _team1Player1.matchesPlayed++;
+        _team1Player2.matchesPlayed++;
+        _team2Player1.matchesPlayed++;
+        _team2Player2.matchesPlayed++;
+
+        if(g.team1Score == 11) {
+          _team1Player1.points += 3;
+          _team1Player2.points += 3;
+        } else if (g.team1Score == 10) {
+          _team1Player1.points += 1;
+          _team1Player2.points += 1;
+          _team2Player1.points += 1;
+          _team2Player2.points += 1;
+        } else {
+          _team2Player1.points += 3;
+          _team2Player2.points += 3;
+        }
 
 
-    $scope.navTitle = 'Home Page';
-    $scope.rankings = [
-      {name: 'Tobias', matchesPlayed: 3, goalsScored: 27, points: 7},
-      {name: 'Pj', matchesPlayed: 3, goalsScored: 21, points: 4},
-      {name: 'Quicky', matchesPlayed: 3, goalsScored: 14, points: 2},
-    ];
-
-    $scope.test = function () {
-      // $ionicLoading.show({
-      //   template: '<ion-spinner class="spinner-calm"></ion-spinner>'
-      // }).then(function(){
-      //   console.log("The loading indicator is now displayed");
-      // });
-      
-      fb.players = [
-        {name: 'Tobias'},
-        {name: 'Pj'},
-        {name: 'Quicky'},
-      ];
-      
-      console.log("players",players);
-      fb.$save().then(function(ref) {
-        ref.key === fb.$id; // true
-        console.log("ref", ref);
-        console.log("players.$id", fb.$id);
-      }, function(error) {
-        console.log("Error:", error);
       });
-    };
 
-    $scope.load = function() {
-
-      fb.$loaded()
-        .then(function(data) {
-          console.log("loaded record:", fb.$id, fb.someOtherKeyInData);
-          // To iterate the key/value pairs of the object, use angular.forEach()
-          angular.forEach(fb, function(value, key) {
-              console.log(key, value);
-          });
-        })
-        .catch(function(error) {
-          console.error("Error:", error);
-        });
     }
+
+    $scope.$watchGroup(['players', 'dbgames'], function(newValues, oldValues, scope) {
+      if(newValues[0] && newValues[1]) {
+        if(newValues[0].length > 0 && newValues[1].length > 0) {
+          console.log("newValues:", newValues);
+          createRanking();
+        }
+      }
+    });
+
+
 });

@@ -1,5 +1,6 @@
 /* Empty. Add your own CSS if you like */
-.zero-adding-margin {padding: 0px; margin: 0px;}
+.zero-padding-margin {padding: 0px; margin: 0px;}
+.zero-padding {padding: 0px; margin: 0px;}
 
 .ranking-row {    padding-top: 4px;
     padding-bottom: 4px;}
@@ -23,8 +24,8 @@
 
     .bar-footer-wizard{padding: 0;     background-color: #ffffff;}
      .wizard-button {    width: calc(100% - 10px);
-        height: 50px;
-    margin-top: -25px;}
+        height: 40px;
+    margin-top: -15px;}
 
     .text-center {text-align: center;}
 

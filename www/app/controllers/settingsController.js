@@ -71,7 +71,7 @@ leagueRankingApp.controller('SettingsController', function ($scope, $ionicSideMe
     function addPlayer() {
         $scope.newPlayer = {};
         var newPlayerPopup = $ionicPopup.show({
-            template: '<input type="text" ng-model="newPlayer.name">',
+            template: '<input type="text" ng-model="newPlayer.name" autofocus>',
             title: 'Add',
             subTitle: '',
             scope: $scope,
