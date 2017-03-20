@@ -2,7 +2,7 @@
 .zero-padding-margin {padding: 0px; margin: 0px;}
 .zero-padding {padding: 0px; margin: 0px;}
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 567px) {
     .hidden-xs {
         display:none;
     }
