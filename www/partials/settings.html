@@ -12,9 +12,10 @@
         <ion-nav-view name="tab-tab1">
           <ion-content>
             <ion-list>
-              <ion-item ng-repeat="item in players | orderBy:'name'">
+              <ion-item ng-repeat="item in players | orderBy:'name'" repeat-is-done="doWhenDone();">
                 {{item.name}} 
-              <ion-option-button class="button-assertive" ng-click="remove(item)">Remove</ion-option-button>
+              <ion-option-button class="button-assertive" ng-click="remove(item)" 
+                ng-disabled="(games | filter:{team1Player1Id:item.$id}).length > 0 || (games | filter:{team1Player2Id:item.$id}).length > 0 (games | filter:{team2Player1Id:item.$id}).length > 0 || (games | filter:{team2Player2Id:item.$id}).length > 0">Remove</ion-option-button>
               </ion-item>
             </ion-list>
           </ion-content>
@@ -26,8 +27,9 @@
           <ion-content>
             <ion-list>
               <ion-item ng-repeat="item in gamedates | orderBy:'dateval'">
-                {{item.dateval | date:'dd LLLL yyyy'}} 
-              <ion-option-button class="button-assertive" ng-click="remove(item)">Remove</ion-option-button>
+                {{item.dateval | date:'dd LLLL yyyy'}}
+              <ion-option-button class="button-assertive" ng-click="remove(item)" ng-disabled="(games | filter:{gamedateId:item.$id}).length > 0">Remove</ion-option-button>
+              <ion-option-button class="button-balanced" ng-click="closeGamedate(item)" ng-disabled="!(games | filter:{gamedateId:item.$id}).length > 0">Close</ion-option-button>
               </ion-item>
             </ion-list>
           </ion-content>

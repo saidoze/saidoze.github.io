@@ -4,25 +4,25 @@
         <ion-slide-page ion-wizard-step class="has-header" next-condition="(players | filter:{checked:true}).length == 4 && select.dateSelected != 0">
             <!--next-condition="(players | filter:{checked:true}).length == 4 && select.dateSelected != 0"-->
             
-                    <div class="row">
-                        <div class="col">
-                            <div class="list">
-                                <label class="item item-input item-select">
-                                    <div class="input-label">
-                                        Gamedate
-                                    </div>
-                                    <select ng-model="select.dateSelected">
-                                        <option ng-repeat="gd in gamedates" value="{{gd.dateval}}">{{gd.dateval | date:'dd LLLL yyyy'}}</option>
-                                    </select>
-                                </label>
+            <div class="row">
+                <div class="col">
+                    <div class="list">
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Gamedate
                             </div>
-                        </div>
+                            <select ng-model="select.dateSelected">
+                                <option ng-repeat="gd in gamedates" value="{{gd.dateval}}">{{gd.dateval | date:'dd LLLL yyyy'}}</option>
+                            </select>
+                        </label>
                     </div>
-<ion-content class="has-header" style="margin-top: 20px; height: 70%;">
-                    <ion-list>
-                            <ion-checkbox class="pointer" ng-model="item.checked" ng-repeat="item in players | orderBy:'name'">{{item.name}}</ion-checkbox>
-                    </ion-list>
-</ion-content>
+                </div>
+            </div>
+            <ion-content class="has-header" style="margin-top: 20px; height: 70%;">
+                <ion-list>
+                        <ion-checkbox class="pointer" ng-model="item.checked" ng-repeat="item in players | orderBy:'name'">{{item.name}}</ion-checkbox>
+                </ion-list>
+            </ion-content>
         </ion-slide-page>
 
         <ion-slide-page ion-wizard-step class="has-header" ng-repeat="g in games">

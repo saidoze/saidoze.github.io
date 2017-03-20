@@ -2,6 +2,12 @@
 .zero-padding-margin {padding: 0px; margin: 0px;}
 .zero-padding {padding: 0px; margin: 0px;}
 
+@media screen and (max-width: 767px) {
+    .hidden-xs {
+        display:none;
+    }
+}
+
 .ranking-row {    padding-top: 4px;
     padding-bottom: 4px;}
 

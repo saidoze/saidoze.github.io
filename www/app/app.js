@@ -41,9 +41,16 @@ var leagueRankingApp = angular.module('leagueRankingApp', ['ionic', 'firebase', 
         templateUrl: 'partials/addgame.html'
       })
       .state('settings', {
+        cache: false,
         url: '/settings',
         controller: 'SettingsController',
         templateUrl: 'partials/settings.html'
+      })
+      .state('closeGamedate', {
+        cache: false,
+        url: '/settings/closegameDate/:gamedateId',
+        controller: 'CloseGamedateController',
+        templateUrl: 'partials/closeGameDate.html'
       });
     $urlRouterProvider.otherwise('/');
 
