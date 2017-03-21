@@ -9,6 +9,28 @@ leagueRankingApp.controller('RankingController', function ($scope, $ionicSideMen
 
     $ionicLoading.show({ template: '<ion-spinner class="spinner-calm"></ion-spinner>' });
 
+
+    $scope.saveRankingImage = function() {
+      html2canvas(document.body, {
+            onrendered: function(canvas) {
+                theCanvas = canvas;
+                canvas.toBlob(function(blob) {
+                    console.log(blob);
+                    var url = window.URL.createObjectURL(blob);
+
+                    var a = document.createElement("a");
+                    document.body.appendChild(a);
+                    a.style = "display: none";
+                    a.href = url;
+                    a.download = "q.png";
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    //saveAs(blob, "Dashboard.png"); 
+                });
+            }
+        });
+    }
+
     playersList.$loaded()
     .then(function (data) {
       console.log("loaded playerList:", data);

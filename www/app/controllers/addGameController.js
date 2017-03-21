@@ -41,6 +41,7 @@ leagueRankingApp.controller('AddGameController', function ($scope, $ionicSideMen
       console.log("loaded playerList:", data);
       $ionicLoading.hide();
       $scope.players = data;
+      _.each($scope.players, function(p) {p.checked = false;});
     })
     .catch(function (error) {
       console.error("Error:", error);
@@ -49,7 +50,8 @@ leagueRankingApp.controller('AddGameController', function ($scope, $ionicSideMen
     .then(function (data) {
       console.log("loaded gamedatesList:", data);
       $scope.gamedates = data;
-      $scope.select.dateSelected = String($scope.gamedates[0].dateval);
+      var _firstNotClosedGamedate = _.findWhere($scope.gamedates, {isClosed: false});
+      $scope.select.dateSelected = String($scope.gamedates[0].$id);
     })
     .catch(function (error) {
       console.error("Error:", error);
@@ -66,8 +68,9 @@ leagueRankingApp.controller('AddGameController', function ($scope, $ionicSideMen
     $scope.$watch("players",
         function handleFooChange( newValue, oldValue ) {
             console.log( "players:", newValue );
-            if(_.where(newValue, {checked: true}).length == 4 && _.where(_.toArray($scope.gamedates), {dateval: parseInt($scope.select.dateSelected)}).length > 0) {
-              var _gamedateId = _.where(_.toArray($scope.gamedates), {dateval: parseInt($scope.select.dateSelected)})[0].$id;
+            if(_.where(newValue, {checked: true}).length == 4 && _.where(_.toArray($scope.gamedates), {$id: parseInt($scope.select.dateSelected)}).length > 0) {
+              //var _gamedateId = _.where(_.toArray($scope.gamedates), {$id: parseInt($scope.select.dateSelected)})[0].$id;
+              var _gamedateId = $scope.select.dateSelected;
               var _players = _.where(newValue, {checked: true});
               //create games..maybe a better way?
               $scope.games[0].gamedateId = _gamedateId;

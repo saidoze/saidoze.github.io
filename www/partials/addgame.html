@@ -12,7 +12,7 @@
                                 Gamedate
                             </div>
                             <select ng-model="select.dateSelected">
-                                <option ng-repeat="gd in gamedates" value="{{gd.dateval}}">{{gd.dateval | date:'dd LLLL yyyy'}}</option>
+                                <option ng-repeat="gd in gamedates" value="{{gd.$id}}" ng-disabled="gd.isClosed">{{gd.dateval | date:'dd LLLL yyyy'}}</option>
                             </select>
                         </label>
                     </div>
@@ -25,7 +25,7 @@
             </ion-content>
         </ion-slide-page>
 
-        <ion-slide-page ion-wizard-step class="has-header" ng-repeat="g in games">
+        <ion-slide-page ion-wizard-step class="has-header" ng-repeat="g in games">}
             <ul class="list">
                 <li class="item zero-padding" >
                     <div class="row" style="font-size: 18px">
