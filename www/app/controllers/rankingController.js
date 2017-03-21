@@ -1,4 +1,4 @@
-leagueRankingApp.controller('RankingController', function ($scope, $ionicSideMenuDelegate, $location, myConfig, $firebaseObject, $ionicLoading, $firebaseArray) {
+leagueRankingApp.controller('RankingController', function ($scope, $timeout, $ionicSideMenuDelegate, $location, myConfig, $firebaseObject, $ionicLoading, $firebaseArray, $ionicActionSheet) {
     var playersList = $firebaseArray(firebase.database().ref('players'));
     var gamesList = $firebaseArray(firebase.database().ref('games'));
     var gamedatesList = $firebaseArray(firebase.database().ref('gamedates'));
@@ -11,25 +11,29 @@ leagueRankingApp.controller('RankingController', function ($scope, $ionicSideMen
 
 
     $scope.saveRankingImage = function() {
-      html2canvas(document.body, {
-            onrendered: function(canvas) {
-                theCanvas = canvas;
-                canvas.toBlob(function(blob) {
-                    console.log(blob);
-                    var url = window.URL.createObjectURL(blob);
-
-                    var a = document.createElement("a");
-                    document.body.appendChild(a);
-                    a.style = "display: none";
-                    a.href = url;
-                    a.download = "q.png";
-                    a.click();
-                    window.URL.revokeObjectURL(url);
-                    //saveAs(blob, "Dashboard.png"); 
-                });
-            }
+        // Show the action sheet
+        var hideSheet = $ionicActionSheet.show({
+          buttons: [
+            { text: 'Export picture' }
+          ],
+          //destructiveText: 'Delete',
+          titleText: 'Export ranking',
+          cancelText: 'Cancel',
+          cancel: function() {
+                // add cancel code..
+              },
+          buttonClicked: function(index) {
+            exportImage();
+            return true;
+          }
         });
-    }
+
+        // For example's sake, hide the sheet after two seconds
+        $timeout(function() {
+          hideSheet();
+        }, 5000);
+
+      };
 
     playersList.$loaded()
     .then(function (data) {
@@ -125,5 +129,41 @@ leagueRankingApp.controller('RankingController', function ($scope, $ionicSideMen
       }
     });
 
+    function exportImage() {
+      var c=document.getElementById("myCanvas");
+      var ctx=c.getContext("2d");
+      ctx.font="16px Arial";
+
+      //titlerow
+      ctx.fillText('MP',200,35);
+      ctx.fillText('W',275,35);
+      ctx.fillText('D',350,35);
+      ctx.fillText('L',425,35);
+      ctx.fillText('A',500,35);
+      ctx.fillText('G',575,35);
+      ctx.fillText('P',650,35);
+      ctx.beginPath(); ctx.lineWidth=1; ctx.moveTo(5,45); ctx.lineTo(700,45); ctx.stroke();
+
+      var _index = 2; var _lineindex = 0;
+      sortedPlayers = _.chain($scope.players).sortBy('name').reverse().sortBy('attendancePoints').sortBy('goalsScored').sortBy('points').reverse().value();
+      _.each(sortedPlayers, function(p) {
+        ctx.fillText((_index - 1) + ".",10,35 * _index);
+        ctx.fillText(p.name,50,35 * _index);
+        ctx.fillText(p.matchesPlayed,200,35 * _index);
+        ctx.fillText(p.amountWon,275,35 * _index);
+        ctx.fillText(p.amountDraw,350,35 * _index);
+        ctx.fillText(p.amountLose,425,35 * _index);
+        ctx.fillText(p.attendancePoints,500,35 * _index);
+        ctx.fillText(p.goalsScored,575,35 * _index);
+        ctx.fillText(p.points,650,35 * _index);
+        ctx.beginPath(); ctx.lineWidth=0.5; ctx.moveTo(5,82 + (35 * _lineindex)); ctx.lineTo(700,82 + (35 * _lineindex)); ctx.stroke();
+
+        _index++; _lineindex++;
+      });
+
+      c.toBlob(function(blob) {
+          saveAs(blob, "Ranking.png");
+      });
+    }
 
 });
