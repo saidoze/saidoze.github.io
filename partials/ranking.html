@@ -1,6 +1,5 @@
 <ion-view view-title="Klassement">
   <ion-nav-buttons side="right">
-    <!--<button class="button button-turn-screen"></button>-->
     <button class="button icon ion-ios-upload-outline" title="Exporteren" ng-click="saveRankingImage();"></button>
   </ion-nav-buttons>
 
@@ -25,7 +24,7 @@
       <li class="item ranking-row" ng-repeat="p in players | orderBy:'-points'" ng-class="$index % 2 == 0 ? 'ranking-row-even' : ''">
         <div class="row">
           <div class="col col-10">{{$index+1}}.</div>
-          <div class="col">{{p.name}}</div>
+          <div class="col">{{p.name}} <span ng-repeat="t in getTimes(((closedGamedates * 3) - p.matchesPlayed) / 3) track by $index" style="color:red;">*</span></div>
           <div class="col col-10">{{p.matchesPlayed}}</div>
           <div class="col col-10 hidden-xs">{{p.amountWon}}</div>
           <div class="col col-10 hidden-xs">{{p.amountDraw}}</div>

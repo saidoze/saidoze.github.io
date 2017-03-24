@@ -1,14 +1,25 @@
-leagueRankingApp.controller('RankingController', function ($scope, $timeout, $ionicSideMenuDelegate, $location, myConfig, $firebaseObject, $ionicLoading, $firebaseArray, $ionicActionSheet) {
-    var playersList = $firebaseArray(firebase.database().ref('players'));
-    var gamesList = $firebaseArray(firebase.database().ref('games'));
-    var gamedatesList = $firebaseArray(firebase.database().ref('gamedates'));
-
-    $scope.players;
-    $scope.dbgames;
-    $scope.gamedates;
+leagueRankingApp.controller('RankingController', function ($scope, $q, $timeout, $ionicSideMenuDelegate, $location, myConfig, $firebaseObject, $ionicLoading, $firebaseArray, $ionicActionSheet) {
+    $scope.players = $firebaseArray(firebase.database().ref('players'));
+    $scope.dbgames = $firebaseArray(firebase.database().ref('games'));
+    $scope.gamedates = $firebaseArray(firebase.database().ref('gamedates'));
+    $scope.closedGamedates = 0;
 
     $ionicLoading.show({ template: '<ion-spinner class="spinner-calm"></ion-spinner>' });
 
+    $q.all([$scope.players, $scope.gamedates, $scope.dbgames]).then(function(results) {
+        console.log("ALL PROMISES RESOLVED");
+        console.log(results);
+        $timeout(function() {
+          createRanking();
+          $scope.doWhenDone();
+        }, 1500);
+    }).catch(function(error) {
+        console.error("Error:", error);
+    });
+
+    $scope.doWhenDone = function() {
+        $ionicLoading.hide();
+    };
 
     $scope.saveRankingImage = function() {
         // Show the action sheet
@@ -32,37 +43,11 @@ leagueRankingApp.controller('RankingController', function ($scope, $timeout, $io
         $timeout(function() {
           hideSheet();
         }, 5000);
-
       };
-
-    playersList.$loaded()
-    .then(function (data) {
-      console.log("loaded playerList:", data);
-      $ionicLoading.hide();
-      $scope.players = data;
-    })
-    .catch(function (error) {
-      console.error("Error:", error);
-    });
-  gamesList.$loaded()
-    .then(function (data) {
-      console.log("loaded gamesList:", data);
-      $scope.dbgames = data;
-    })
-    .catch(function (error) {
-      console.error("Error:", error);
-    });
-  gamedatesList.$loaded()
-    .then(function (data) {
-      console.log("loaded gamedatesList:", data);
-      $scope.gamedates = data;
-    })
-    .catch(function (error) {
-      console.error("Error:", error);
-    });
 
     function createRanking() {
       _.each($scope.players, function(g) {g.points = 0; g.matchesPlayed = 0; g.attendancePoints = 0; g.goalsScored = 0; g.amountWon = 0; g.amountDraw = 0; g.amountLose = 0;});
+      $scope.closedGamedates = _.where($scope.gamedates, {isClosed: true}).length; 
 
       _.each($scope.dbgames, function(g) {
         //console.log(g);
@@ -149,6 +134,11 @@ leagueRankingApp.controller('RankingController', function ($scope, $timeout, $io
       _.each(sortedPlayers, function(p) {
         ctx.fillText((_index - 1) + ".",10,35 * _index);
         ctx.fillText(p.name,50,35 * _index);
+        for (i = 0; i < ((($scope.closedGamedates * 3) - p.matchesPlayed) / 3); i++) { 
+            ctx.fillStyle = 'red';
+            ctx.fillText("*",190 - (i * 10),35 * _index);
+        }
+        ctx.fillStyle = 'black';
         ctx.fillText(p.matchesPlayed,200,35 * _index);
         ctx.fillText(p.amountWon,275,35 * _index);
         ctx.fillText(p.amountDraw,350,35 * _index);
@@ -166,4 +156,7 @@ leagueRankingApp.controller('RankingController', function ($scope, $timeout, $io
       });
     }
 
+    $scope.getTimes = function(n){
+      return new Array(n);
+    };
 });
