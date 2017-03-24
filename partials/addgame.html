@@ -1,4 +1,4 @@
-<ion-view view-title="Add game">
+<ion-view view-title="Speeldag toevoegen">
     <!--<ion-content></ion-content>-->
     <ion-slides options="swiperOptions" slider="swiper" ion-wizard>
         <ion-slide-page ion-wizard-step class="has-header" next-condition="(players | filter:{checked:true}).length == 4 && select.dateSelected != 0">
@@ -9,7 +9,7 @@
                     <div class="list">
                         <label class="item item-input item-select">
                             <div class="input-label">
-                                Gamedate
+                                Speeldag
                             </div>
                             <select ng-model="select.dateSelected">
                                 <option ng-repeat="gd in gamedates" value="{{gd.$id}}" ng-disabled="gd.isClosed">{{gd.dateval | date:'dd LLLL yyyy'}}</option>
@@ -63,10 +63,9 @@
         </ion-slide-page>
 
         <ion-slide-page ion-wizard-step class="has-header">
-            <!--<button class="button button-balanced wizard-button" style="float: right;" ng-click="saveGame()" ng-show="(players | filter:{checked:true}).length == 4 && (games[0].team1Score != '0' || games[0].team2Score != '0') && (games[1].team1Score != '0' || games[1].team2Score != '0') && (games[2].team1Score != '0' || games[2].team2Score != '0')">Save</button>-->
             <div class="row">
                 <div class="col">
-                    <button class="button button-block button-balanced" ng-click="saveGame()">Save</button>
+                    <button class="button button-block button-balanced" ng-click="saveGame()">Opslaan</button>
                 </div>
             </div>
             <div class="row" ng-repeat="g in games" style="margin-bottom: 10px;">
@@ -84,10 +83,10 @@
     <div class="bar bar-footer bar-footer-wizard">
         <div class="row">
             <div class="col">
-                <button class="button button-balanced wizard-button" ion-wizard-previous>Previous</button>
+                <button class="button button-balanced wizard-button" ion-wizard-previous>Vorige</button>
             </div>
             <div class="col">
-                <button class="button button-balanced wizard-button" style="float: right;" ion-wizard-next>Next</button>
+                <button class="button button-balanced wizard-button" style="float: right;" ion-wizard-next>Volgende</button>
             </div>
         </div>
     </div>

@@ -14,11 +14,11 @@ leagueRankingApp.controller('RankingController', function ($scope, $timeout, $io
         // Show the action sheet
         var hideSheet = $ionicActionSheet.show({
           buttons: [
-            { text: 'Export picture' }
+            { text: 'Foto' }
           ],
           //destructiveText: 'Delete',
-          titleText: 'Export ranking',
-          cancelText: 'Cancel',
+          titleText: 'Exporteer',
+          cancelText: 'Annuleren',
           cancel: function() {
                 // add cancel code..
               },
