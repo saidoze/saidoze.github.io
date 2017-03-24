@@ -68,7 +68,7 @@ leagueRankingApp.controller('AddGameController', function ($scope, $ionicSideMen
     $scope.$watch("players",
         function handleFooChange( newValue, oldValue ) {
             console.log( "players:", newValue );
-            if(_.where(newValue, {checked: true}).length == 4 && _.where(_.toArray($scope.gamedates), {$id: parseInt($scope.select.dateSelected)}).length > 0) {
+            if(_.where(newValue, {checked: true}).length == 4 && _.where(_.toArray($scope.gamedates), {$id: $scope.select.dateSelected}).length > 0) {
               //var _gamedateId = _.where(_.toArray($scope.gamedates), {$id: parseInt($scope.select.dateSelected)})[0].$id;
               var _gamedateId = $scope.select.dateSelected;
               var _players = _.where(newValue, {checked: true});

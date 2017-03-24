@@ -5,7 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 var leagueRankingApp = angular.module('leagueRankingApp', ['ionic', 'firebase', 'ionic-datepicker', 'ionic.wizard'])
 
-  .run(function ($ionicPlatform) {
+  .run(function ($ionicPlatform, $rootScope, $ionicPopup) {
+    $rootScope.authorized = false;
+
     $ionicPlatform.ready(function () {
       if (window.cordova && window.cordova.plugins.Keyboard) {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,6 +23,41 @@ var leagueRankingApp = angular.module('leagueRankingApp', ['ionic', 'firebase', 
         StatusBar.styleDefault();
       }
     });
+
+    $rootScope.login = function() {
+      console.log("login");
+
+      $rootScope.data = {};
+
+      // An elaborate, custom popup
+      var myPopup = $ionicPopup.show({
+        template: '<input type="password" ng-model="data.password" autofocus>',
+        title: 'Wachtwoord',
+        //subTitle: 'Please use normal things',
+        rootScope: $rootScope,
+        buttons: [
+          { text: 'Annuleren' },
+          {
+            text: '<b>Ok</b>',
+            type: 'button-positive',
+            onTap: function(e) {
+              if (!$rootScope.data.password) {
+                //don't allow the user to close 
+                e.preventDefault();
+              } else {
+                return $rootScope.data.password;
+              }
+            }
+          }
+        ]
+      });
+
+      myPopup.then(function(res) {
+        console.log('Tapped!', res);
+        if(res == "123456") 
+          $rootScope.authorized = true;
+      });
+    }
   })
 
   .config(function ($stateProvider, $urlRouterProvider, ionicDatePickerProvider) {
