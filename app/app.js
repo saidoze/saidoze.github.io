@@ -54,7 +54,7 @@ var leagueRankingApp = angular.module('leagueRankingApp', ['ionic', 'firebase', 
 
       myPopup.then(function(res) {
         console.log('Tapped!', res);
-        if(res == "123456") 
+        if(res == "123") 
           $rootScope.authorized = true;
       });
     }
@@ -62,6 +62,7 @@ var leagueRankingApp = angular.module('leagueRankingApp', ['ionic', 'firebase', 
 
   .config(function ($stateProvider, $urlRouterProvider, ionicDatePickerProvider) {
     $stateProvider.state('ranking', {
+      cache: false,
       url: '/',
       controller: 'RankingController',
       templateUrl: 'partials/ranking.html'

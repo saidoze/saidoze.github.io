@@ -50,8 +50,9 @@ leagueRankingApp.controller('AddGameController', function ($scope, $ionicSideMen
     .then(function (data) {
       console.log("loaded gamedatesList:", data);
       $scope.gamedates = data;
+      _.each($scope.gamedates, function(gd) { if(!gd.isClosed) gd.isClosed = false ;});
       var _firstNotClosedGamedate = _.findWhere($scope.gamedates, {isClosed: false});
-      $scope.select.dateSelected = String($scope.gamedates[0].$id);
+      $scope.select.dateSelected = String(_firstNotClosedGamedate.$id);
     })
     .catch(function (error) {
       console.error("Error:", error);
