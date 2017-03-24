@@ -53,7 +53,6 @@ var leagueRankingApp = angular.module('leagueRankingApp', ['ionic', 'firebase', 
       });
 
       myPopup.then(function(res) {
-        console.log('Tapped!', res);
         if(res == "123") 
           $rootScope.authorized = true;
       });
