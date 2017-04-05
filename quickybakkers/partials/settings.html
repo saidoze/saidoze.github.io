@@ -1,0 +1,61 @@
+<ion-view view-title="Instellingen" hide-back-button="true">
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="add()" ng-hide="!addButtonVisible || !authorized">
+        Toev.
+      </button>
+  </ion-nav-buttons>
+  
+  <ion-pane>
+    <ion-tabs class="tabs-positive tabs-icon-top">
+
+      <ion-tab title="Spelers" icon-on="ion-ios-people" icon-off="ion-ios-people-outline" ng-click="switchTabs(0)">
+        <ion-nav-view name="tab-tab1">
+          <ion-content>
+            <ion-list>
+              <ion-item ng-repeat="item in players | orderBy:'name'" repeat-is-done="doWhenDone();">
+                {{item.name}} 
+              <ion-option-button class="button-assertive" ng-click="remove(item)" 
+                ng-disabled="!authorized || ((games | filter:{team1Player1Id:item.$id}).length > 0 || (games | filter:{team1Player2Id:item.$id}).length > 0 || (games | filter:{team2Player1Id:item.$id}).length > 0 || (games | filter:{team2Player2Id:item.$id}).length > 0)">Verwijderen</ion-option-button>
+              </ion-item>
+            </ion-list>
+          </ion-content>
+        </ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Speeldagen" icon-on="ion-ios-calendar" icon-off="ion-ios-calendar-outline" ng-click="switchTabs(1)">
+        <ion-nav-view name="tab-tab1">
+          <ion-content>
+            <ion-list>
+              <ion-item ng-repeat="item in gamedates | orderBy:'dateval'">
+                {{item.dateval | date:'dd LLLL yyyy'}}
+              <ion-option-button class="button-assertive" ng-click="remove(item)" ng-disabled="!authorized || (games | filter:{gamedateId:item.$id}).length > 0">Verwijderen</ion-option-button>
+              <ion-option-button class="button-balanced" ng-click="closeGamedate(item)" ng-disabled="!authorized || !(games | filter:{gamedateId:item.$id}).length > 0 || item.isClosed">Afsluiten</ion-option-button>
+              </ion-item>
+            </ion-list>
+          </ion-content>
+        </ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Over" icon-on="ion-ios-information" icon-off="ion-ios-information-outline" ng-click="switchTabs(2)">
+        <div class="card card-about">
+          <div class="item item-text-wrap">
+            <p>
+              Quicky bakkers<br/><br/>
+              <b>Klassement</b><br/>
+              MP = Matches gespeeld<br/>
+              W = Gewonnen<br/>
+              D = Gelijk<br/>
+              L = Verloren<br/>
+              A = Aanwezigheidspunten (2 per aanwezigheid)<br/>
+              G = Goals gemaakt<br/>
+              P = Punten<br/>
+              Draai het toestel om meer details van de ranking te kunnen zien.
+            </p>
+          </div>
+        </div>
+      </ion-tab>
+
+    </ion-tabs>
+
+  </ion-pane>
+</ion-view>

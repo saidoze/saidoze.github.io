@@ -1,0 +1,77 @@
+/* Empty. Add your own CSS if you like */
+.zero-padding-margin {padding: 0px; margin: 0px;}
+.padding-5 {padding: 5px; margin: 0px;}
+.padding-left-right-5 {padding-left: 5px; padding-right: 5px;}
+.zero-padding {padding: 0px; margin: 0px;}
+.bold {font-weight: bold;}
+.results-right {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.col-5 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 5%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 5%;
+    -ms-flex: 0 0 5%;
+    flex: 0 0 5%;
+    max-width: 5%;
+}
+.col-45 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 45%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 45%;
+    -ms-flex: 0 0 45%;
+    flex: 0 0 45%;
+    max-width: 45%;
+}
+
+@media screen and (max-width: 567px) {
+    .hidden-xs {
+        display:none;
+    }
+}
+@media screen and (min-width: 567px) {
+    .hidden-rest {
+        display:none;
+    }
+}
+
+
+.ranking-row {    padding-top: 4px;
+    padding-bottom: 4px;}
+
+    .ranking-row-even {background-color: #efefef;}
+    .ranking-row-header {    height: 30px;padding-top: 0px;
+    padding-bottom: 0px;}
+    .ranking-row-header div {padding-top: 2px;}
+
+    .card-about {    margin-top: 60px;
+    width: calc(100% - 20px);
+    height: calc(100% - 125px);}
+
+    .pointer {cursor: pointer;}
+
+    .bar-footer {    background-color: #33cd5f;}
+
+    .tab-nav {    border-color: #35a956 !important;
+    background-color: #33cd5f !important;
+    background-image: linear-gradient(0deg, #33cd5f, #69de8b 50%, transparent 50%) !important;}
+
+    .bar-footer-wizard{padding: 0;     background-color: #ffffff;}
+     .wizard-button {    width: calc(100% - 10px);
+        height: 40px;
+    margin-top: -15px;}
+
+    .text-center {text-align: center;}
+    .text-right {text-align: right;}
+    .text-left {text-align: left;}
+
+    .points-button {width: 100%; height: 100%; border-radius: 0px;}
+
+    .button-turn-screen {    background-image: url(../img/turn-mobile-32.png);
+    background-repeat: no-repeat;
+    background-position: center; width: 40px; cursor: default; border: none;}
