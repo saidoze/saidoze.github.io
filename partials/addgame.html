@@ -1,0 +1,93 @@
+<ion-view view-title="Speeldag toevoegen">
+    <!--<ion-content></ion-content>-->
+    <ion-slides options="swiperOptions" slider="swiper" ion-wizard>
+        <ion-slide-page ion-wizard-step class="has-header" next-condition="(players | filter:{checked:true}).length == 4 && select.dateSelected != 0">
+            <!--next-condition="(players | filter:{checked:true}).length == 4 && select.dateSelected != 0"-->
+            
+            <div class="row">
+                <div class="col">
+                    <div class="list">
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Speeldag
+                            </div>
+                            <select ng-model="select.dateSelected">
+                                <option ng-repeat="gd in gamedates" value="{{gd.$id}}" ng-disabled="gd.isClosed">{{gd.dateval | date:'dd LLLL yyyy'}}</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <ion-content class="has-header" style="margin-top: 20px; height: 70%;">
+                <ion-list>
+                        <ion-checkbox class="pointer" ng-model="item.checked" ng-repeat="item in players | orderBy:'name'">{{item.name}}</ion-checkbox>
+                </ion-list>
+            </ion-content>
+        </ion-slide-page>
+
+        <ion-slide-page ion-wizard-step class="has-header" ng-repeat="g in games">
+            <ul class="list">
+                <li class="item zero-padding" >
+                    <div class="row" style="font-size: 18px">
+                        <div class="col text-center" style="line-height: 25px;">{{(players | filter: {$id: g.team1Player1Id})[0].name}}<br/>{{(players | filter: {$id: g.team1Player2Id})[0].name}}
+                        </div>
+                        <div class="col text-center col-10" style="padding-top: 18px;">VS</div>
+                        <div class="col text-center" style="line-height: 25px;">{{(players | filter: {$id: g.team2Player1Id})[0].name}}<br/>{{(players | filter: {$id: g.team2Player2Id})[0].name}}</div>
+                    </div>
+                </li>
+                <li class="item zero-padding-margin">
+                    <div class="row zero-padding-margin">
+                        <div class="col zero-padding-margin">
+                            <ul class="list zero-padding-margin">
+                                <li class="item zero-padding-margin" ng-repeat="p in possibleScores" ng-if="p < 6"><button ng-class="{'button-energized': (g.team1Score == p)}" ng-click="g.team1Score = p" class="button button-calm points-button">{{p}}</button></li>
+                            </ul>
+                        </div>
+                        <div class="col zero-padding-margin" style="border-right: 2px black solid;">
+                            <ul class="list zero-padding-margin">
+                                <li class="item zero-padding-margin" ng-repeat="p in possibleScores" ng-if="p > 5"><button ng-class="{'button-energized': (g.team1Score == p)}" ng-click="g.team1Score = p" class="button button-calm points-button">{{p}}</button></li>
+                            </ul>
+                        </div>
+                        <div class="col zero-padding-margin">
+                            <ul class="list zero-padding-margin">
+                                <li class="item zero-padding-margin" ng-repeat="p in possibleScores" ng-if="p < 6"><button ng-class="{'button-energized': (g.team2Score == p)}" ng-click="g.team2Score = p" class="button button-calm points-button">{{p}}</button></li>
+                            </ul>
+                        </div>
+                        <div class="col zero-padding-margin">
+                            <ul class="list zero-padding-margin">
+                                <li class="item zero-padding-margin" ng-repeat="p in possibleScores" ng-if="p > 5"><button ng-class="{'button-energized': (g.team2Score == p)}" ng-click="g.team2Score = p" class="button button-calm points-button">{{p}}</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </ion-slide-page>
+
+        <ion-slide-page ion-wizard-step class="has-header">
+            <div class="row">
+                <div class="col">
+                    <button class="button button-block button-balanced" ng-click="saveGame()">Opslaan</button>
+                </div>
+            </div>
+            <div class="row" ng-repeat="g in games" style="margin-bottom: 10px;">
+                <div class="col" style="text-align: center;">
+                    {{(players | filter: {$id: g.team1Player1Id})[0].name}}<br/>{{(players | filter: {$id: g.team1Player2Id})[0].name}}
+                </div>
+                <div class="col col-10" style="padding-top: 15px;">{{g.team1Score}}</div>
+                <div class="col col-10" style="padding-top: 15px;">{{g.team2Score}}</div>
+                <div class="col" style="text-align: center;">
+                    {{(players | filter: {$id: g.team2Player1Id})[0].name}}<br/>{{(players | filter: {$id: g.team2Player2Id})[0].name}}
+                </div>
+            </div>
+        </ion-slide-page>
+    </ion-slides>
+    <div class="bar bar-footer bar-footer-wizard">
+        <div class="row">
+            <div class="col">
+                <button class="button button-balanced wizard-button" ion-wizard-previous>Vorige</button>
+            </div>
+            <div class="col">
+                <button class="button button-balanced wizard-button" style="float: right;" ion-wizard-next>Volgende</button>
+            </div>
+        </div>
+    </div>
+</ion-view>
