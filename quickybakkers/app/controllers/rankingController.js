@@ -6,6 +6,13 @@ leagueRankingApp.controller('RankingController', function ($scope, $q, $timeout,
 
     $ionicLoading.show({ template: '<ion-spinner class="spinner-calm"></ion-spinner>' });
 
+    $scope.doRefresh = function() {
+      $scope.players = $firebaseArray(firebase.database().ref('players'));
+      $scope.dbgames = $firebaseArray(firebase.database().ref('games'));
+      $scope.gamedates = $firebaseArray(firebase.database().ref('gamedates'));
+      $scope.$broadcast('scroll.refreshComplete');
+    };
+
     $q.all([$scope.players, $scope.gamedates, $scope.dbgames]).then(function(results) {
         console.log("ALL PROMISES RESOLVED");
         console.log(results);

@@ -4,6 +4,10 @@
   </ion-nav-buttons>
 
   <ion-content id="myRanking">
+    <ion-refresher
+      pulling-text=""
+      on-refresh="doRefresh()">
+    </ion-refresher>
 
    <canvas id="myCanvas" width="700" height="650" style="border:1px solid #d3d3d3; display: none;">Your browser does not support the HTML5 canvas tag.</canvas>
 
@@ -17,7 +21,7 @@
           <div class="col col-10 hidden-xs" title="Gelijk">D</div>
           <div class="col col-10 hidden-xs" title="Verloren">L</div>
           <div class="col col-10" title="Aanwezigheidspunten">A</div>
-          <div class="col col-10" title="Goals gemaakt">G</div>
+          <div class="col col-15" title="Goals gemaakt">G</div>
           <div class="col col-10" title="Punten">P</div>
         </div>
       </li>
@@ -30,7 +34,7 @@
           <div class="col col-10 hidden-xs">{{p.amountDraw}}</div>
           <div class="col col-10 hidden-xs">{{p.amountLose}}</div>
           <div class="col col-10">{{p.attendancePoints}}</div>
-          <div class="col col-10">{{p.goalsScored}}</div>
+          <div class="col col-15">{{p.goalsScored}}</div>
           <div class="col col-10">{{p.points}}</div>
         </div>
       </li>
