@@ -53,7 +53,7 @@ leagueRankingApp.controller('SettingsController', function ($q, $timeout, $scope
         var ipObj1 = {
             callback: function (val) {  //Mandatory
                 console.log('Return value from the datepicker popup is : ' + val, new Date(val));
-                gamedates.$add({ dateval: val });
+                $scope.gamedates.$add({ dateval: val });
             }, 
             disabledDates: [            //Optional
                 new Date(2017, 2, 6),
