@@ -89,7 +89,7 @@ leagueRankingApp.controller('SettingsController', function ($q, $timeout, $scope
 
         newPlayerPopup.then(function(res) {
             //save new player name
-            players.$add({ name: res });
+            $scope.players.$add({ name: res });
         });
     }
 
