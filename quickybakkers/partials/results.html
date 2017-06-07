@@ -1,7 +1,7 @@
 <ion-view view-title="Resultaten">
     <ion-content>
         <div class="list">
-            <div ng-repeat="gd in gamedates | orderBy:'-dateval'" repeat-is-done="doWhenDone();">
+            <div ng-repeat="gd in gamedates | orderBy:'-dateval'" repeat-is-done="doWhenDone();" data-gamedateid="{gd.$id}">
                 <div class="item item-divider">
                     Speeldag {{gamedates.length - $index}} - {{gd.dateval | date:'dd LLLL'}}
                 </div>
@@ -9,9 +9,9 @@
                     <div class="row zero-padding-margin">
                         <div class="col col-45 zero-padding-margin" ng-class="{bold: g.team1Score==11}">
                             <div class="row zero-padding-margin hidden-rest">
-                                <div class="col col-45 zero-padding-margin results-right text-right">{{(players | filter:{$id:g.team1Player1Id})[0].name}}</div>
+                                <div class="col col-45 zero-padding-margin results-right text-right" data-team1Player1Id="{g.team1Player1Id}">{{(players | filter:{$id:g.team1Player1Id})[0].name}}</div>
                                 <div class="col col-10 zero-padding-margin results-right text-center padding-left-right-5">/</div>
-                                <div class="col col-45 zero-padding-margin results-right text-left">{{(players | filter:{$id:g.team1Player2Id})[0].name}}</div>
+                                <div class="col col-45 zero-padding-margin results-right text-left" data-team1Player2Id="{g.team1Player2Id}">{{(players | filter:{$id:g.team1Player2Id})[0].name}}</div>
                             </div>
                             <div class="hidden-xs">{{(players | filter:{$id:g.team1Player1Id})[0].name}} / {{(players | filter:{$id:g.team1Player2Id})[0].name}}</div>
                         </div>
@@ -19,9 +19,9 @@
                         <div class="col col-5 zero-padding-margin text-center" ng-class="{bold: g.team2Score==11}" style="padding-left:2px;">{{g.team2Score}}</div>
                         <div class="col col-45 zero-padding-margin item-text-wrap" ng-class="{bold: g.team2Score==11}">
                             <div class="row zero-padding-margin hidden-rest">
-                                <div class="col col-45 zero-padding-margin results-right text-right">{{(players | filter:{$id:g.team2Player1Id})[0].name}}</div>
+                                <div class="col col-45 zero-padding-margin results-right text-right" data-team2Player1Id="{g.team2Player1Id}">{{(players | filter:{$id:g.team2Player1Id})[0].name}}</div>
                                 <div class="col col-10 zero-padding-margin results-right text-center padding-left-right-5">/</div>
-                                <div class="col col-45 zero-padding-margin results-right text-left">{{(players | filter:{$id:g.team2Player2Id})[0].name}}</div>
+                                <div class="col col-45 zero-padding-margin results-right text-left" data-team2Player2Id="{g.team2Player2Id}">{{(players | filter:{$id:g.team2Player2Id})[0].name}}</div>
                             </div>
                             <div class="hidden-xs text-right">{{(players | filter:{$id:g.team2Player1Id})[0].name}} / {{(players | filter:{$id:g.team2Player2Id})[0].name}}</div>
                         </div>
