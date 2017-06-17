@@ -119,21 +119,21 @@ leagueRankingApp.controller('RankingController', function ($scope, $q, $timeout,
         }
 
         //if gamedateID is... -> filter quicky points (4e speler zonder punten in die match)
-        if(g.$id == '-') {
+        if(g.$id == '-Kmpg1rpHuytZCf38m_8') {
+          //quicky = -Ke_6QlSCtMQkc5_EAhK - is toevallig altijd player 1
+          _team1Player1.goalsScored -= 11;
+          _team1Player1.amountWon -= 1;
+          _team1Player1.matchesPlayed -= 1;
+        }
+        if(g.$id == '-Kmpg1rsdy5jVdG3F4Et') {
           //quicky = -Ke_6QlSCtMQkc5_EAhK - is toevallig altijd player 1
           _team1Player1.goalsScored -= 9;
           _team1Player1.amountLose -= 1;
           _team1Player1.matchesPlayed -= 1;
         }
-        if(g.$id == '-') {
+        if(g.$id == '-Kmpg1rtonPje7nzUULh') {
           //quicky = -Ke_6QlSCtMQkc5_EAhK - is toevallig altijd player 1
-          _team1Player1.goalsScored -= 6;
-          _team1Player1.amountLose -= 1;
-          _team1Player1.matchesPlayed -= 1;
-        }
-        if(g.$id == '-') {
-          //quicky = -Ke_6QlSCtMQkc5_EAhK - is toevallig altijd player 1
-          _team1Player1.goalsScored -= (9+6+7);
+          _team1Player1.goalsScored -= 7;
           _team1Player1.amountLose -= 1;
           _team1Player1.matchesPlayed -= 1;
         }
