@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="smartmirror">
     <head>
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,30 +10,92 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/locale/nl-be.js"></script>
 
         <!--CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
         <style>
-        body {
-            background-color: #000;
-            color: #fff
-        }
-    </style>
-    </head>
-    <body>
-        <div id="mainController" class="container-fluid">
+            body {
+                background-color: #000;
+                color: #fff
+            }
+            .calender-day {background-color: green; flex: 1;}
 
+            .datetime {font-size: 28px;}
+            .datetime div:first-letter {text-transform: uppercase;}
+            .row {margin-left: 0px; margin-right: 0px;}
+        </style>
+    </head>
+    <body ng-controller="MainController">
+        <div class="container-fluid">
+            <div class="row datetime">
+                <div class="col-sm-8 pull-left" style="padding-top:10px;">{{currentDay}}</div>
+                <div class="col-sm-4 pull-right" style="padding-top:10px;">{{currentTime}}</div>
+            </div>
+            <div class="row centered">
+                <div class="col-sm-12" style="display: flex;">
+                    <div class="calender-day">maa<br> boo</div>
+                    <div class="calender-day">din<br> boo</div>
+                    <div class="calender-day">woe<br> boo</div>
+                    <div class="calender-day">don<br> boo</div>
+                    <div class="calender-day">vr <br> boo</div>
+                    <div class="calender-day">zat<br> boo</div>
+                    <div class="calender-day">zon<br> boo</div>
+                </div>
+                <div class="col-sm-12" style="display: flex;">
+                    <div class="calender-day">maa<br> boo</div>
+                    <div class="calender-day">din<br> boo</div>
+                    <div class="calender-day">woe<br> boo</div>
+                    <div class="calender-day">don<br> boo</div>
+                    <div class="calender-day">vr <br> boo</div>
+                    <div class="calender-day">zat<br> boo</div>
+                    <div class="calender-day">zon<br> boo</div>
+                </div>
+                <div class="col-sm-12">maa</div>
+            </div>
+            <div class="row">Weerbericht</div>
+            <div class="row">Nieuws headlines</div>
         </div>
     </body>
 
     <script>
-        angular.module("smartmirror", []);
+        angular.module("smartmirror", [])
+            .controller("MainController", function($scope) {
+            $scope.currentDay;
+            $scope.currentTime;
+            $scope.daysOfWeek = [1,2,3,4,5,6,7];
 
-        angular.controller("mainController", function($scope) {
-            $scope.helloTo = {};
-            $scope.helloTo.title = "AngularJS";
-         });
+            SetIntervals();
+            ConfigStyles();
+
+            SetCurrentDateTime();
+
+
+            function SetDaysOfWeek() {
+
+            }
+            function SetCurrentDateTime() {
+                console.log("SetCurrentDateTime");
+                if(!$scope.$$phase) {
+                    $scope.$apply(function () {
+                        $scope.currentDay = moment().format("dddd D MMMM");
+                        $scope.currentTime = moment().format("HH:mm:ss");
+                    });
+                }
+            }
+
+            function SetIntervals() {
+                setInterval(function(){
+                    SetCurrentDateTime();
+                }, 1000)
+            }
+
+            function ConfigStyles() {
+
+            }
+        });
 
     </script>
 </html>
