@@ -1,0 +1,562 @@
+{
+  "version": 3,
+  "targets": {
+    "MonoAndroid,Version=v6.0": {
+      "SkiaSharp/1.59.3": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/SkiaSharp.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/win7-x64/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win7-x64"
+          },
+          "runtimes/win7-x86/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win7-x86"
+          }
+        }
+      },
+      "Xamarin.Android.Support.Animated.Vector.Drawable/23.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Vector.Drawable": "[23.3.0]",
+          "Xamarin.Android.Support.v4": "[23.3.0]"
+        },
+        "compile": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.Animated.Vector.Drawable.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.Animated.Vector.Drawable.dll": {}
+        }
+      },
+      "Xamarin.Android.Support.Design/23.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v4": "[23.3.0]",
+          "Xamarin.Android.Support.v7.AppCompat": "[23.3.0]",
+          "Xamarin.Android.Support.v7.RecyclerView": "[23.3.0]"
+        },
+        "compile": {
+          "lib/MonoAndroid43/Xamarin.Android.Support.Design.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid43/Xamarin.Android.Support.Design.dll": {}
+        }
+      },
+      "Xamarin.Android.Support.v4/23.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.v4.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.v4.dll": {}
+        }
+      },
+      "Xamarin.Android.Support.v7.AppCompat/23.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Animated.Vector.Drawable": "[23.3.0]",
+          "Xamarin.Android.Support.Vector.Drawable": "[23.3.0]",
+          "Xamarin.Android.Support.v4": "[23.3.0]"
+        },
+        "compile": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.v7.AppCompat.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.v7.AppCompat.dll": {}
+        }
+      },
+      "Xamarin.Android.Support.v7.CardView/23.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.v7.CardView.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.v7.CardView.dll": {}
+        }
+      },
+      "Xamarin.Android.Support.v7.MediaRouter/23.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v4": "[23.3.0]",
+          "Xamarin.Android.Support.v7.AppCompat": "[23.3.0]"
+        },
+        "compile": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.v7.MediaRouter.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.v7.MediaRouter.dll": {}
+        }
+      },
+      "Xamarin.Android.Support.v7.RecyclerView/23.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v4": "[23.3.0]"
+        },
+        "compile": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.v7.RecyclerView.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.v7.RecyclerView.dll": {}
+        }
+      },
+      "Xamarin.Android.Support.Vector.Drawable/23.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v4": "[23.3.0]"
+        },
+        "compile": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.Vector.Drawable.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/Xamarin.Android.Support.Vector.Drawable.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Android.Support.Vector.Drawable.targets": {}
+        }
+      },
+      "Xamarin.Forms/2.3.4.247": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Design": "[23.3.0]",
+          "Xamarin.Android.Support.v4": "[23.3.0]",
+          "Xamarin.Android.Support.v7.AppCompat": "[23.3.0]",
+          "Xamarin.Android.Support.v7.CardView": "[23.3.0]",
+          "Xamarin.Android.Support.v7.MediaRouter": "[23.3.0]"
+        },
+        "compile": {
+          "lib/MonoAndroid10/FormsViewGroup.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Core.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Platform.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/FormsViewGroup.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Core.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Platform.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll": {}
+        },
+        "build": {
+          "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.targets": {}
+        }
+      },
+      "Quicky.SportsApp.Models/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Quicky.SportsApp.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Quicky.SportsApp.Models.dll": {}
+        }
+      },
+      "Quicky.SportsApp.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Quicky.SportsApp.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Quicky.SportsApp.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Quicky.SportsApp.Services.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SkiaSharp/1.59.3": {
+      "sha512": "MNVXKHn3dDGnJPtO4dPMU6GtvFHO1aUHDWm1V5i7QbacVJFxT+a8x1chGGdgFNl7pB4+/yzEo39x9Q7ggRYt6A==",
+      "type": "package",
+      "path": "skiasharp/1.59.3",
+      "files": [
+        "build/net45/SkiaSharp.dll.config",
+        "build/net45/SkiaSharp.targets",
+        "lib/MonoAndroid/SkiaSharp.dll",
+        "lib/MonoAndroid/SkiaSharp.xml",
+        "lib/XamarinMac/SkiaSharp.dll",
+        "lib/XamarinMac/SkiaSharp.xml",
+        "lib/XamariniOS/SkiaSharp.dll",
+        "lib/XamariniOS/SkiaSharp.xml",
+        "lib/XamarintvOS/SkiaSharp.dll",
+        "lib/XamarintvOS/SkiaSharp.xml",
+        "lib/net45/SkiaSharp.dll",
+        "lib/net45/SkiaSharp.dll.config",
+        "lib/net45/SkiaSharp.xml",
+        "lib/netstandard1.3/SkiaSharp.dll",
+        "lib/netstandard1.3/SkiaSharp.xml",
+        "lib/portable-net45+win8+wpa81+wp8/SkiaSharp.dll",
+        "lib/portable-net45+win8+wpa81+wp8/SkiaSharp.xml",
+        "lib/uap10.0/SkiaSharp.dll",
+        "lib/uap10.0/SkiaSharp.xml",
+        "runtimes/osx/native/libSkiaSharp.dylib",
+        "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win7-x64/native/libSkiaSharp.dll",
+        "runtimes/win7-x86/native/libSkiaSharp.dll",
+        "skiasharp.1.59.3.nupkg.sha512",
+        "skiasharp.nuspec",
+        "xamarin.interactive/SkiaSharp.Workbooks.dll"
+      ]
+    },
+    "Xamarin.Android.Support.Animated.Vector.Drawable/23.3.0": {
+      "sha512": "qCN7bgA3BpzVybYV5jJa0wQDDYqdomZ7va4gdeyXNAtjEVFPDdKdS8wrD1HuGsQfxShLPcsDFIKd1Z4birTq8g==",
+      "type": "package",
+      "path": "xamarin.android.support.animated.vector.drawable/23.3.0",
+      "files": [
+        "Xamarin.Android.Support.Animated.Vector.Drawable.23.3.0.nupkg.sha512",
+        "Xamarin.Android.Support.Animated.Vector.Drawable.nuspec",
+        "lib/MonoAndroid403/Xamarin.Android.Support.Animated.Vector.Drawable.dll"
+      ]
+    },
+    "Xamarin.Android.Support.Design/23.3.0": {
+      "sha512": "aTf8CqR0Ktzgoa9DD6YOR/BvfBcvvmUsQ3O2TtJxas0QQ1wb2raneICKyeZd89oFa3VAQbQzzXUP5NtSurF15w==",
+      "type": "package",
+      "path": "xamarin.android.support.design/23.3.0",
+      "files": [
+        "Xamarin.Android.Support.Design.23.3.0.nupkg.sha512",
+        "Xamarin.Android.Support.Design.nuspec",
+        "lib/MonoAndroid43/Xamarin.Android.Support.Design.dll"
+      ]
+    },
+    "Xamarin.Android.Support.v4/23.3.0": {
+      "sha512": "14gFJCJF0ZDBVEHIuXefBaGKaVxWMw11yb41dcupnDPtIyQCUEz2BQGmMna2aIWquwAHrhJ8sxdmhmTdGyno+Q==",
+      "type": "package",
+      "path": "xamarin.android.support.v4/23.3.0",
+      "files": [
+        "Xamarin.Android.Support.v4.23.3.0.nupkg.sha512",
+        "Xamarin.Android.Support.v4.nuspec",
+        "lib/MonoAndroid403/Xamarin.Android.Support.v4.dll"
+      ]
+    },
+    "Xamarin.Android.Support.v7.AppCompat/23.3.0": {
+      "sha512": "n5x/PwzhM9ShoESvckqI82cdWn2L3ccdfwdp0LrstcGBlIJMN9mXbntsjyKrfHXU0+RF04Iq5w0begvaAmTxcQ==",
+      "type": "package",
+      "path": "xamarin.android.support.v7.appcompat/23.3.0",
+      "files": [
+        "Xamarin.Android.Support.v7.AppCompat.23.3.0.nupkg.sha512",
+        "Xamarin.Android.Support.v7.AppCompat.nuspec",
+        "lib/MonoAndroid403/Xamarin.Android.Support.v7.AppCompat.dll"
+      ]
+    },
+    "Xamarin.Android.Support.v7.CardView/23.3.0": {
+      "sha512": "kyY2l1O1DTBzFmNy6gIoplcYC+lrSMJhyyw5s24hYWCLZSa31DYKFIiyPF1OMvb0xLDi43oBC2ZCIWrUvzTe+w==",
+      "type": "package",
+      "path": "xamarin.android.support.v7.cardview/23.3.0",
+      "files": [
+        "Xamarin.Android.Support.v7.CardView.23.3.0.nupkg.sha512",
+        "Xamarin.Android.Support.v7.CardView.nuspec",
+        "lib/MonoAndroid403/Xamarin.Android.Support.v7.CardView.dll"
+      ]
+    },
+    "Xamarin.Android.Support.v7.MediaRouter/23.3.0": {
+      "sha512": "a+cZB6LRtV2fncYzQSdBxLYWcvNkUlNbq0PLUV+3JncC4pBTPVBY3t89fD5OmIy+vSL9DxgP2yJ6LwxjnDSJGw==",
+      "type": "package",
+      "path": "xamarin.android.support.v7.mediarouter/23.3.0",
+      "files": [
+        "Xamarin.Android.Support.v7.MediaRouter.23.3.0.nupkg.sha512",
+        "Xamarin.Android.Support.v7.MediaRouter.nuspec",
+        "lib/MonoAndroid403/Xamarin.Android.Support.v7.MediaRouter.dll"
+      ]
+    },
+    "Xamarin.Android.Support.v7.RecyclerView/23.3.0": {
+      "sha512": "LRzIX3UHTAElbVGlXrNOL3SjsNcftfGDN9M1jhkGz5+uKxyhCFoXkvLMUvmNd5iZLdnFixAgXR+Ctm4tsRQxPQ==",
+      "type": "package",
+      "path": "xamarin.android.support.v7.recyclerview/23.3.0",
+      "files": [
+        "Xamarin.Android.Support.v7.RecyclerView.23.3.0.nupkg.sha512",
+        "Xamarin.Android.Support.v7.RecyclerView.nuspec",
+        "lib/MonoAndroid403/Xamarin.Android.Support.v7.RecyclerView.dll"
+      ]
+    },
+    "Xamarin.Android.Support.Vector.Drawable/23.3.0": {
+      "sha512": "A2yyRZp7QsRdPKIjTCQ2Ic84nNToPY5lVa8vJPLV0gJ0XBeKijQQi8biFZZdnXy+tzrUmfX6fJnlbYFSdIMhiQ==",
+      "type": "package",
+      "path": "xamarin.android.support.vector.drawable/23.3.0",
+      "files": [
+        "Xamarin.Android.Support.Vector.Drawable.23.3.0.nupkg.sha512",
+        "Xamarin.Android.Support.Vector.Drawable.nuspec",
+        "build/Xamarin.Android.Support.Tasks.VectorDrawable.dll",
+        "build/Xamarin.Android.Support.Vector.Drawable.targets",
+        "lib/MonoAndroid403/Xamarin.Android.Support.Vector.Drawable.dll"
+      ]
+    },
+    "Xamarin.Forms/2.3.4.247": {
+      "sha512": "+6VN8IBSah7EcNJ4SV3pIhNA8tNlBaPLfr3+hQpPIllueJrXI5QtjM0tAJusPc2V1cYyC4YKvA1fs5c/A8RrBw==",
+      "type": "package",
+      "path": "xamarin.forms/2.3.4.247",
+      "files": [
+        "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Mono.Cecil.Mdb.dll",
+        "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Mono.Cecil.Pdb.dll",
+        "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Mono.Cecil.Rocks.dll",
+        "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Mono.Cecil.dll",
+        "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Build.Tasks.dll",
+        "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Core.dll",
+        "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Xaml.dll",
+        "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.targets",
+        "lib/MonoAndroid10/Design/Xamarin.Forms.Core.Design.dll",
+        "lib/MonoAndroid10/Design/Xamarin.Forms.Xaml.Design.dll",
+        "lib/MonoAndroid10/FormsViewGroup.dll",
+        "lib/MonoAndroid10/FormsViewGroup.pdb",
+        "lib/MonoAndroid10/Xamarin.Forms.Core.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Core.pdb",
+        "lib/MonoAndroid10/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.pdb",
+        "lib/MonoAndroid10/Xamarin.Forms.Platform.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Xaml.pdb",
+        "lib/MonoAndroid10/Xamarin.Forms.Xaml.xml",
+        "lib/WP80/Design/Xamarin.Forms.Core.Design.dll",
+        "lib/WP80/Design/Xamarin.Forms.Xaml.Design.dll",
+        "lib/WP80/Xamarin.Forms.Core.dll",
+        "lib/WP80/Xamarin.Forms.Core.pdb",
+        "lib/WP80/Xamarin.Forms.Core.xml",
+        "lib/WP80/Xamarin.Forms.Platform.WP8.dll",
+        "lib/WP80/Xamarin.Forms.Platform.WP8.pdb",
+        "lib/WP80/Xamarin.Forms.Platform.dll",
+        "lib/WP80/Xamarin.Forms.Xaml.dll",
+        "lib/WP80/Xamarin.Forms.Xaml.pdb",
+        "lib/WP80/Xamarin.Forms.Xaml.xml",
+        "lib/Xamarin.iOS10/Design/Xamarin.Forms.Core.Design.dll",
+        "lib/Xamarin.iOS10/Design/Xamarin.Forms.Xaml.Design.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll.mdb",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Core.pdb",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Core.xml",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll.mdb",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.pdb",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll.mdb",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.pdb",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.xml",
+        "lib/Xamarin.iOS10/ar/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/ca/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/cs/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/da/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/de/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/el/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/es/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/fi/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/fr/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/he/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/hi/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/hr/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/hu/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/id/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/it/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/ja/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/ko/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/ms/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/nb/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/nl/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/ro/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/ru/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/sk/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/sv/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/th/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/tr/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/uk/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/vi/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Design/Xamarin.Forms.Core.Design.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Design/Xamarin.Forms.Xaml.Design.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Core.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Core.dll.mdb",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Core.pdb",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Core.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Platform.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Platform.dll.mdb",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Platform.pdb",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Xaml.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Xaml.dll.mdb",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Xaml.pdb",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Xaml.xml",
+        "lib/uap10.0/Design/Xamarin.Forms.Core.Design.dll",
+        "lib/uap10.0/Design/Xamarin.Forms.Xaml.Design.dll",
+        "lib/uap10.0/Xamarin.Forms.Core.dll",
+        "lib/uap10.0/Xamarin.Forms.Core.xml",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP.pri",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/AutoSuggestStyle.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsCommandBarStyle.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsTextBoxStyle.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/MasterDetailControlStyle.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/PageControl.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/PageControlStyle.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/Properties/Xamarin.Forms.Platform.UAP.rd.xml",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/Resources.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/TabbedPageStyle.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/Xamarin.Forms.Platform.UAP.xr.xml",
+        "lib/uap10.0/Xamarin.Forms.Platform.dll",
+        "lib/uap10.0/Xamarin.Forms.Xaml.dll",
+        "lib/uap10.0/Xamarin.Forms.Xaml.xml",
+        "lib/win81/Design/Xamarin.Forms.Core.Design.dll",
+        "lib/win81/Design/Xamarin.Forms.Xaml.Design.dll",
+        "lib/win81/Xamarin.Forms.Core.dll",
+        "lib/win81/Xamarin.Forms.Core.xml",
+        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet.dll",
+        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet.pri",
+        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/FormsTextBoxStyle.xbf",
+        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/Resources.xbf",
+        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/TabletResources.xbf",
+        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/Xamarin.Forms.Platform.WinRT.Tablet.xr.xml",
+        "lib/win81/Xamarin.Forms.Platform.WinRT.dll",
+        "lib/win81/Xamarin.Forms.Platform.WinRT.pri",
+        "lib/win81/Xamarin.Forms.Platform.WinRT/PageControl.xbf",
+        "lib/win81/Xamarin.Forms.Platform.WinRT/StepperControl.xbf",
+        "lib/win81/Xamarin.Forms.Platform.WinRT/Xamarin.Forms.Platform.WinRT.xr.xml",
+        "lib/win81/Xamarin.Forms.Platform.dll",
+        "lib/win81/Xamarin.Forms.Xaml.dll",
+        "lib/win81/Xamarin.Forms.Xaml.xml",
+        "lib/wpa81/Design/Xamarin.Forms.Core.Design.dll",
+        "lib/wpa81/Design/Xamarin.Forms.Xaml.Design.dll",
+        "lib/wpa81/Xamarin.Forms.Core.dll",
+        "lib/wpa81/Xamarin.Forms.Core.xml",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone.dll",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone.pri",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/FormsTextBoxStyle.xbf",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/PhoneResources.xbf",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/Resources.xbf",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/SearchBox.xbf",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/Xamarin.Forms.Platform.WinRT.Phone.xr.xml",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT.dll",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT.pri",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT/PageControl.xbf",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT/StepperControl.xbf",
+        "lib/wpa81/Xamarin.Forms.Platform.WinRT/Xamarin.Forms.Platform.WinRT.xr.xml",
+        "lib/wpa81/Xamarin.Forms.Platform.dll",
+        "lib/wpa81/Xamarin.Forms.Xaml.dll",
+        "lib/wpa81/Xamarin.Forms.Xaml.xml",
+        "xamarin.forms.2.3.4.247.nupkg.sha512",
+        "xamarin.forms.nuspec"
+      ]
+    },
+    "Quicky.SportsApp.Models/1.0.0": {
+      "type": "project",
+      "path": "../../Quicky.SportsApp.Models/Quicky.SportsApp.Models.csproj",
+      "msbuildProject": "../../Quicky.SportsApp.Models/Quicky.SportsApp.Models.csproj"
+    },
+    "Quicky.SportsApp.Services/1.0.0": {
+      "type": "project",
+      "path": "../../Quicky.SportsApp.Services/Quicky.SportsApp.Services.csproj",
+      "msbuildProject": "../../Quicky.SportsApp.Services/Quicky.SportsApp.Services.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "MonoAndroid,Version=v6.0": [
+      "Quicky.SportsApp.Models >= 1.0.0",
+      "Quicky.SportsApp.Services >= 1.0.0",
+      "SkiaSharp >= 1.59.3",
+      "Xamarin.Android.Support.Design >= 23.3.0",
+      "Xamarin.Android.Support.v4 >= 23.3.0",
+      "Xamarin.Android.Support.v7.AppCompat >= 23.3.0",
+      "Xamarin.Android.Support.v7.CardView >= 23.3.0",
+      "Xamarin.Android.Support.v7.MediaRouter >= 23.3.0",
+      "Xamarin.Forms >= 2.3.4.247"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\tobias.nuyttens\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Persoonlijk\\saidoze.github.io\\quickybakkers_app\\Quicky.SportsApp\\Quicky.SportsApp\\Quicky.SportsApp.Android\\Quicky.SportsApp.Android.csproj",
+      "projectName": "Quicky.SportsApp.Android",
+      "projectPath": "C:\\Persoonlijk\\saidoze.github.io\\quickybakkers_app\\Quicky.SportsApp\\Quicky.SportsApp\\Quicky.SportsApp.Android\\Quicky.SportsApp.Android.csproj",
+      "packagesPath": "C:\\Users\\tobias.nuyttens\\.nuget\\packages\\",
+      "outputPath": "C:\\Persoonlijk\\saidoze.github.io\\quickybakkers_app\\Quicky.SportsApp\\Quicky.SportsApp\\Quicky.SportsApp.Android\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\tobias.nuyttens\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+      ],
+      "originalTargetFrameworks": [
+        "monoandroid60"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://industry-tfs-nuget.veibe.net/api/v2": {},
+        "http://nuget.org/api/v2": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "monoandroid60": {
+          "projectReferences": {
+            "C:\\Persoonlijk\\saidoze.github.io\\quickybakkers_app\\Quicky.SportsApp\\Quicky.SportsApp.Models\\Quicky.SportsApp.Models.csproj": {
+              "projectPath": "C:\\Persoonlijk\\saidoze.github.io\\quickybakkers_app\\Quicky.SportsApp\\Quicky.SportsApp.Models\\Quicky.SportsApp.Models.csproj"
+            },
+            "C:\\Persoonlijk\\saidoze.github.io\\quickybakkers_app\\Quicky.SportsApp\\Quicky.SportsApp.Services\\Quicky.SportsApp.Services.csproj": {
+              "projectPath": "C:\\Persoonlijk\\saidoze.github.io\\quickybakkers_app\\Quicky.SportsApp\\Quicky.SportsApp.Services\\Quicky.SportsApp.Services.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "monoandroid60": {
+        "dependencies": {
+          "SkiaSharp": {
+            "target": "Package",
+            "version": "[1.59.3, )"
+          },
+          "Xamarin.Android.Support.Design": {
+            "target": "Package",
+            "version": "[23.3.0, )"
+          },
+          "Xamarin.Android.Support.v4": {
+            "target": "Package",
+            "version": "[23.3.0, )"
+          },
+          "Xamarin.Android.Support.v7.AppCompat": {
+            "target": "Package",
+            "version": "[23.3.0, )"
+          },
+          "Xamarin.Android.Support.v7.CardView": {
+            "target": "Package",
+            "version": "[23.3.0, )"
+          },
+          "Xamarin.Android.Support.v7.MediaRouter": {
+            "target": "Package",
+            "version": "[23.3.0, )"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[2.3.4.247, )"
+          }
+        }
+      }
+    }
+  }
+}

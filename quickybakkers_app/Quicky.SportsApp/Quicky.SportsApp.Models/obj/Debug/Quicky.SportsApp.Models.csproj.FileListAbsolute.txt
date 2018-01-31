@@ -1,0 +1,12 @@
+C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\bin\Debug\Quicky.SportsApp.Models.dll
+C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\bin\Debug\Quicky.SportsApp.Models.pdb
+C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Debug\Quicky.SportsApp.Models.csproj.CoreCompileInputs.cache
+C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Debug\Quicky.SportsApp.Models.dll
+C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Debug\Quicky.SportsApp.Models.pdb
+C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Debug\Quicky.SportsApp.Models.csprojResolveAssemblyReference.cache
+C:\Persoonlijk\saidoze.github.io\quickybakkers_app\Quicky.SportsApp\Quicky.SportsApp.Models\bin\Debug\Quicky.SportsApp.Models.dll
+C:\Persoonlijk\saidoze.github.io\quickybakkers_app\Quicky.SportsApp\Quicky.SportsApp.Models\bin\Debug\Quicky.SportsApp.Models.pdb
+C:\Persoonlijk\saidoze.github.io\quickybakkers_app\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Debug\Quicky.SportsApp.Models.csprojResolveAssemblyReference.cache
+C:\Persoonlijk\saidoze.github.io\quickybakkers_app\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Debug\Quicky.SportsApp.Models.csproj.CoreCompileInputs.cache
+C:\Persoonlijk\saidoze.github.io\quickybakkers_app\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Debug\Quicky.SportsApp.Models.dll
+C:\Persoonlijk\saidoze.github.io\quickybakkers_app\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Debug\Quicky.SportsApp.Models.pdb

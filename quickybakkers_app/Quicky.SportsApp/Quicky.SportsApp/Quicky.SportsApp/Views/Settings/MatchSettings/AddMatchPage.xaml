@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:v="clr-namespace:Quicky.SportsApp.UserControls"
+             x:Class="Quicky.SportsApp.Views.Settings.MatchSettings.AddMatchPage">
+    <ContentPage.Content>
+        <Grid Padding="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <v:CustomPicker Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="matchDayPicker" Title="Speeldag" ItemDisplayBinding="{Binding DateAsString}"></v:CustomPicker>
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Team 1"></Label>
+            <v:CustomPicker Grid.Row="2" Grid.Column="0" x:Name="team1player1Picker" Title="Speler 1" ItemDisplayBinding="{Binding Name}" SelectedIndexChanged="OnTeam1Player1SelectedIndexChanged"></v:CustomPicker>
+            <Switch Grid.Row="2" Grid.Column="1" x:Name="team1player1AllowPoints" IsToggled="True" Toggled="onTogglePlayerPoints"></Switch>
+            <v:CustomPicker Grid.Row="3" Grid.Column="0" x:Name="team1player2Picker" Title="Speler 2" ItemDisplayBinding="{Binding Name}" SelectedIndexChanged="OnTeam1Player2SelectedIndexChanged"></v:CustomPicker>
+            <Switch Grid.Row="3" Grid.Column="1" x:Name="team1player2AllowPoints" IsToggled="True" Toggled="onTogglePlayerPoints"></Switch>
+            <v:CustomPicker Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name="team1ScorePicker" Title="Score"></v:CustomPicker>
+
+            <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="Team 2"></Label>
+            <v:CustomPicker Grid.Row="6" Grid.Column="0" x:Name="team2player1Picker" Title="Speler 1" ItemDisplayBinding="{Binding Name}" SelectedIndexChanged="OnTeam2Player1SelectedIndexChanged"></v:CustomPicker>
+            <Switch Grid.Row="6" Grid.Column="1" x:Name="team2player1AllowPoints" IsToggled="True" Toggled="onTogglePlayerPoints"></Switch>
+            <v:CustomPicker Grid.Row="7" Grid.Column="0" x:Name="team2player2Picker" Title="Speler 2" ItemDisplayBinding="{Binding Name}" SelectedIndexChanged="OnTeam2Player2SelectedIndexChanged"></v:CustomPicker>
+            <Switch Grid.Row="7" Grid.Column="1" x:Name="team2player2AllowPoints" IsToggled="True" Toggled="onTogglePlayerPoints"></Switch>
+            <v:CustomPicker Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" x:Name="team2ScorePicker" Title="Score"></v:CustomPicker>
+
+            <Button Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Text="Opslaan" Clicked="OnSaveButtonClicked" />
+        </Grid>
+        <!--<StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" Padding="15, 20, 15, 0" x:Name="AddPlayerPanel">
+                <v:CustomPicker x:Name="matchDayPicker" Title="Speeldag" ItemDisplayBinding="{Binding DateAsString}"></v:CustomPicker>
+                
+                <Label Text="Team 1"></Label>
+                <v:CustomPicker x:Name="team1player1Picker" Title="Speler 1" ItemDisplayBinding="{Binding Name}" SelectedIndexChanged="OnTeam1Player1SelectedIndexChanged"></v:CustomPicker>
+                <Switch x:Name="team1player1AllowPoints" IsToggled="True"></Switch>
+                <v:CustomPicker x:Name="team1player2Picker" Title="Speler 2" ItemDisplayBinding="{Binding Name}" SelectedIndexChanged="OnTeam1Player2SelectedIndexChanged"></v:CustomPicker>
+                <Switch x:Name="team1player2AllowPoints" IsToggled="True"></Switch>
+                <v:CustomPicker x:Name="team1ScorePicker" Title="Score"></v:CustomPicker>
+
+                <Label Text="Team 2"></Label>
+                <v:CustomPicker x:Name="team2player1Picker" Title="Speler 1" ItemDisplayBinding="{Binding Name}" SelectedIndexChanged="OnTeam2Player1SelectedIndexChanged"></v:CustomPicker>
+                <v:CustomPicker x:Name="team2player2Picker" Title="Speler 2" ItemDisplayBinding="{Binding Name}" SelectedIndexChanged="OnTeam2Player2SelectedIndexChanged"></v:CustomPicker>
+                <v:CustomPicker x:Name="team2ScorePicker" Title="Score"></v:CustomPicker>
+                
+                
+                <Button Text="Opslaan" Clicked="OnSaveButtonClicked" />
+            </StackLayout>
+        </StackLayout>-->
+    </ContentPage.Content>
+</ContentPage>

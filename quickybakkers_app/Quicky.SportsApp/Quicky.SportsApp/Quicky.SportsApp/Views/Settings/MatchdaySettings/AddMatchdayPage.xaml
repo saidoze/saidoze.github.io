@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespaceTongue Tiedystem;assembly=mscorlib"
+             x:Class="Quicky.SportsApp.Views.Settings.MatchdaySettings.AddMatchdayPage"
+             Title="Speeldag toevoegen">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" Padding="15, 20, 15, 0" x:Name="AddPlayerPanel">
+                <!--<Entry x:Name="dateEntry" Placeholder="Datum" />-->
+                <Label Text="Datum"></Label>
+                <DatePicker x:Name="dateEntry" VerticalOptions="CenterAndExpand">
+                    <DatePicker.Format>dd/MM/yyyy</DatePicker.Format>
+                    <!--<DatePicker.MinimumDate>                 Date="{x:Static sys:DateTime.Now}"
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Jan 1 2018</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MinimumDate>
+                    <DatePicker.MaximumDate>
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Dec 31 2018</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MaximumDate>-->
+                </DatePicker>
+                <Button Text="Opslaan" Clicked="OnSaveButtonClicked" BackgroundColor="Red" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

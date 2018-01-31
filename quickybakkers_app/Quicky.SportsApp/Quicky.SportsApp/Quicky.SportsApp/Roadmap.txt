@@ -1,0 +1,4 @@
+﻿ROADMAP
+- when closing matchday, give user the possibility to add presence points to players that did not play a match
+  eg. when they were with an odd number off players and he couldn't play his match
+- selecting user in klassement should open a page with his stats
