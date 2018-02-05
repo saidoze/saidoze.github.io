@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quicky.bakkers.Android", "quicky.bakkers\quicky.bakkers.Android\quicky.bakkers.Android.csproj", "{269A8A32-37D6-4037-9C05-CE3DCDE469F7}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "quicky.bakkers", "quicky.bakkers\quicky.bakkers\quicky.bakkers.shproj", "{F00A6758-7BBD-4EB9-85A0-39946DEB6CD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quicky.bakkers.models", "quicky.bakkers.models\quicky.bakkers.models.csproj", "{0B7BCCF9-FD22-484E-BE04-DBB070B0349D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quicky.bakkers.services", "quicky.bakkers.services\quicky.bakkers.services.csproj", "{1BE39BAE-AC5B-42B2-9411-19E2FBF998CF}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		quicky.bakkers\quicky.bakkers\quicky.bakkers.projitems*{269a8a32-37d6-4037-9c05-ce3dcde469f7}*SharedItemsImports = 4
+		quicky.bakkers\quicky.bakkers\quicky.bakkers.projitems*{f00a6758-7bbd-4eb9-85a0-39946deb6cd3}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{269A8A32-37D6-4037-9C05-CE3DCDE469F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{269A8A32-37D6-4037-9C05-CE3DCDE469F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{269A8A32-37D6-4037-9C05-CE3DCDE469F7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{269A8A32-37D6-4037-9C05-CE3DCDE469F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{269A8A32-37D6-4037-9C05-CE3DCDE469F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{269A8A32-37D6-4037-9C05-CE3DCDE469F7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0B7BCCF9-FD22-484E-BE04-DBB070B0349D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7BCCF9-FD22-484E-BE04-DBB070B0349D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7BCCF9-FD22-484E-BE04-DBB070B0349D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7BCCF9-FD22-484E-BE04-DBB070B0349D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BE39BAE-AC5B-42B2-9411-19E2FBF998CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BE39BAE-AC5B-42B2-9411-19E2FBF998CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BE39BAE-AC5B-42B2-9411-19E2FBF998CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE39BAE-AC5B-42B2-9411-19E2FBF998CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06EEAB26-9E80-4DAC-9A33-4C9BB730B700}
+	EndGlobalSection
+EndGlobal

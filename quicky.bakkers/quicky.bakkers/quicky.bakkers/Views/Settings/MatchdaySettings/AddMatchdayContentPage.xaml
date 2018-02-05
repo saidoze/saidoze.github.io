@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="quicky.bakkers.Views.Settings.MatchdaySettings.AddMatchdayContentPage"
+             Title="Speeldag toevoegen">
+    <!--<ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" Padding="15, 20, 15, 0" x:Name="AddPlayerPanel">
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>-->
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <StackLayout VerticalOptions="StartAndExpand" Padding="15, 20, 15, 0" x:Name="AddPlayerPanel">
+                <!--<Entry x:Name="dateEntry" Placeholder="Datum" />-->
+                <Label Text="Datum"></Label>
+                <DatePicker x:Name="dateEntry" VerticalOptions="CenterAndExpand">
+                    <DatePicker.Format>dd/MM/yyyy</DatePicker.Format>
+                    <!--<DatePicker.MinimumDate>                 Date="{x:Static sys:DateTime.Now}"
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Jan 1 2018</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MinimumDate>
+                    <DatePicker.MaximumDate>
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Dec 31 2018</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MaximumDate>-->
+                </DatePicker>
+                <Button Text="Opslaan" Clicked="OnSaveButtonClicked" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </StackLayout>
+
+    </AbsoluteLayout>
+</ContentPage>

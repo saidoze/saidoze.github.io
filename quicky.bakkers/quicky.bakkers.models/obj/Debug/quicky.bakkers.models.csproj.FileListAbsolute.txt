@@ -1,0 +1,6 @@
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\bin\Debug\quicky.bakkers.models.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\bin\Debug\quicky.bakkers.models.pdb
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\obj\Debug\quicky.bakkers.models.csprojResolveAssemblyReference.cache
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\obj\Debug\quicky.bakkers.models.csproj.CoreCompileInputs.cache
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\obj\Debug\quicky.bakkers.models.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\obj\Debug\quicky.bakkers.models.pdb

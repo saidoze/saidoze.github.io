@@ -17,6 +17,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)LoginContentPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SimplePage.xaml.cs">
+      <DependentUpon>SimplePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)UserControls\CircleView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UserControls\CustomPicker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\LeaderBoardPage.xaml.cs">
@@ -131,5 +135,11 @@
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Roadmap.txt" />
     <Content Include="$(MSBuildThisFileDirectory)TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SimplePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

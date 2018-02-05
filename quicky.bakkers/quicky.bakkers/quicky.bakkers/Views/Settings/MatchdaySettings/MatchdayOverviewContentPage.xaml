@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="quicky.bakkers.Views.Settings.MatchdaySettings.MatchdayOverviewContentPage"
+             Title="Speeldagen">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Toevoegen" Clicked="OnAddButtonClicked" x:Name="AddButton" />
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <ListView x:Name="datalist" ItemsSource="{Binding Matchdays}" BackgroundColor="White" 
+                      RowHeight="50" SeparatorColor="{StaticResource grayPrimary}" ItemSelected="OnItemSelected"
+                      IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding DateAsString}" TextColor="#7c97a6" Margin="10,9,0,0" FontSize="Large" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </StackLayout>
+
+    </AbsoluteLayout>
+</ContentPage>

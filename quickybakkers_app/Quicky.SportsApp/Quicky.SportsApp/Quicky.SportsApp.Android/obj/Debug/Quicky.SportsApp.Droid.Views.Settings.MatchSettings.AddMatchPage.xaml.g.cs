@@ -11,8 +11,8 @@
 namespace Quicky.SportsApp.Views.Settings.MatchSettings {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\Xamarin\\Quicky.SportsApp\\Quicky.SportsApp\\Quicky.SportsApp\\Views\\S" +
-        "ettings\\MatchSettings\\AddMatchPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\saidoze.github.io\\quickybakkers_app\\Quicky.SportsApp\\Quicky.Sports" +
+        "App\\Quicky.SportsApp\\Views\\Settings\\MatchSettings\\AddMatchPage.xaml")]
     public partial class AddMatchPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

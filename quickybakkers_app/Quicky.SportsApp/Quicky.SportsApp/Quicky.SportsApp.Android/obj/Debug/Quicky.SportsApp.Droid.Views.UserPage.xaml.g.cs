@@ -11,8 +11,8 @@
 namespace Quicky.SportsApp.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\Xamarin\\Quicky.SportsApp\\Quicky.SportsApp\\Quicky.SportsApp\\Views\\U" +
-        "serPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\saidoze.github.io\\quickybakkers_app\\Quicky.SportsApp\\Quicky.Sports" +
+        "App\\Quicky.SportsApp\\Views\\UserPage.xaml")]
     public partial class UserPage : global::Quicky.SportsApp.LoginContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

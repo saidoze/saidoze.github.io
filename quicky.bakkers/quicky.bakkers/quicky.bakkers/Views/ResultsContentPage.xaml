@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:AuthorizedContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:v="clr-namespace:quicky.bakkers.Usercontrols"
+             x:Class="quicky.bakkers.Views.ResultsContentPage"
+             xmlns:d="clr-namespace:quicky.bakkers.BasePages"
+             Title="Resultaten">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Toevoegen" Clicked="OnAddButtonClicked" x:Name="AddButton" />
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <StackLayout Orientation="Horizontal" Margin="0" Padding="0">
+                <Label Text="Speeldag:" TextColor="#a09b9b" Margin="10,0,5,0" FontSize="Medium" VerticalTextAlignment="Center" />
+                <v:CustomPicker x:Name="matchDayPicker" Title="Speeldag" ItemDisplayBinding="{Binding DateAsString}" SelectedIndexChanged="MatchDayPicker_SelectedIndexChanged"></v:CustomPicker>
+            </StackLayout>
+
+            <ListView x:Name="resultList" BackgroundColor="White" RowHeight="60"
+                      SeparatorColor="{StaticResource grayPrimary}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="#eee">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Grid.Row="0" Text="{Binding Player1Name}" TextColor="#a09b9b" Margin="0,5,0,5" HorizontalTextAlignment="Center" />
+                                <Label Grid.Column="0" Grid.Row="1" Text="{Binding Player2Name}" TextColor="#a09b9b" Margin="0,5,0,5" HorizontalTextAlignment="Center" />
+
+                                <Label Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="{Binding Result}" TextColor="#7c97a6" FontSize="Large" Margin="0" VerticalTextAlignment="Center" />
+
+                                <Label Grid.Column="2" Grid.Row="0" Text="{Binding Player3Name}" TextColor="#a09b9b" Margin="0,5,0,5" HorizontalTextAlignment="Center" />
+                                <Label Grid.Column="2" Grid.Row="1" Text="{Binding Player4Name}" TextColor="#a09b9b" Margin="0,5,0,5" HorizontalTextAlignment="Center" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </StackLayout>
+    </AbsoluteLayout>
+
+    <!--<ContentView BackgroundColor="White" Padding="0">
+        <StackLayout Padding="0">
+            <StackLayout Orientation="Horizontal" Margin="0" Padding="0">
+                <Label Text="Speeldag:" TextColor="#a09b9b" Margin="10,0,5,0" FontSize="Medium" VerticalTextAlignment="Center" />
+                <v:CustomPicker x:Name="matchDayPicker" Title="Speeldag" ItemDisplayBinding="{Binding DateAsString}" SelectedIndexChanged="MatchDayPicker_SelectedIndexChanged"></v:CustomPicker>
+            </StackLayout>
+
+            <ListView x:Name="resultList" BackgroundColor="White" RowHeight="60"
+                      SeparatorColor="{StaticResource grayPrimary}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="#eee">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Grid.Row="0" Text="{Binding Player1Name}" TextColor="#a09b9b" Margin="0,5,0,5" HorizontalTextAlignment="Center" />
+                                <Label Grid.Column="0" Grid.Row="1" Text="{Binding Player2Name}" TextColor="#a09b9b" Margin="0,5,0,5" HorizontalTextAlignment="Center" />
+
+                                <Label Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="{Binding Result}" TextColor="#7c97a6" FontSize="Large" Margin="0" VerticalTextAlignment="Center" />
+
+                                <Label Grid.Column="2" Grid.Row="0" Text="{Binding Player3Name}" TextColor="#a09b9b" Margin="0,5,0,5" HorizontalTextAlignment="Center" />
+                                <Label Grid.Column="2" Grid.Row="1" Text="{Binding Player4Name}" TextColor="#a09b9b" Margin="0,5,0,5" HorizontalTextAlignment="Center" />
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentView>-->
+</d:AuthorizedContentPage>

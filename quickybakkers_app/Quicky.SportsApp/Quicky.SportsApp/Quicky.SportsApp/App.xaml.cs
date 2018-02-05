@@ -13,8 +13,8 @@ namespace Quicky.SportsApp
 		{
 			InitializeComponent();
 
-            //MainPage = new Quicky.SportsApp.Views.MainTabbedPage();
-            MainPage = new NavigationPage(new Quicky.SportsApp.Views.MainTabbedPage());
+            MainPage = new Quicky.SportsApp.SimplePage();
+            //MainPage = new NavigationPage(new Quicky.SportsApp.Views.MainTabbedPage());
         }
 
 		protected override void OnStart ()

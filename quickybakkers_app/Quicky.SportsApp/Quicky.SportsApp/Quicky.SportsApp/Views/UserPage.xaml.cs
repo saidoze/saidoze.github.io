@@ -18,7 +18,7 @@ namespace Quicky.SportsApp.Views
         public UserPage() : base()
         {
             InitializeComponent();
-            SetVisibility();
+            //SetVisibility();
         }
 
         private void SetVisibility()

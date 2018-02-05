@@ -11,8 +11,8 @@
 namespace Quicky.SportsApp.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\Xamarin\\Quicky.SportsApp\\Quicky.SportsApp\\Quicky.SportsApp\\Views\\M" +
-        "ainTabbedPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\saidoze.github.io\\quickybakkers_app\\Quicky.SportsApp\\Quicky.Sports" +
+        "App\\Quicky.SportsApp\\Views\\MainTabbedPage.xaml")]
     public partial class MainTabbedPage : global::Xamarin.Forms.TabbedPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

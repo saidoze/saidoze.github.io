@@ -1,0 +1,16 @@
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\quicky.bakkers.services.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\quicky.bakkers.services.pdb
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\crypto.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\Firebase.Xamarin.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\JWT.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\Newtonsoft.Json.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\quicky.bakkers.models.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\System.Reactive.Core.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\System.Reactive.Interfaces.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\System.Reactive.Linq.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\bin\Debug\quicky.bakkers.models.pdb
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\obj\Debug\quicky.bakkers.services.csprojResolveAssemblyReference.cache
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\obj\Debug\quicky.bakkers.services.csproj.CoreCompileInputs.cache
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\obj\Debug\quicky.bakkers.services.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.services\obj\Debug\quicky.bakkers.services.pdb

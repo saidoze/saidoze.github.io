@@ -11,8 +11,8 @@
 namespace Quicky.SportsApp.Views.Settings.MatchdaySettings {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\Xamarin\\Quicky.SportsApp\\Quicky.SportsApp\\Quicky.SportsApp\\Views\\S" +
-        "ettings\\MatchdaySettings\\AddMatchdayPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\saidoze.github.io\\quickybakkers_app\\Quicky.SportsApp\\Quicky.Sports" +
+        "App\\Quicky.SportsApp\\Views\\Settings\\MatchdaySettings\\AddMatchdayPage.xaml")]
     public partial class AddMatchdayPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

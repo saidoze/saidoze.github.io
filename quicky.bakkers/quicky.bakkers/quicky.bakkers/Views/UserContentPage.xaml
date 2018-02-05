@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:AuthorizedContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="quicky.bakkers.Views.UserContentPage"
+             xmlns:d="clr-namespace:quicky.bakkers.BasePages"
+             Title="Instellingen">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" Padding="15, 20, 15, 0" x:Name="LoginPanel">
+                <Entry x:Name="usernameEntry" Placeholder="Gebruikersnaam" />
+                <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Wachtwoord" />
+                <Button Text="Inloggen" Clicked="OnLoginButtonClicked" />
+                <Label x:Name="messageLabel" TextColor="Red" HorizontalTextAlignment="Center" />
+            </StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" x:Name="MainPanel" Padding="15, 20, 15, 0">
+                <Button Text="Uitloggen" Clicked="OnLogoutButtonClicked" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="75" />
+                        <RowDefinition Height="75" />
+                    </Grid.RowDefinitions>
+                    <Button Text="Spelersbeheer" Grid.Column="1" Grid.Row="0" Clicked="OnPlayerManagementButtonClicked" />
+                    <Button Text="Speeldagenbeheer" Grid.Column="0" Grid.Row="0" Clicked="OnMatchdayManagementButtonClicked" />
+                    <!--<Button Text="Instellingen" Grid.Column="1" Grid.Row="1" />-->
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</d:AuthorizedContentPage>

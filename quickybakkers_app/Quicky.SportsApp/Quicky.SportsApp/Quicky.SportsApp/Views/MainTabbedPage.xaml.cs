@@ -16,8 +16,8 @@ namespace Quicky.SportsApp.Views
         {
             InitializeComponent();
             
-            Children.Add(new LeaderBoardPage());
-            Children.Add(new ResultsPage());
+            //Children.Add(new LeaderBoardPage());
+            //Children.Add(new ResultsPage());
             Children.Add(new UserPage());
         }
     }
