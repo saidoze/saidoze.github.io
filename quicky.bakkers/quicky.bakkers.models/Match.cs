@@ -32,10 +32,42 @@ namespace quicky.bakkers.models
             this.Key = key;
             return this;
         }
-        public string Player1Name { get { return String.Format("{0} {1}", Players.Where(p => p.Key == (Team1?.Player1Key ?? "")).SingleOrDefault()?.Name, (Team1.Player1AllowPoints ? "" : "*")); } }
-        public string Player2Name { get { return String.Format("{0} {1}", Players.Where(p => p.Key == (Team1?.Player2Key ?? "")).SingleOrDefault()?.Name, (Team1.Player2AllowPoints ? "" : "*")); } }
-        public string Player3Name { get { return String.Format("{0} {1}", Players.Where(p => p.Key == (Team2?.Player1Key ?? "")).SingleOrDefault()?.Name, (Team2.Player1AllowPoints ? "" : "*")); } }
-        public string Player4Name { get { return String.Format("{0} {1}", Players.Where(p => p.Key == (Team2?.Player2Key ?? "")).SingleOrDefault()?.Name, (Team2.Player2AllowPoints ? "" : "*")); } }
+        public string Player1Name
+        {
+            get
+            {
+                if ((Players?.Count ?? 0) == 0)
+                    return "";
+                return String.Format("{0} {1}", Players.Where(p => p.Key == (Team1?.Player1Key ?? "")).SingleOrDefault()?.Name, (Team1.Player1AllowPoints ? "" : "*"));
+            }
+        }
+        public string Player2Name
+        {
+            get
+            {
+                if ((Players?.Count ?? 0) == 0)
+                    return "";
+                return String.Format("{0} {1}", Players?.Where(p => p.Key == (Team1?.Player2Key ?? "")).SingleOrDefault()?.Name, (Team1.Player2AllowPoints ? "" : "*"));
+            }
+        }
+        public string Player3Name
+        {
+            get
+            {
+                if ((Players?.Count ?? 0) == 0)
+                    return "";
+                return String.Format("{0} {1}", Players?.Where(p => p.Key == (Team2?.Player1Key ?? "")).SingleOrDefault()?.Name, (Team2.Player1AllowPoints ? "" : "*"));
+            }
+        }
+        public string Player4Name
+        {
+            get
+            {
+                if ((Players?.Count ?? 0) == 0)
+                    return "";
+                return String.Format("{0} {1}", Players?.Where(p => p.Key == (Team2?.Player2Key ?? "")).SingleOrDefault()?.Name, (Team2.Player2AllowPoints ? "" : "*"));
+            }
+        }
         public string Result { get { return string.Format("{0} - {1}", ScoreTeam1, ScoreTeam2); } }
     }
 }

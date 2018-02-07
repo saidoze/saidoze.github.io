@@ -35,12 +35,11 @@ namespace quicky.bakkers.services.Services
             try
             {
                 var p = await SaveItem(match);
-
                 return p;
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
     }

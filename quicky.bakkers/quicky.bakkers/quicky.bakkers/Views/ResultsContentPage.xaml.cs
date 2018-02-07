@@ -12,11 +12,11 @@ using Xamarin.Forms.Xaml;
 
 namespace quicky.bakkers.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ResultsContentPage : AuthorizedContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ResultsContentPage : AuthorizedContentPage
     {
         private MatchdayService _matchdayService;
-        private PlayerService _playeryService;
+        private PlayerService _playerService;
         private MatchService _matchService;
         private TeamService _teamService;
         private List<Match> _matches;
@@ -24,22 +24,24 @@ namespace quicky.bakkers.Views
         private List<Matchday> _matchdays;
         private List<Team> _teams;
 
-        public ResultsContentPage ()
-		{
-			InitializeComponent ();
+        public ResultsContentPage()
+        {
+            InitializeComponent();
             BindingContext = this;
             IsBusy = false;
 
             _matchdayService = new MatchdayService();
             _teamService = new TeamService();
             _matchService = new MatchService();
-            _playeryService = new PlayerService();
+            _playerService = new PlayerService();
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
             matchDayPicker.ItemsSource = new List<Matchday>();
+
+            AddButton.Text = (_isAuthenticated ? "Toevoegen" : "");
 
             if (!IsBusy)
             {
@@ -59,7 +61,7 @@ namespace quicky.bakkers.Views
 
                         matchDayPicker.ItemsSource = _matchdays;
                         LoadDefaultMatchday();
-                        AddButton.Text = (_isAuthenticated ? "Toevoegen" : "");
+
                         this.IsBusy = false;
                     });
                 });
@@ -77,7 +79,7 @@ namespace quicky.bakkers.Views
             _matchdays = _matchdayService.GetAllItems();
             _teams = _teamService.GetAllItems();
             _matches = _matchService.GetAllItems();
-            _players = _playeryService.GetAllItems();
+            _players = _playerService.GetAllItems();
         }
 
         private void MatchDayPicker_SelectedIndexChanged(object sender, EventArgs e)

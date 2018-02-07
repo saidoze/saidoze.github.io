@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "428460948774",
+    "firebase_url": "https://sport-league-creator.firebaseio.com",
+    "project_id": "sport-league-creator",
+    "storage_bucket": "sport-league-creator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428460948774:android:71f1ec901d0bcb0a",
+        "android_client_info": {
+          "package_name": "com.nuyttens.quicky.bakkers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428460948774-u19gnj05otoove6obpked5bnmlb6qol0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPv4LTmnu86GDSF0kW7mZjyA7hmAbXwhg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

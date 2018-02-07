@@ -10,8 +10,8 @@ using Xamarin.Forms.Xaml;
 
 namespace quicky.bakkers.Views.Settings.MatchSettings
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AddMatchContentPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class AddMatchContentPage : ContentPage
     {
         private PlayerService _playerService;
         private MatchdayService _matchdayService;
@@ -20,9 +20,9 @@ namespace quicky.bakkers.Views.Settings.MatchSettings
         private List<Player> _players;
         private bool _succeeded = false;
 
-        public AddMatchContentPage ()
-		{
-			InitializeComponent ();
+        public AddMatchContentPage()
+        {
+            InitializeComponent();
             _playerService = new PlayerService();
             _matchService = new MatchService();
             _matchdayService = new MatchdayService();

@@ -40,6 +40,12 @@ namespace quicky.bakkers.Views
             var username = usernameEntry.Text;
             var password = passwordEntry.Text;
 
+            if (!(username == "admin" && password == "admin"))
+            {
+                messageLabel.Text = "Login not correct";
+                return;
+            }
+
             //check credentials
             var user = new User()
             {
