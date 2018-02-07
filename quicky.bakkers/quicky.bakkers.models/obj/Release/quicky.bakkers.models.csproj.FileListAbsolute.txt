@@ -1,6 +1,0 @@
-C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\bin\Release\quicky.bakkers.models.dll
-C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\bin\Release\quicky.bakkers.models.pdb
-C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\obj\Release\quicky.bakkers.models.csprojResolveAssemblyReference.cache
-C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\obj\Release\quicky.bakkers.models.csproj.CoreCompileInputs.cache
-C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\obj\Release\quicky.bakkers.models.dll
-C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers.models\obj\Release\quicky.bakkers.models.pdb
