@@ -17,6 +17,8 @@ namespace quicky.bakkers.models
         public int Points { get; set; }
 
         //helper
+        public string MatchdaysToCatchUp { get; set; }
         public string PlayerName { get; set; }
+        public string PlayerNameWithCatchups => string.Format("{0} {1}", PlayerName, MatchdaysToCatchUp);
     }
 }

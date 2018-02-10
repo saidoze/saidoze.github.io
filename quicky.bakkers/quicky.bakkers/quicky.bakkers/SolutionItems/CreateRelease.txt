@@ -1,0 +1,3 @@
+﻿CREATING RELEASE
+Version nr
+Version name

@@ -16,7 +16,7 @@
                 <v:CustomPicker x:Name="matchDayPicker" Title="Speeldag" ItemDisplayBinding="{Binding DateAsString}" SelectedIndexChanged="MatchDayPicker_SelectedIndexChanged"></v:CustomPicker>
             </StackLayout>
 
-            <ListView x:Name="resultList" BackgroundColor="White" RowHeight="60"
+            <ListView x:Name="resultList" BackgroundColor="White" RowHeight="60" ItemSelected="OnItemSelected"
                       SeparatorColor="{StaticResource grayPrimary}">
                 <ListView.ItemTemplate>
                     <DataTemplate>

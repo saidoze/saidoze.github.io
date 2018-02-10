@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="quicky.bakkers.Views.Settings.MatchSettings.EditMatchContentPage"
+             Title="Match bewerken">
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="1" Text="Team 1"></Label>
+                <Label Grid.Row="2" Text="Pol"></Label>
+                <Label Grid.Row="3" Text="Jan"></Label>
+                <Label Grid.Row="4" Text="11"></Label>
+                <Label Grid.Row="5" Text="Team 2"></Label>
+                <Label Grid.Row="6" Text="Mieke"></Label>
+                <Label Grid.Row="7" Text="Janneke"></Label>
+                <Label Grid.Row="8" Text="4"></Label>
+
+                <Button Grid.Row="9" Text="Verwijder" Clicked="OnDeleteButtonClicked" BackgroundColor="Red" x:Name="deleteButton" />
+            </Grid>
+        </StackLayout>
+
+        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </StackLayout>
+
+    </AbsoluteLayout>
+</ContentPage>

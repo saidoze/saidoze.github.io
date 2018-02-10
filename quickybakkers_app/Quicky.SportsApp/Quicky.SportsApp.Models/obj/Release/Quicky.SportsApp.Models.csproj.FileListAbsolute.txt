@@ -1,6 +1,0 @@
-C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\bin\Release\Quicky.SportsApp.Models.dll
-C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\bin\Release\Quicky.SportsApp.Models.pdb
-C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Release\Quicky.SportsApp.Models.csprojResolveAssemblyReference.cache
-C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Release\Quicky.SportsApp.Models.csproj.CoreCompileInputs.cache
-C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Release\Quicky.SportsApp.Models.dll
-C:\Persoonlijk\Xamarin\Quicky.SportsApp\Quicky.SportsApp.Models\obj\Release\Quicky.SportsApp.Models.pdb

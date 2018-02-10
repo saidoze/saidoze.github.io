@@ -49,6 +49,10 @@
       <DependentUpon>AddMatchContentPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Settings\MatchSettings\EditMatchContentPage.xaml.cs">
+      <DependentUpon>EditMatchContentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\Settings\PlayerSettings\AddPlayerContentPage.xaml.cs">
       <DependentUpon>AddPlayerContentPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -133,6 +137,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)SolutionItems\" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Settings\MatchSettings\EditMatchContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\CreateRelease.txt" />
   </ItemGroup>
 </Project>

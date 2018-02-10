@@ -111,5 +111,23 @@ namespace quicky.bakkers.Views
             if (_isAuthenticated)
                 await Navigation.PushAsync(new AddMatchContentPage());
         }
+
+        public async Task OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            try
+            {
+                if (_isAuthenticated)
+                {
+                    if (e.SelectedItem != null)
+                    {
+                        await Navigation.PushAsync(new EditMatchContentPage(e.SelectedItem as Match));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
     }
 }

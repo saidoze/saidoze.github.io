@@ -15,7 +15,7 @@ using Android.App;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: Application(Label = "Quickybakkers")]
+//[assembly: Application(Label = "Quickybakkers")]
 
 // Version information for an assembly consists of the following four values:
 //
