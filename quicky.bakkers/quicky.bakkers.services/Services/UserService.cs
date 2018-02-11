@@ -28,6 +28,7 @@ namespace quicky.bakkers.services.Services
             }
             catch (Exception ex)
             {
+                TruncateTable();
                 return null;
             }
         }

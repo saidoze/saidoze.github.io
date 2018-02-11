@@ -11,8 +11,8 @@
 namespace quicky.bakkers.Views.Settings.PlayerSettings {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Y:\\quicky.bakkers\\quicky.bakkers\\Views\\Settings\\PlayerSettings\\AddPlayerContentPa" +
-        "ge.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\saidoze.github.io\\quicky.bakkers\\quicky.bakkers\\quicky.bakkers\\Vie" +
+        "ws\\Settings\\PlayerSettings\\AddPlayerContentPage.xaml")]
     public partial class AddPlayerContentPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

@@ -15,13 +15,15 @@ namespace quicky.bakkers.Views.Settings.MatchdaySettings
     {
         private bool _matchdayAlreadyExists;
         private MatchdayService _matchdayService;
+        private int _amountOfMatchdays;
 
-        public AddMatchdayContentPage ()
+        public AddMatchdayContentPage (int amountOfMatchdays)
 		{
 			InitializeComponent ();
             BindingContext = this;
             IsBusy = false;
             _matchdayService = new MatchdayService();
+            _amountOfMatchdays = amountOfMatchdays;
         }
 
         public async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace quicky.bakkers.Views.Settings.MatchdaySettings
 
                     if (!_matchdayAlreadyExists)
                     {
-                        var dummy = (_matchdayService.SaveMatchday(new Matchday() { Date = date })).Result;
+                        var dummy = (_matchdayService.SaveMatchday(new Matchday() { Date = date, Number = _amountOfMatchdays + 1 })).Result;
                     }
 
                     Device.BeginInvokeOnMainThread(() =>

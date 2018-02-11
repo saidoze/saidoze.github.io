@@ -11,7 +11,8 @@
 namespace quicky.bakkers {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Y:\\quicky.bakkers\\quicky.bakkers\\MainPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\saidoze.github.io\\quicky.bakkers\\quicky.bakkers\\quicky.bakkers\\Mai" +
+        "nPage.xaml")]
     public partial class MainPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

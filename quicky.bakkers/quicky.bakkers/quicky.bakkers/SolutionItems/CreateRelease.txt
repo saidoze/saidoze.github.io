@@ -1,3 +1,6 @@
 ﻿CREATING RELEASE
-Version nr
-Version name
+Android manifest (properties of android project)
+- change version number
+- change version name
+AssemblyInfo -> change assembly version to the version name
+

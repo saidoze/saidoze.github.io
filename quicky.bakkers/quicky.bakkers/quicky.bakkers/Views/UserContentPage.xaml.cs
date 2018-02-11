@@ -9,15 +9,30 @@ using quicky.bakkers.BasePages;
 using quicky.bakkers.models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Reflection;
 
 namespace quicky.bakkers.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class UserContentPage : AuthorizedContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class UserContentPage : AuthorizedContentPage
     {
-		public UserContentPage ()
-		{
-			InitializeComponent();
+        public UserContentPage()
+        {
+            InitializeComponent();
+            SetVisibility();
+            try
+            {
+                versionLabel.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             SetVisibility();
         }
 
@@ -51,15 +66,18 @@ namespace quicky.bakkers.Views
             {
                 Username = username,
                 LastLogin = DateTime.Now,
-                ExpiryDate = DateTime.Now.AddHours(1)
+                ExpiryDate = DateTime.Now.AddDays(1)
             };
 
-            _userService.SaveUser(user);
-
-            messageLabel.Text = "User saved";
-
-            LoginPanel.IsVisible = false;
-            MainPanel.IsVisible = true;
+            var newUser = _userService.SaveUser(user);
+            if (newUser == null)
+                messageLabel.Text = "Fout tijdens inloggen";
+            else
+            {
+                messageLabel.Text = "Inloggen gelukt";
+                LoginPanel.IsVisible = false;
+                MainPanel.IsVisible = true;
+            }
         }
         public async Task OnLogoutButtonClicked(object sender, EventArgs e)
         {

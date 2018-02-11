@@ -126,16 +126,10 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.v7.Palette.dll",
 		"Xamarin.Android.Support.v7.RecyclerView.dll",
 		"Xamarin.Android.Support.Vector.Drawable.dll",
-		"Xamarin.Firebase.Common.dll",
-		"Xamarin.Firebase.Iid.dll",
-		"Xamarin.Firebase.Messaging.dll",
 		"Xamarin.Forms.Core.dll",
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
-		"Xamarin.GooglePlayServices.Base.dll",
-		"Xamarin.GooglePlayServices.Basement.dll",
-		"Xamarin.GooglePlayServices.Tasks.dll",
 		"Firebase.Xamarin.dll",
 		"System.Reactive.Linq.dll",
 		"System.Reactive.Core.dll",
@@ -146,5 +140,5 @@ class MonoPackageManager_Resources {
 	};
 	public static final String[] Dependencies = new String[]{
 	};
-	public static final String ApiPackageName = null;
+	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_26";
 }

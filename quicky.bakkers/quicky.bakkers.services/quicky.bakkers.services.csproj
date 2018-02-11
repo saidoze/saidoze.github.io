@@ -70,6 +70,7 @@
     <Compile Include="Providers\IUserProvider.cs" />
     <Compile Include="Services\MatchdayService.cs" />
     <Compile Include="Services\MatchService.cs" />
+    <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Services\PlayerService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\TeamService.cs" />

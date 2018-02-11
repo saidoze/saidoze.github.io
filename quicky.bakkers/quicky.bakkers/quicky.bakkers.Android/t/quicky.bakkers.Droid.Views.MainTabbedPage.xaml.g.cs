@@ -11,7 +11,8 @@
 namespace quicky.bakkers.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Y:\\quicky.bakkers\\quicky.bakkers\\Views\\MainTabbedPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\saidoze.github.io\\quicky.bakkers\\quicky.bakkers\\quicky.bakkers\\Vie" +
+        "ws\\MainTabbedPage.xaml")]
     public partial class MainTabbedPage : global::Xamarin.Forms.TabbedPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

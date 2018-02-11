@@ -28,6 +28,10 @@
                     <!--<Button Text="Instellingen" Grid.Column="1" Grid.Row="1" />-->
                 </Grid>
             </StackLayout>
+
+            <StackLayout VerticalOptions="End" Padding="15, 0, 15, 0">
+                <Label x:Name="versionLabel" HorizontalTextAlignment="Center" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </d:AuthorizedContentPage>

@@ -3709,27 +3709,6 @@ namespace quicky.bakkers.Droid
 			// aapt resource value: 0x7f090038
 			public const int character_counter_pattern = 2131296312;
 			
-			// aapt resource value: 0x7f090040
-			public const int default_web_client_id = 2131296320;
-			
-			// aapt resource value: 0x7f090041
-			public const int firebase_database_url = 2131296321;
-			
-			// aapt resource value: 0x7f09003e
-			public const int gcm_defaultSenderId = 2131296318;
-			
-			// aapt resource value: 0x7f090042
-			public const int google_api_key = 2131296322;
-			
-			// aapt resource value: 0x7f09003f
-			public const int google_app_id = 2131296319;
-			
-			// aapt resource value: 0x7f090043
-			public const int google_crash_reporting_api_key = 2131296323;
-			
-			// aapt resource value: 0x7f090044
-			public const int google_storage_bucket = 2131296324;
-			
 			// aapt resource value: 0x7f090000
 			public const int mr_button_content_description = 2131296256;
 			

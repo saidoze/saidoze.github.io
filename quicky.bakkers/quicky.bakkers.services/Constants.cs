@@ -17,5 +17,6 @@ namespace quicky.bakkers.services
         public static string FirebaseMatchdayDbName = "matchdays";
         public static string FirebaseMatchDbName = "matches";
         public static string FirebaseTeamDbName = "teams";
+        public static string FirebaseSettingsDbName = "settings";
     }
 }

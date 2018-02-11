@@ -24,6 +24,12 @@ namespace quicky.bakkers.BasePages
             CheckAuthentication();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            CheckAuthentication();
+        }
+
         protected virtual void CheckAuthentication()
         {
             var users = _userService.LoadActiveUsers();

@@ -1,7 +1,7 @@
 ﻿using System;
-using Android.Gms.Common;
-using Firebase.Messaging;
-using Firebase.Iid;
+//using Android.Gms.Common;
+//using Firebase.Messaging;
+//using Firebase.Iid;
 using Android.Util;
 using Android.App;
 using Android.Content.PM;
@@ -9,7 +9,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using Plugin.FirebasePushNotification;
+//using Plugin.FirebasePushNotification;
 
 namespace quicky.bakkers.Droid
 {
@@ -26,7 +26,7 @@ namespace quicky.bakkers.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
 
-            FirebasePushNotificationManager.ProcessIntent(Intent);
+            //FirebasePushNotificationManager.ProcessIntent(Intent);
         }
         
     }

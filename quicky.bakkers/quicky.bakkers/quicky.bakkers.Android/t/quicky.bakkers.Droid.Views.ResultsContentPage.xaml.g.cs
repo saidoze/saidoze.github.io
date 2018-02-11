@@ -11,7 +11,8 @@
 namespace quicky.bakkers.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Y:\\quicky.bakkers\\quicky.bakkers\\Views\\ResultsContentPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Persoonlijk\\saidoze.github.io\\quicky.bakkers\\quicky.bakkers\\quicky.bakkers\\Vie" +
+        "ws\\ResultsContentPage.xaml")]
     public partial class ResultsContentPage : global::quicky.bakkers.BasePages.AuthorizedContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

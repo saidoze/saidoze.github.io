@@ -63,7 +63,7 @@ namespace quicky.bakkers.Views.Settings.MatchdaySettings
         {
             try
             {
-                await Navigation.PushAsync(new AddMatchdayContentPage());
+                await Navigation.PushAsync(new AddMatchdayContentPage(_matchdays.Count));
             }
             catch (Exception ex)
             {
