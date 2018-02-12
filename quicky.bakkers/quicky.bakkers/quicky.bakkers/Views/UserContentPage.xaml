@@ -30,7 +30,7 @@
             </StackLayout>
 
             <StackLayout VerticalOptions="End" Padding="15, 0, 15, 0">
-                <Label x:Name="versionLabel" HorizontalTextAlignment="Center" />
+                <Label x:Name="versionLabel" HorizontalTextAlignment="Center" Margin="0,0,0,10" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

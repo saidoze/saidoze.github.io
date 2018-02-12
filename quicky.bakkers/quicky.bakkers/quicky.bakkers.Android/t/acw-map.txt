@@ -1,7 +1,7 @@
-quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android;md5bf42400de5f8b16eec27067e7ca35842.MainActivity
-quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null;md5bf42400de5f8b16eec27067e7ca35842.MainActivity
-quicky.bakkers.Droid.MainActivity;md5bf42400de5f8b16eec27067e7ca35842.MainActivity
-quicky.bakkers.droid.MainActivity;md5bf42400de5f8b16eec27067e7ca35842.MainActivity
+quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android;md556aa449f30cd814da501185ab72a1f2d.MainActivity
+quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android, Version=1.0.3.0, Culture=neutral, PublicKeyToken=null;md556aa449f30cd814da501185ab72a1f2d.MainActivity
+quicky.bakkers.Droid.MainActivity;md556aa449f30cd814da501185ab72a1f2d.MainActivity
+quicky.bakkers.droid.MainActivity;md556aa449f30cd814da501185ab72a1f2d.MainActivity
 Android.Support.V4.Widget.SearchViewCompat/IOnCloseListenerImplementor, Xamarin.Android.Support.Compat;mono.android.support.v4.widget.SearchViewCompat_OnCloseListenerImplementor
 Android.Support.V4.Widget.SearchViewCompat+IOnCloseListenerImplementor, Xamarin.Android.Support.Compat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.android.support.v4.widget.SearchViewCompat_OnCloseListenerImplementor
 Android.Support.V4.Widget.SearchViewCompat.IOnCloseListenerImplementor;mono.android.support.v4.widget.SearchViewCompat_OnCloseListenerImplementor

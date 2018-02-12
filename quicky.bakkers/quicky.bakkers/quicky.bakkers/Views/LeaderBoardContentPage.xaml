@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<d:AuthorizedContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:v="clr-namespace:quicky.bakkers.Usercontrols"
              x:Class="quicky.bakkers.Views.LeaderBoardContentPage"
+             xmlns:d="clr-namespace:quicky.bakkers.BasePages"
              Title="Klassement">
     <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
-            <ListView x:Name="leaderboardList" BackgroundColor="White" 
+            <ListView x:Name="leaderboardList" BackgroundColor="White" ItemSelected="OnItemSelected"
                       RowHeight="50" SeparatorColor="{StaticResource grayPrimary}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -29,4 +30,4 @@
         </StackLayout>
 
     </AbsoluteLayout>
-</ContentPage>
+</d:AuthorizedContentPage>

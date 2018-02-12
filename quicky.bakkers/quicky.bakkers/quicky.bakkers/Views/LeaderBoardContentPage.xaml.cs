@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using quicky.bakkers.BasePages;
 using quicky.bakkers.models;
 using quicky.bakkers.services.Services;
+using quicky.bakkers.Views.Settings.PlayerSettings;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace quicky.bakkers.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LeaderBoardContentPage : ContentPage
+    public partial class LeaderBoardContentPage : AuthorizedContentPage
     {
         private MatchdayService _matchdayService;
         private MatchService _matchService;
@@ -65,20 +67,12 @@ namespace quicky.bakkers.Views
             CalculatePlayerResults();
         }
 
-        public async Task OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            /*if (e.SelectedItem != null)
-            {
-                await Navigation.PushAsync(new EditPlayerPage(e.SelectedItem as Player));
-            }*/
-        }
-
         private void CalculatePlayerResults()
         {
             try
             {
 
-                var amountOfMatchdays = _matchdays.Count();
+                var amountOfMatchdays = _matchdays.Where(m => m.Closed).Count();
                 var allMatches = (from m in _matches
                                   join t1 in _teams on m.Team1Key equals t1.Key
                                   join t2 in _teams on m.Team2Key equals t2.Key
@@ -165,7 +159,7 @@ namespace quicky.bakkers.Views
                         presult.MatchdaysToCatchUp = new String('*', amountOfMatchdays);
                     else
                         presult.MatchdaysToCatchUp = new String('*', (((amountOfMatchdays * 3) / presult.MatchesPlayed) - 1));
-                    
+
                     _playerResults.Add(presult);
                 }
 
@@ -184,6 +178,21 @@ namespace quicky.bakkers.Views
             }
 
             //leaderboardList.ItemsSource = _playerResults;
+        }
+
+        public async Task OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            try
+            {
+                if (e.SelectedItem != null)
+                {
+                    await Navigation.PushAsync(new PlayerMatchesContentPage(e.SelectedItem as PlayerResult, _teams, _matches, _players, _matchdays));
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.Message, "OK");
+            }
         }
     }
 }

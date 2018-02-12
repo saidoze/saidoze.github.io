@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="quicky.bakkers.Views.Settings.PlayerSettings.PlayerMatchesContentPage"
+             Title="Matchdetails">
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <ListView x:Name="playerMatchesList" BackgroundColor="White" RowHeight="75"
+                      SeparatorColor="{StaticResource grayPrimary}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Text="{Binding MatchdayNumber}" TextColor="#cdcdcd" FontSize="Large" Margin="15,7,0,5" />
+                                <Label HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1" Text="{Binding Team1Player1}" TextColor="#cdcdcd" FontSize="Medium" Margin="15,5,0,0" />
+                                <Label HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding Team1Player2}" TextColor="#cdcdcd" FontSize="Medium" Margin="15,5,0,0" />
+                                <Label VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Text="{Binding Score}" TextColor="#cdcdcd" FontSize="Large" Margin="15,7,0,5" />
+                                <Label HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="3" Text="{Binding Team2Player1}" TextColor="#cdcdcd" FontSize="Medium" Margin="15,5,0,0" />
+                                <Label HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="3" Text="{Binding Team2Player2}" TextColor="#cdcdcd" FontSize="Medium" Margin="15,5,0,0" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </StackLayout>
+
+    </AbsoluteLayout>
+</ContentPage>

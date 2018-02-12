@@ -36,7 +36,7 @@ namespace quicky.bakkers.Views
             {
                 Task.Run(() =>
                 {
-                    var localversion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                    var localversion = Assembly.GetExecutingAssembly().GetName().Version.ToString().Replace(".", "");
                     var settings = _settingService.GetAllItems();
 
                     if (settings.Count == 0)
@@ -45,7 +45,8 @@ namespace quicky.bakkers.Views
                     }
                     else
                     {
-                        if(settings.First().AssemblyVersion != localversion)
+                        var newestVersion = settings.First().AssemblyVersion.Replace(".", "");
+                        if (Convert.ToInt32(localversion) < Convert.ToInt32(newestVersion))
                             _newVersion = true;
                     }
 

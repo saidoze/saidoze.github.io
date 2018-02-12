@@ -61,6 +61,10 @@
       <DependentUpon>EditPlayerContentPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Settings\PlayerSettings\PlayerMatchesContentPage.xaml.cs">
+      <DependentUpon>PlayerMatchesContentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\Settings\PlayerSettings\PlayerOverviewContentPage.xaml.cs">
       <DependentUpon>PlayerOverviewContentPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -144,5 +148,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\CreateRelease.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Settings\PlayerSettings\PlayerMatchesContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
