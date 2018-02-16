@@ -148,6 +148,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\CreateRelease.txt" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\google-services.json" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\logo.PNG" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\Roadmap.txt" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\splashscreen_android_hdpi.png" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\splashscreen_android_ldpi.png" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\splashscreen_android_mdpi.png" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\splashscreen_android_xhdpi.png" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\splashscreen_android_xxhdpi.png" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\splashscreen_android_xxxhdpi.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Settings\PlayerSettings\PlayerMatchesContentPage.xaml">

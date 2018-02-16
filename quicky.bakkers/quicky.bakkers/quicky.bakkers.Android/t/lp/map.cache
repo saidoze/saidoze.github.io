@@ -1,4 +1,6 @@
 FormsViewGroup
+Plugin.LocalNotifications.Abstractions
+Plugin.LocalNotifications
 quicky.bakkers.models
 quicky.bakkers.services
 System.Runtime
@@ -23,9 +25,9 @@ Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 Firebase.Xamarin
+System.Resources.ResourceManager
 System.ComponentModel
 System.Reflection.Extensions
-System.Resources.ResourceManager
 System.Reactive.Linq
 Newtonsoft.Json
 System.Reactive.Core

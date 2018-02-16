@@ -3,6 +3,8 @@ C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.An
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\Java.Interop.dll
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\Mono.Android.dll
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\mscorlib.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\Plugin.LocalNotifications.Abstractions.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\Plugin.LocalNotifications.dll
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\quicky.bakkers.models.dll
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\quicky.bakkers.services.dll
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\System.Core.dll
@@ -44,8 +46,8 @@ C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.An
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\System.Net.Http.dll
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\System.Runtime.Serialization.dll
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\System.ServiceModel.Internals.dll
-C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\Firebase.Xamarin.dll
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\System.Resources.ResourceManager.dll
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\Firebase.Xamarin.dll
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\System.Threading.Tasks.dll
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\System.ObjectModel.dll
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.Android\t\android\assets\System.IO.dll

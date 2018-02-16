@@ -108,6 +108,8 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "quicky.bakkers.Android.dll" comes first in this list. */
 		"quicky.bakkers.Android.dll",
 		"FormsViewGroup.dll",
+		"Plugin.LocalNotifications.Abstractions.dll",
+		"Plugin.LocalNotifications.dll",
 		"quicky.bakkers.models.dll",
 		"quicky.bakkers.services.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
@@ -140,5 +142,5 @@ class MonoPackageManager_Resources {
 	};
 	public static final String[] Dependencies = new String[]{
 	};
-	public static final String ApiPackageName = null;
+	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_26";
 }

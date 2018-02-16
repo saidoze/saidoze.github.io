@@ -74,12 +74,19 @@ namespace quicky.bakkers.Views
             matchDayPicker.SelectedItem = defaultMatchday;
         }
 
-        private void LoadData()
+        private async Task LoadData()
         {
-            _matchdays = _matchdayService.GetAllItems();
-            _teams = _teamService.GetAllItems();
-            _matches = _matchService.GetAllItems();
-            _players = _playerService.GetAllItems();
+            var task1 = _teamService.GetAllItemsAsync();
+            var task2 = _matchService.GetAllItemsAsync();
+            var task3 = _playerService.GetAllItemsAsync();
+            var task4 = _matchdayService.GetAllItemsAsync();
+
+            Task.WaitAll(task1, task2, task3, task4);
+
+            _teams = task1.Result;
+            _matches = task2.Result;
+            _players = task3.Result;
+            _matchdays = task4.Result;
         }
 
         private void MatchDayPicker_SelectedIndexChanged(object sender, EventArgs e)

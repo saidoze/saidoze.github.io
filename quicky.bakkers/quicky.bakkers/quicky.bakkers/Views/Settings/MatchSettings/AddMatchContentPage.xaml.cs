@@ -18,6 +18,7 @@ namespace quicky.bakkers.Views.Settings.MatchSettings
         private MatchService _matchService;
         private TeamService _teamService;
         private List<Player> _players;
+        private List<Matchday> _matchdays;
         private bool _succeeded = false;
 
         public AddMatchContentPage()
@@ -27,13 +28,38 @@ namespace quicky.bakkers.Views.Settings.MatchSettings
             _matchService = new MatchService();
             _matchdayService = new MatchdayService();
             _teamService = new TeamService();
-            LoadData();
         }
 
-        private void LoadData()
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            this.IsBusy = true;
+            Task.Run(() =>
+            {
+                LoadData();
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    ProcessLoadedData();
+
+                    this.IsBusy = false;
+                });
+            });
+        }
+
+        private async Task LoadData()
         {
             //load players
-            _players = _playerService.GetAllItems();
+            var task1 = _playerService.GetAllItemsAsync();
+            var task2 = _matchdayService.GetAllItemsAsync();
+            Task.WaitAll(task1, task2);
+
+            _players = task1.Result;
+            _matchdays = task2.Result;
+        }
+
+        private void ProcessLoadedData()
+        {
             if (_players != null)
             {
                 _players = _players.OrderBy(p => p.Name).ToList();
@@ -42,8 +68,7 @@ namespace quicky.bakkers.Views.Settings.MatchSettings
                 team2player1Picker.ItemsSource = _players;
                 team2player2Picker.ItemsSource = _players;
                 //load open matchdays
-                var matchdays = _matchdayService.GetAllItems();
-                matchDayPicker.ItemsSource = matchdays;
+                matchDayPicker.ItemsSource = _matchdays;
                 //possible scores
                 var scores = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
                 team1ScorePicker.ItemsSource = scores;

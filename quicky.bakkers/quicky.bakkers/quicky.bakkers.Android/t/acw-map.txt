@@ -2,6 +2,10 @@ quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android;md556aa449f30cd814da50
 quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android, Version=1.0.3.0, Culture=neutral, PublicKeyToken=null;md556aa449f30cd814da501185ab72a1f2d.MainActivity
 quicky.bakkers.Droid.MainActivity;md556aa449f30cd814da501185ab72a1f2d.MainActivity
 quicky.bakkers.droid.MainActivity;md556aa449f30cd814da501185ab72a1f2d.MainActivity
+Plugin.LocalNotifications.ScheduledAlarmHandler, Plugin.LocalNotifications;md54b33d38a21a950def308c8bb6f6e0d30.ScheduledAlarmHandler
+Plugin.LocalNotifications.ScheduledAlarmHandler, Plugin.LocalNotifications, Version=2.0.2.0, Culture=neutral, PublicKeyToken=null;md54b33d38a21a950def308c8bb6f6e0d30.ScheduledAlarmHandler
+Plugin.LocalNotifications.ScheduledAlarmHandler;md54b33d38a21a950def308c8bb6f6e0d30.ScheduledAlarmHandler
+plugin.localnotifications.ScheduledAlarmHandler;md54b33d38a21a950def308c8bb6f6e0d30.ScheduledAlarmHandler
 Android.Support.V4.Widget.SearchViewCompat/IOnCloseListenerImplementor, Xamarin.Android.Support.Compat;mono.android.support.v4.widget.SearchViewCompat_OnCloseListenerImplementor
 Android.Support.V4.Widget.SearchViewCompat+IOnCloseListenerImplementor, Xamarin.Android.Support.Compat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.android.support.v4.widget.SearchViewCompat_OnCloseListenerImplementor
 Android.Support.V4.Widget.SearchViewCompat.IOnCloseListenerImplementor;mono.android.support.v4.widget.SearchViewCompat_OnCloseListenerImplementor
