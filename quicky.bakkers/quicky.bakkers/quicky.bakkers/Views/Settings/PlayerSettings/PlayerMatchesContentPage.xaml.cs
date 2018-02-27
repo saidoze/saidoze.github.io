@@ -38,6 +38,7 @@ namespace quicky.bakkers.Views.Settings.PlayerSettings
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            MainSettings.LastVisitedContentPage = ContentPageEnum.PlayerMatchesOverview;
             playerMatchesList.ItemsSource = new List<PlayerMatchResult>();
 
             if (!IsBusy)
@@ -64,6 +65,12 @@ namespace quicky.bakkers.Views.Settings.PlayerSettings
         {
             try
             {
+                var matchesWon = 0;
+                var matchesDraw = 0;
+                var matchesLost = 0;
+                var matchesGoalsFor = 0;
+                var matchesGoalsAgainst = 0;
+
                 foreach (var matchday in _matchdays)
                 {
                     var matches = _matches.Where(m => m.MatchdayKey == matchday.Key).ToList();
@@ -78,16 +85,49 @@ namespace quicky.bakkers.Views.Settings.PlayerSettings
                         var pmr = new PlayerMatchResult();
                         pmr.MatchdayNumber = matchday.Number;
                         pmr.Score = match.Result;
-                        pmr.Team1Player1 = _players.Where(p => p.Key == _teams.Where(t => t.Key == match.Team1Key).First().Player1Key).First().Name;
-                        pmr.Team1Player2 = _players.Where(p => p.Key == _teams.Where(t => t.Key == match.Team1Key).First().Player2Key).First().Name;
-                        pmr.Team2Player1 = _players.Where(p => p.Key == _teams.Where(t => t.Key == match.Team2Key).First().Player1Key).First().Name;
-                        pmr.Team2Player2 = _players.Where(p => p.Key == _teams.Where(t => t.Key == match.Team2Key).First().Player2Key).First().Name;
+                        var team1player1 = _players.Where(p => p.Key == _teams.Where(t => t.Key == match.Team1Key).First().Player1Key).FirstOrDefault();
+                        var team1player2 = _players.Where(p => p.Key == _teams.Where(t => t.Key == match.Team1Key).First().Player2Key).FirstOrDefault();
+                        var team2player1 = _players.Where(p => p.Key == _teams.Where(t => t.Key == match.Team2Key).First().Player1Key).FirstOrDefault();
+                        var team2player2 = _players.Where(p => p.Key == _teams.Where(t => t.Key == match.Team2Key).First().Player2Key).FirstOrDefault();
+
+                        pmr.Team1Player1 = team1player1.Name;
+                        pmr.Team1Player2 = team1player2.Name;
+                        pmr.Team2Player1 = team2player1.Name;
+                        pmr.Team2Player2 = team2player2.Name;
 
                         pmr.Team1Player1 += (_teams.Where(t => t.Key == match.Team1Key).First().Player1AllowPoints ? "" : " *");
                         pmr.Team1Player2 += (_teams.Where(t => t.Key == match.Team1Key).First().Player2AllowPoints ? "" : " *");
                         pmr.Team2Player1 += (_teams.Where(t => t.Key == match.Team2Key).First().Player1AllowPoints ? "" : " *");
                         pmr.Team2Player2 += (_teams.Where(t => t.Key == match.Team2Key).First().Player2AllowPoints ? "" : " *");
 
+                        pmr.AmITeam1Player1 = team1player1.Key == _playerKey;
+                        pmr.AmITeam1Player2 = team1player2.Key == _playerKey;
+                        pmr.AmITeam2Player1 = team2player1.Key == _playerKey;
+                        pmr.AmITeam2Player2 = team2player2.Key == _playerKey;
+
+                        //calculate totals
+                        if(((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) && match.ScoreTeam1 == 11)
+                            || ((pmr.AmITeam2Player1 || pmr.AmITeam2Player2) && match.ScoreTeam2 == 11))
+                        {
+                            matchesWon++;
+                            matchesGoalsFor += 11;
+                            matchesGoalsAgainst += ((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) ? match.ScoreTeam2 : match.ScoreTeam1);
+                        }
+                        if (((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) && match.ScoreTeam1 == 10)
+                            || ((pmr.AmITeam2Player1 || pmr.AmITeam2Player2) && match.ScoreTeam2 == 10))
+                        {
+                            matchesDraw++;
+                            matchesGoalsFor += 10;
+                            matchesGoalsAgainst += 10;
+                        }
+                        if(((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) && match.ScoreTeam1 < 10)
+                            || ((pmr.AmITeam2Player1 || pmr.AmITeam2Player2) && match.ScoreTeam2 < 10))
+                        {
+                            matchesLost++;
+                            matchesGoalsFor += ((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) ? match.ScoreTeam1 : match.ScoreTeam2);
+                            matchesGoalsAgainst += 11;
+                        }
+                        
                         _playerMatchResults.Add(pmr);
                     }
 
@@ -98,6 +138,12 @@ namespace quicky.bakkers.Views.Settings.PlayerSettings
                             Score = "AFWEZIG"
                         });
                 }
+                
+                AmountWonLabel.Text = matchesWon.ToString();
+                AmountDrawLabel.Text = matchesDraw.ToString();
+                AmountLostLabel.Text = matchesLost.ToString();
+                AmountGoalsForLabel.Text = matchesGoalsFor.ToString();
+                AmountGoalsAgainstLabel.Text = matchesGoalsAgainst.ToString();
             }
             catch (Exception ex)
             {

@@ -22,13 +22,13 @@
                 </Grid.ColumnDefinitions>
 
                 <Label HorizontalTextAlignment="Center" FontSize="Large" Grid.Row="1" Text="Team 1"></Label>
-                <Label HorizontalTextAlignment="Center" FontSize="Medium" Grid.Row="2" Text="Pol"></Label>
-                <Label HorizontalTextAlignment="Center" FontSize="Medium" Grid.Row="3" Text="Jan"></Label>
-                <Label HorizontalTextAlignment="Center" Grid.Row="4" Text="11"></Label>
+                <Label HorizontalTextAlignment="Center" FontSize="Medium" Grid.Row="2" x:Name="Team1Player1Label"></Label>
+                <Label HorizontalTextAlignment="Center" FontSize="Medium" Grid.Row="3" x:Name="Team1Player2Label"></Label>
+                <Label HorizontalTextAlignment="Center" Grid.Row="4" x:Name="Team1ScoreLabel"></Label>
                 <Label HorizontalTextAlignment="Center" FontSize="Large" Grid.Row="5" Text="Team 2"></Label>
-                <Label HorizontalTextAlignment="Center" FontSize="Medium" Grid.Row="6" Text="Mieke"></Label>
-                <Label HorizontalTextAlignment="Center" FontSize="Medium" Grid.Row="7" Text="Janneke"></Label>
-                <Label HorizontalTextAlignment="Center" Grid.Row="8" Text="4"></Label>
+                <Label HorizontalTextAlignment="Center" FontSize="Medium" Grid.Row="6" x:Name="Team2Player1Label"></Label>
+                <Label HorizontalTextAlignment="Center" FontSize="Medium" Grid.Row="7" x:Name="Team2Player2Label"></Label>
+                <Label HorizontalTextAlignment="Center" Grid.Row="8" x:Name="Team2ScoreLabel"></Label>
 
                 <Button Grid.Row="9" Text="Verwijder" Clicked="OnDeleteButtonClicked" BackgroundColor="Red" x:Name="deleteButton" Margin="5,50,5,0" />
             </Grid>

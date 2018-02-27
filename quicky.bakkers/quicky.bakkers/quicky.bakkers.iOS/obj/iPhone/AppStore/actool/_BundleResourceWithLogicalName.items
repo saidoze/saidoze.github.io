@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_BundleResourceWithLogicalName Include="obj\iPhone\AppStore\actool\bundle\AppIcons60x60@2x.png">
+      <LogicalName>AppIcons60x60@2x.png</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhone\AppStore\actool\bundle\AppIcons60x60@3x.png">
+      <LogicalName>AppIcons60x60@3x.png</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhone\AppStore\actool\bundle\AppIcons76x76~ipad.png">
+      <LogicalName>AppIcons76x76~ipad.png</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhone\AppStore\actool\bundle\AppIcons76x76@2x~ipad.png">
+      <LogicalName>AppIcons76x76@2x~ipad.png</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhone\AppStore\actool\bundle\LaunchImages-700@2x.png">
+      <LogicalName>LaunchImages-700@2x.png</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhone\AppStore\actool\bundle\LaunchImages-700-568h@2x.png">
+      <LogicalName>LaunchImages-700-568h@2x.png</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhone\AppStore\actool\bundle\Assets.car">
+      <LogicalName>Assets.car</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+  </ItemGroup>
+</Project>

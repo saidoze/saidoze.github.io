@@ -52,8 +52,8 @@ namespace quicky.bakkers.Views
 
         public async Task OnLoginButtonClicked(object sender, EventArgs e)
         {
-            var username = usernameEntry.Text;
-            var password = passwordEntry.Text;
+            var username = usernameEntry.Text.ToLower();
+            var password = passwordEntry.Text.ToLower();
 
             if (!(username == "admin" && password == "admin"))
             {

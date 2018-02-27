@@ -3007,11 +3007,12 @@ containing a value of this type.
         public static int notification_bg_normal=0x7f020107;
         public static int notification_bg_normal_pressed=0x7f020108;
         public static int notification_icon_background=0x7f020109;
-        public static int notification_template_icon_bg=0x7f02010d;
-        public static int notification_template_icon_low_bg=0x7f02010e;
+        public static int notification_template_icon_bg=0x7f02010e;
+        public static int notification_template_icon_low_bg=0x7f02010f;
         public static int notification_tile_bg=0x7f02010a;
         public static int notify_panel_notification_icon_bg=0x7f02010b;
         public static int plugin_lc_smallicon=0x7f02010c;
+        public static int splashscreen=0x7f02010d;
     }
     public static final class id {
         public static int action0=0x7f08009e;
@@ -3516,6 +3517,11 @@ containing a value of this type.
         public static int CardView_Light=0x7f0b000e;
         public static int MainTheme=0x7f0b0189;
         /**  Base theme applied no matter what API 
+<item name="android:windowBackground">@drawable/splashscreen</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsTranslucent">false</item>
+    <item name="android:windowIsFloating">false</item>
+    <item name="android:backgroundDimEnabled">true</item>
          */
         public static int MainTheme_Base=0x7f0b018a;
         public static int Platform_AppCompat=0x7f0b002d;

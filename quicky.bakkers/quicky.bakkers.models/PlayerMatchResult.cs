@@ -12,5 +12,9 @@ namespace quicky.bakkers.models
         public string Team2Player2 { get; set; }
 
         //helper
+        public bool AmITeam1Player1 { get; set; }
+        public bool AmITeam1Player2 { get; set; }
+        public bool AmITeam2Player1 { get; set; }
+        public bool AmITeam2Player2 { get; set; }
     }
 }

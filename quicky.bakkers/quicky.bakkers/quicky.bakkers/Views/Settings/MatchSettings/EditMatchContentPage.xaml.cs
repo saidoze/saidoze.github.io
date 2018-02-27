@@ -21,6 +21,18 @@ namespace quicky.bakkers.Views.Settings.MatchSettings
 			InitializeComponent ();
             _match = match;
             _matchService = new MatchService();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            //normally player names will be filled in
+            Team1Player1Label.Text = _match.Player1Name;
+            Team1Player2Label.Text = _match.Player2Name;
+            Team1ScoreLabel.Text = _match.ScoreTeam1.ToString();
+            Team2Player1Label.Text = _match.Player3Name;
+            Team2Player2Label.Text = _match.Player4Name;
+            Team2ScoreLabel.Text = _match.ScoreTeam2.ToString();
         }
 
         public async void OnDeleteButtonClicked(object sender, EventArgs e)

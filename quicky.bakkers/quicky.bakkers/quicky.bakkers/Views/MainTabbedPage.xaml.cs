@@ -21,9 +21,21 @@ namespace quicky.bakkers.Views
         {
             InitializeComponent();
 
-            Children.Add(new LeaderBoardContentPage());
-            Children.Add(new ResultsContentPage());
-            Children.Add(new UserContentPage());
+            var leaderboardContentPage = new LeaderBoardContentPage();
+            if(Device.RuntimePlatform == Device.iOS)
+                leaderboardContentPage.Icon = "list.png";
+
+            var resultsContentPage = new ResultsContentPage();
+            if (Device.RuntimePlatform == Device.iOS)
+                resultsContentPage.Icon = "line_chart.png";
+
+            var userContentPage = new UserContentPage();
+            if (Device.RuntimePlatform == Device.iOS)
+                userContentPage.Icon = "settings.png";
+
+            Children.Add(leaderboardContentPage);
+            Children.Add(resultsContentPage);
+            Children.Add(userContentPage);
 
             _settingService = new SettingService();
             //check version
