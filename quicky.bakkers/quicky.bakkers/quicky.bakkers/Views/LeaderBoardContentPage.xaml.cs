@@ -30,9 +30,6 @@ namespace quicky.bakkers.Views
             InitializeComponent();
             BindingContext = this;
             this.IsBusy = false;
-            var img = new FileImageSource();
-
-            this.Icon = "";
 
             _teamService = new TeamService();
             _matchService = new MatchService();
@@ -43,7 +40,11 @@ namespace quicky.bakkers.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            MainSettings.LastVisitedContentPage = ContentPageEnum.Leaderboard;
+            if (MainSettings.LastVisitedContentPage == ContentPageEnum.PlayerMatchesOverview)
+            {
+                MainSettings.LastVisitedContentPage = ContentPageEnum.Leaderboard;
+                return;
+            }
             leaderboardList.ItemsSource = new List<PlayerResult>();
 
             if (!IsBusy)
@@ -63,22 +64,22 @@ namespace quicky.bakkers.Views
 
         private void LoadData()
         {
-            //var task1 = _teamService.GetAllItemsAsync();
-            //var task2 = _matchService.GetAllItemsAsync();
-            //var task3 = _playerService.GetAllItemsAsync();
-            //var task4 = _matchdayService.GetAllItemsAsync();
+            var task1 = _teamService.GetAllItemsAsync();
+            var task2 = _matchService.GetAllItemsAsync();
+            var task3 = _playerService.GetAllItemsAsync();
+            var task4 = _matchdayService.GetAllItemsAsync();
 
-            //Task.WaitAll(task1, task2, task3, task4);
+            Task.WaitAll(task1, task2, task3, task4);
 
-            //_teams = task1.Result;
-            //_matches = task2.Result;
-            //_players = task3.Result;
-            //_matchdays = task4.Result;
+            _teams = task1.Result;
+            _matches = task2.Result;
+            _players = task3.Result;
+            _matchdays = task4.Result;
 
-            _teams = _teamService.GetAllItems();
-            _matches = _matchService.GetAllItems();
-            _players = _playerService.GetAllItems();
-            _matchdays = _matchdayService.GetAllItems();
+            //_teams = _teamService.GetAllItems();
+            //_matches = _matchService.GetAllItems();
+            //_players = _playerService.GetAllItems();
+            //_matchdays = _matchdayService.GetAllItems();
 
             CalculatePlayerResults();
         }

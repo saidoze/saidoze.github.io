@@ -19,7 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)BasePages\AuthorizedContentPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToFontAttributeConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\IntToBoolConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -150,14 +150,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\android\res\mipmap-hdpi\icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\android\res\mipmap-mdpi\icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\android\res\mipmap-xhdpi\icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\android\res\mipmap-xxhdpi\icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\android\res\mipmap-xxxhdpi\icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\android\web_hi_res_1024x500.png" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\android\web_hi_res_512.png" />
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\CreateRelease.txt" />
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\google-services.json" />
-    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\icon.png" />
-    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\icon_120x120.png" />
-    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\icon_152x152.png" />
-    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\icon_167x167.png" />
-    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\icon_180x180.png" />
-    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\icon_76x76.png" />
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\ios\Default%402x.png" />
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\ios\Default-568h%402x.png" />
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\ios\Default.png" />
@@ -165,6 +166,7 @@
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\ios_launch_image_640x1136.png" />
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\ios_launch_image_640x960.png" />
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\logo.PNG" />
+    <Content Include="$(MSBuildThisFileDirectory)SolutionItems\new_images\icon.png" />
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\ReleaseLog.txt" />
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\splashscreen_android_hdpi.png" />
     <Content Include="$(MSBuildThisFileDirectory)SolutionItems\splashscreen_android_ldpi.png" />
@@ -180,6 +182,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)SolutionItems\android\Android Asset Studio - Launcher icon generator.url" />
     <None Include="$(MSBuildThisFileDirectory)SolutionItems\CertificateSigningRequest.certSigningRequest" />
     <None Include="$(MSBuildThisFileDirectory)SolutionItems\iOS_development_iphone_6.mobileprovision" />
     <None Include="$(MSBuildThisFileDirectory)SolutionItems\ios_distribution.cer" />

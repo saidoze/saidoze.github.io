@@ -12,8 +12,8 @@
     
     <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
-            <StackLayout Orientation="Horizontal" Margin="5">
-                <Grid>
+            <!--<StackLayout Orientation="Horizontal" Margin="5">-->
+                <Grid Margin="10,5,10,5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -38,7 +38,7 @@
                     <Label Grid.Column="8" Text="T:"></Label>
                     <Label Grid.Column="9" x:Name="AmountGoalsAgainstLabel" ></Label>
                 </Grid>
-            </StackLayout>
+            <!--</StackLayout>-->
             <ListView x:Name="playerMatchesList" BackgroundColor="White" RowHeight="75"
                       SeparatorColor="{StaticResource grayPrimary}">
                 <ListView.ItemTemplate>

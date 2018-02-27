@@ -3,4 +3,10 @@ Android manifest (properties of android project)
 - change version number
 - change version name
 AssemblyInfo -> change assembly version to the version name
+Rechtsklikken project -> Archive -> when done pick Distribute - Ad hoc -> location & sign file
 
+IOS
+AssemblyInfo -> change assembly version to the version name
+And build version in Info.plist
+Builden met Ad-Hoc op Iphone
+Uploaden met application loader op mac os x (openen via xcode in menu developer)

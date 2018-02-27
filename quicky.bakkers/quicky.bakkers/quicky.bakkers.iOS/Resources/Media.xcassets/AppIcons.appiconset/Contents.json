@@ -3,12 +3,14 @@
     {
       "scale": "2x",
       "size": "20x20",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "Icon-App-20x20@2x.png"
     },
     {
       "scale": "3x",
       "size": "20x20",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "Icon-App-60x60@1x.png"
     },
     {
       "scale": "2x",
@@ -34,13 +36,13 @@
       "scale": "2x",
       "size": "60x60",
       "idiom": "iphone",
-      "filename": "icon_120x120.png"
+      "filename": "Icon-App-60x60@2x.png"
     },
     {
       "scale": "3x",
       "size": "60x60",
       "idiom": "iphone",
-      "filename": "icon_180x180.png"
+      "filename": "Icon-App-60x60@3x.png"
     },
     {
       "scale": "1x",
@@ -76,25 +78,25 @@
       "scale": "1x",
       "size": "76x76",
       "idiom": "ipad",
-      "filename": "icon_76x76.png"
+      "filename": "Icon-App-76x76@1x.png"
     },
     {
       "scale": "2x",
       "size": "76x76",
       "idiom": "ipad",
-      "filename": "icon_152x152.png"
+      "filename": "Icon-App-76x76@2x.png"
     },
     {
       "scale": "2x",
       "size": "83.5x83.5",
       "idiom": "ipad",
-      "filename": "icon_167x167.png"
+      "filename": "Icon-App-83.5x83.5@2x.png"
     },
     {
       "scale": "1x",
       "size": "1024x1024",
       "idiom": "ios-marketing",
-      "filename": "ios_app_store_icon_1024x1024.png"
+      "filename": "iTunesArtwork@2x.png"
     }
   ],
   "properties": {},

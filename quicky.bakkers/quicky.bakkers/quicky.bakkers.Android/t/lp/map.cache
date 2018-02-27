@@ -24,3 +24,15 @@ Xamarin.Forms.Core
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
+Firebase.Xamarin
+System.Resources.ResourceManager
+System.ComponentModel
+System.Reflection.Extensions
+System.Reactive.Linq
+Newtonsoft.Json
+System.Reactive.Core
+JWT
+System.Reactive.Interfaces
+System.Runtime.InteropServices.WindowsRuntime
+System.Diagnostics.Tools
+crypto

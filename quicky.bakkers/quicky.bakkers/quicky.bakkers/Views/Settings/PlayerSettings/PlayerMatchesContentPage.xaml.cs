@@ -20,6 +20,11 @@ namespace quicky.bakkers.Views.Settings.PlayerSettings
         private List<Match> _matches;
         private List<Player> _players;
         private List<PlayerMatchResult> _playerMatchResults = new List<PlayerMatchResult>();
+        private int _matchesWon;
+        private int _matchesDraw;
+        private int _matchesLost;
+        private int _matchesGoalsFor;
+        private int _matchesGoalsAgainst;
 
         public PlayerMatchesContentPage(PlayerResult playerResult,
             List<Team> teams, List<Match> matches, List<Player> players, List<Matchday> matchdays)
@@ -50,6 +55,11 @@ namespace quicky.bakkers.Views.Settings.PlayerSettings
                     Device.BeginInvokeOnMainThread(() =>
                     {
                         playerMatchesList.ItemsSource = _playerMatchResults.OrderByDescending(pmr => pmr.MatchdayNumber).ToList();
+                        AmountWonLabel.Text = _matchesWon.ToString();
+                        AmountDrawLabel.Text = _matchesDraw.ToString();
+                        AmountLostLabel.Text = _matchesLost.ToString();
+                        AmountGoalsForLabel.Text = _matchesGoalsFor.ToString();
+                        AmountGoalsAgainstLabel.Text = _matchesGoalsAgainst.ToString();
                         this.IsBusy = false;
                     });
                 });
@@ -65,11 +75,11 @@ namespace quicky.bakkers.Views.Settings.PlayerSettings
         {
             try
             {
-                var matchesWon = 0;
-                var matchesDraw = 0;
-                var matchesLost = 0;
-                var matchesGoalsFor = 0;
-                var matchesGoalsAgainst = 0;
+                _matchesWon = 0;
+                _matchesDraw = 0;
+                _matchesLost = 0;
+                _matchesGoalsFor = 0;
+                _matchesGoalsAgainst = 0;
 
                 foreach (var matchday in _matchdays)
                 {
@@ -109,23 +119,23 @@ namespace quicky.bakkers.Views.Settings.PlayerSettings
                         if(((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) && match.ScoreTeam1 == 11)
                             || ((pmr.AmITeam2Player1 || pmr.AmITeam2Player2) && match.ScoreTeam2 == 11))
                         {
-                            matchesWon++;
-                            matchesGoalsFor += 11;
-                            matchesGoalsAgainst += ((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) ? match.ScoreTeam2 : match.ScoreTeam1);
+                            _matchesWon++;
+                            _matchesGoalsFor += 11;
+                            _matchesGoalsAgainst += ((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) ? match.ScoreTeam2 : match.ScoreTeam1);
                         }
                         if (((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) && match.ScoreTeam1 == 10)
                             || ((pmr.AmITeam2Player1 || pmr.AmITeam2Player2) && match.ScoreTeam2 == 10))
                         {
-                            matchesDraw++;
-                            matchesGoalsFor += 10;
-                            matchesGoalsAgainst += 10;
+                            _matchesDraw++;
+                            _matchesGoalsFor += 10;
+                            _matchesGoalsAgainst += 10;
                         }
                         if(((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) && match.ScoreTeam1 < 10)
                             || ((pmr.AmITeam2Player1 || pmr.AmITeam2Player2) && match.ScoreTeam2 < 10))
                         {
-                            matchesLost++;
-                            matchesGoalsFor += ((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) ? match.ScoreTeam1 : match.ScoreTeam2);
-                            matchesGoalsAgainst += 11;
+                            _matchesLost++;
+                            _matchesGoalsFor += ((pmr.AmITeam1Player1 || pmr.AmITeam1Player2) ? match.ScoreTeam1 : match.ScoreTeam2);
+                            _matchesGoalsAgainst += 11;
                         }
                         
                         _playerMatchResults.Add(pmr);
@@ -138,12 +148,6 @@ namespace quicky.bakkers.Views.Settings.PlayerSettings
                             Score = "AFWEZIG"
                         });
                 }
-                
-                AmountWonLabel.Text = matchesWon.ToString();
-                AmountDrawLabel.Text = matchesDraw.ToString();
-                AmountLostLabel.Text = matchesLost.ToString();
-                AmountGoalsForLabel.Text = matchesGoalsFor.ToString();
-                AmountGoalsAgainstLabel.Text = matchesGoalsAgainst.ToString();
             }
             catch (Exception ex)
             {
