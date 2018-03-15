@@ -86,11 +86,12 @@ namespace quicky.bakkers.Views
 
         private void CalculatePlayerResults()
         {
+                var cp = new Player();
             try
             {
-
                 var amountOfMatchdays = _matchdays.Where(m => m.Closed).Count();
                 var allMatches = (from m in _matches
+                                  join md in _matchdays.Where(m => m.Closed) on m.MatchdayKey equals md.Key
                                   join t1 in _teams on m.Team1Key equals t1.Key
                                   join t2 in _teams on m.Team2Key equals t2.Key
                                   select new
@@ -104,6 +105,10 @@ namespace quicky.bakkers.Views
                 //create playerresults for every player
                 foreach (var player in _players)
                 {
+                    cp = player;
+                    if(cp.Name == "Tobias")
+                    {
+                    }
                     var presult = new PlayerResult();
                     presult.PlayerKey = player.Key;
                     presult.PlayerName = player.Name;
@@ -117,7 +122,8 @@ namespace quicky.bakkers.Views
                                           scoreTeam1 = (a.match.ScoreTeam1 == 11 ? a.match.ScoreTeam1 : 0),
                                           scoreTeam2 = (a.match.ScoreTeam2 == 11 ? a.match.ScoreTeam2 : 0)
                                       }).ToList();
-                    var goalsForWhenWon = matchesWon.Count * 11; //matchesWon.Sum(m => m.scoreTeam1) + matchesWon.Sum(m => m.scoreTeam2);
+                    var matchesWonCount = matchesWon.Count;
+                    var goalsForWhenWon = matchesWonCount * 11; //matchesWon.Sum(m => m.scoreTeam1) + matchesWon.Sum(m => m.scoreTeam2);
 
                     //Matches won, but get other teams goals
                     var matchesWonOtherTeamGoals = (from a in allMatches
@@ -139,7 +145,8 @@ namespace quicky.bakkers.Views
                                            scoreTeam1 = (a.match.ScoreTeam1 == 10 ? a.match.ScoreTeam1 : 0),
                                            scoreTeam2 = (a.match.ScoreTeam2 == 10 ? a.match.ScoreTeam2 : 0)
                                        }).ToList();
-                    var goalsForWhenDraw = matchesDraw.Count * 10;
+                    var matchesDrawCount = matchesDraw.Count;
+                    var goalsForWhenDraw = matchesDrawCount * 10;
 
                     //Matches lost
                     var matchesLost = (from a in allMatches
@@ -150,6 +157,7 @@ namespace quicky.bakkers.Views
                                            scoreTeam1 = (a.match.ScoreTeam1 < 10 ? a.match.ScoreTeam1 : 0),
                                            scoreTeam2 = (a.match.ScoreTeam2 < 10 ? a.match.ScoreTeam2 : 0)
                                        }).ToList();
+                    var matchesLostCount = matchesLost.Count;
                     var goalsForWhenLost = matchesLost.Sum(m => m.scoreTeam1) + matchesLost.Sum(m => m.scoreTeam2);
 
                     //presence points
@@ -161,21 +169,26 @@ namespace quicky.bakkers.Views
                     });
                     presult.PresencePoints = presencePoints;
 
-                    presult.Points = (matchesWon.Count * 3) + (matchesDraw.Count) + presult.PresencePoints;
+                    presult.Points = (matchesWonCount * 3) + (matchesDrawCount) + presult.PresencePoints;
                     presult.GoalsFor = goalsForWhenWon + goalsForWhenDraw + goalsForWhenLost;
-                    presult.GoalsAgainst = (matchesDraw.Count * 10) + (matchesLost.Count * 11) + (goalsAgainstWhenWon);
+                    presult.GoalsAgainst = (matchesDrawCount * 10) + (matchesLostCount * 11) + (goalsAgainstWhenWon);
 
-                    presult.MatchesPlayed = matchesWon.Count + matchesDraw.Count + matchesLost.Count;
-                    presult.MatchesWon = matchesWon.Count;
-                    presult.MatchesDrawed = matchesDraw.Count;
-                    presult.MatchesLost = matchesLost.Count;
+                    presult.MatchesPlayed = matchesWonCount + matchesDrawCount + matchesLostCount;
+                    presult.MatchesWon = matchesWonCount;
+                    presult.MatchesDrawed = matchesDrawCount;
+                    presult.MatchesLost = matchesLostCount;
 
                     var games = amountOfMatchdays * 3;
                     var p = presult.MatchesPlayed;
-                    if (presult.MatchesPlayed == 0)
+                    if (p == 0)
                         presult.MatchdaysToCatchUp = new String('*', amountOfMatchdays);
                     else
-                        presult.MatchdaysToCatchUp = new String('*', (((amountOfMatchdays * 3) / presult.MatchesPlayed) - 1));
+                    {
+                        var amountToCatchUp = ((amountOfMatchdays * 3) - p) / 3;
+
+                        if (amountToCatchUp > 0)
+                            presult.MatchdaysToCatchUp = new String('*', amountToCatchUp);
+                    }
 
                     _playerResults.Add(presult);
                 }

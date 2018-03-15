@@ -14,7 +14,8 @@ namespace quicky.bakkers.models
         }
 
         public string Key { get; set; }
-        public string AssemblyVersion { get; set; }
+        public string AssemblyVersionIos { get; set; }
+        public string AssemblyVersionAndroid { get; set; }
 
         public Setting WithKey(string key)
         {

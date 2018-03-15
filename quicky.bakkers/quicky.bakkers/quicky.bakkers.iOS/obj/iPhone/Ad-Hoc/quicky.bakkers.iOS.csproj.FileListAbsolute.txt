@@ -95,8 +95,6 @@ C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iO
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\obj\iPhone\Ad-Hoc\quicky.bakkers.iOS.EditMatchContentPage.xaml.g.cs
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\obj\iPhone\Ad-Hoc\quicky.bakkers.iOS.PlayerMatchesContentPage.xaml.g.cs
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\obj\iPhone\Ad-Hoc\quicky.bakkers.iOS.exe
-C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\bin\iPhone\Ad-Hoc\quicky.bakkers.models.dll.mdb
-C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\bin\iPhone\Ad-Hoc\quicky.bakkers.services.dll.mdb
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\obj\iPhone\Ad-Hoc\optimized\list.png
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\obj\iPhone\Ad-Hoc\optimized\list@2x.png
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\obj\iPhone\Ad-Hoc\optimized\list@3x.png
@@ -121,3 +119,5 @@ C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iO
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\obj\iPhone\Ad-Hoc\optimized\SolutionItems\ios_launch_image_640x960.png
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\obj\iPhone\Ad-Hoc\optimized\SolutionItems\new_images\icon.png
 C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\obj\iPhone\Ad-Hoc\optimized\Icon-App-180x180.png
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\bin\iPhone\Ad-Hoc\quicky.bakkers.models.dll.mdb
+C:\Persoonlijk\saidoze.github.io\quicky.bakkers\quicky.bakkers\quicky.bakkers.iOS\bin\iPhone\Ad-Hoc\quicky.bakkers.services.dll.mdb

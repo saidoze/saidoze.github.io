@@ -1,4 +1,4 @@
-package md556aa449f30cd814da501185ab72a1f2d;
+package md54f30736770d5c0f9528e67a8183da1d4;
 
 
 public class MainActivity
@@ -12,7 +12,7 @@ public class MainActivity
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"";
-		mono.android.Runtime.register ("quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android, Version=1.0.3.0, Culture=neutral, PublicKeyToken=null", MainActivity.class, __md_methods);
+		mono.android.Runtime.register ("quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android, Version=1.0.6.0, Culture=neutral, PublicKeyToken=null", MainActivity.class, __md_methods);
 	}
 
 
@@ -20,7 +20,7 @@ public class MainActivity
 	{
 		super ();
 		if (getClass () == MainActivity.class)
-			mono.android.TypeManager.Activate ("quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android, Version=1.0.3.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android, Version=1.0.6.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 

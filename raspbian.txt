@@ -1,0 +1,45 @@
+192.168.0.90
+login: pi
+ww: 123456
+
+Automatisch chromium starten bij booten: file 'chromium.desktop' in autostart folder
+[Desktop Entry]
+Encoding=UTF-8
+Name=Connect
+Comment=Start smart mirror site
+Exec=/usr/bin/chromium-browser -incognito --kiosk http://192.168.0.219/smartmirror
+
+sudo reboot
+sudo shutdown
+
+openen texteditor: sudo nano
+ctrl+x is sluiten en dan locatie opgeven om op te slaan
+
+sudo nano /home/pi/.config/autostart/chromium.desktop
+sudo nano /home/pi/.config/autostart/LXinput-setup.desktop
+
+mouse invisible after 5 sec: unclutter -display :0.0 -idle 5
+dit toevoegen in LXinput file , om bij reboot te activeren
+
+NETWORK
+-------
+ifconfig -> netwerkoverzicht
+sudo nano /etc/network/interfaces -> overzicht verbindingen eth0, wlan0, ...
+
+SSH niet bereikbaar/inloggen?
+sudo service ssh status
+sudo raspi-config  --> hierin ssh enablen
+
+-------
+ROTATE
+sudo nano /boot/config.txt
+Add one of these to the bottom, 
+
+display_rotate=0 Normal
+display_rotate=1 90 degrees
+display_rotate=2 180 degrees
+NOTE: You can rotate both the image and touch interface 180º by entering lcd_rotate=2 instead
+display_rotate=3 270 degrees
+display_rotate=0x10000 horizontal flip
+display_rotate=0x20000 vertical flip
+

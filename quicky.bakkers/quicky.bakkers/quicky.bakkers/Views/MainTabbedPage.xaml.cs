@@ -53,12 +53,19 @@ namespace quicky.bakkers.Views
 
                     if (settings.Count == 0)
                     {
-                        var s = (_settingService.SaveSettings(new models.Setting() { AssemblyVersion = localversion })).Result;
+                        var s = (_settingService.SaveSettings(new models.Setting() {
+                            AssemblyVersionAndroid = localversion,
+                            AssemblyVersionIos = localversion
+                        })).Result;
                     }
                     else
                     {
-                        var newestVersion = settings.First().AssemblyVersion.Replace(".", "");
-                        if (Convert.ToInt32(localversion) < Convert.ToInt32(newestVersion))
+                        var version_ios = settings.First().AssemblyVersionIos.Replace(".", "");
+                        var version_android = settings.First().AssemblyVersionAndroid.Replace(".", "");
+
+                        if ((Device.RuntimePlatform == Device.iOS) && (Convert.ToInt32(localversion) < Convert.ToInt32(version_ios)))
+                            _newVersion = true;
+                        if ((Device.RuntimePlatform == Device.Android) && (Convert.ToInt32(localversion) < Convert.ToInt32(version_android)))
                             _newVersion = true;
                     }
 
@@ -79,9 +86,13 @@ namespace quicky.bakkers.Views
             if (newVersion)
             {
                 var answer = await DisplayAlert("Versie", "Nieuwe versie beschikbaar in de store!", "Openen", "Ok");
-                if(answer)
-                    Xamarin.Forms.Device.OpenUri(new Uri("market://details?id=com.nuyttens.quicky.bakkers"));
-                
+                if (answer) {
+                    if(Device.RuntimePlatform == Device.iOS)
+                        Xamarin.Forms.Device.OpenUri(new Uri("itms://itunes.apple.com/us/app/quickybakkers/id1351261448?l=nl&ls=1&mt=8"));
+                    //http opens in safari browser
+                    else
+                        Xamarin.Forms.Device.OpenUri(new Uri("market://details?id=com.nuyttens.quicky.bakkers"));
+                }
                 return;
             }
         }

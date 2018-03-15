@@ -20,7 +20,7 @@ namespace quicky.bakkers.services.Services
 
         public override List<Setting> CreateObjects(IReadOnlyCollection<FirebaseObject<Setting>> items)
         {
-            return items.Select(i => new Setting() { Key = i.Key, AssemblyVersion = i.Object.AssemblyVersion }).ToList();
+            return items.Select(i => new Setting() { Key = i.Key, AssemblyVersionAndroid = i.Object.AssemblyVersionAndroid, AssemblyVersionIos = i.Object.AssemblyVersionIos }).ToList();
         }
 
         public async Task<Setting> SaveSettings(Setting settings)

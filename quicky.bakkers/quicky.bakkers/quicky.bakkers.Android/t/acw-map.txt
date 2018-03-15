@@ -1,7 +1,7 @@
-quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android;md5207828d350b4a29f08215aed1c3b4bac.MainActivity
-quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null;md5207828d350b4a29f08215aed1c3b4bac.MainActivity
-quicky.bakkers.Droid.MainActivity;md5207828d350b4a29f08215aed1c3b4bac.MainActivity
-quicky.bakkers.droid.MainActivity;md5207828d350b4a29f08215aed1c3b4bac.MainActivity
+quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android;md54f30736770d5c0f9528e67a8183da1d4.MainActivity
+quicky.bakkers.Droid.MainActivity, quicky.bakkers.Android, Version=1.0.6.0, Culture=neutral, PublicKeyToken=null;md54f30736770d5c0f9528e67a8183da1d4.MainActivity
+quicky.bakkers.Droid.MainActivity;md54f30736770d5c0f9528e67a8183da1d4.MainActivity
+quicky.bakkers.droid.MainActivity;md54f30736770d5c0f9528e67a8183da1d4.MainActivity
 Plugin.LocalNotifications.ScheduledAlarmHandler, Plugin.LocalNotifications;md54b33d38a21a950def308c8bb6f6e0d30.ScheduledAlarmHandler
 Plugin.LocalNotifications.ScheduledAlarmHandler, Plugin.LocalNotifications, Version=2.0.2.0, Culture=neutral, PublicKeyToken=null;md54b33d38a21a950def308c8bb6f6e0d30.ScheduledAlarmHandler
 Plugin.LocalNotifications.ScheduledAlarmHandler;md54b33d38a21a950def308c8bb6f6e0d30.ScheduledAlarmHandler

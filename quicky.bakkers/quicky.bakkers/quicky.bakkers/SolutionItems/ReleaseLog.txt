@@ -1,3 +1,6 @@
-﻿1.0.4
+﻿1.0.5
+Oplossen fout met klassement.
+
+1.0.4
 Spelersmatchen overzicht toont nu totaal gewonnen/gelijk/verloren en goals voor/tegen.
 Snelheidsoptimalisaties

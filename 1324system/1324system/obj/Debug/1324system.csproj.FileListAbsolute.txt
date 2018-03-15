@@ -1,0 +1,7 @@
+C:\Persoonlijk\saidoze.github.io\1324system\1324system\bin\Debug\1324system.exe.config
+C:\Persoonlijk\saidoze.github.io\1324system\1324system\bin\Debug\1324system.exe
+C:\Persoonlijk\saidoze.github.io\1324system\1324system\bin\Debug\1324system.pdb
+C:\Persoonlijk\saidoze.github.io\1324system\1324system\obj\Debug\1324system.csproj.CoreCompileInputs.cache
+C:\Persoonlijk\saidoze.github.io\1324system\1324system\obj\Debug\1324system.exe
+C:\Persoonlijk\saidoze.github.io\1324system\1324system\obj\Debug\1324system.pdb
+C:\Persoonlijk\saidoze.github.io\1324system\1324system\obj\Debug\1324system.csprojResolveAssemblyReference.cache
