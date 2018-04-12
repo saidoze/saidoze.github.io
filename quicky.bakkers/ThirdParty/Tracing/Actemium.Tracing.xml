@@ -1,0 +1,74 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Actemium.Tracing
+</name>
+</assembly>
+<members>
+<member name="T:Actemium.Tracing.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Actemium.Tracing.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Actemium.Tracing.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Actemium.Tracing.TraceUtils.Sinks">
+ <summary>
+ The sink collection containing all objects implementing ITraceSink.
+ A sink is an addon on the promatic tracing.
+ At this moment a Seq sink exists, letting you easily send promatic tracing log statements to seq.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Actemium.Tracing.TraceUtils.LogSeperateErrorsSuffix">
+ <summary>
+ Specify a filename suffix if you want to make an extra logfile with the ERRORs
+ </summary>
+</member>
+<member name="P:Actemium.Tracing.TraceUtils.LogSeperateWarningsSuffix">
+ <summary>
+ Specify a filename suffix if you want to make an extra logfile with the WARNINGs (and ERRORs)
+ </summary>
+</member>
+<member name="P:Actemium.Tracing.TraceUtils.CleanupDelay">
+ <summary>
+ Number of days to keep the logfiles
+ </summary>
+</member>
+<member name="P:Actemium.Tracing.TraceUtils.TraceFilePath">
+ <summary>
+ The path for the trace logfiles. If not specified then the application directory is used.
+ </summary>
+</member>
+<member name="P:Actemium.Tracing.TraceUtils.MaxFileSize">
+ <summary>
+ Max logfilesize (in bytes)
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Actemium.Tracing.TraceUtils.KeepFileOpenTime">
+ <summary>
+ The logfile is auto-closed after this interval (msec) when idle
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Actemium.Tracing.TraceUtils.#cctor">
+ <summary>
+ Default shared constructor. Try to get CleanupDelay, TraceFilePath and TraceFilePrefix settings from the config file of the calling application.
+ </summary>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

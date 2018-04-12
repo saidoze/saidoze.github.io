@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+  </PropertyGroup>
+  
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Radius.Service.Hosting" Version="2.0.12997" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\quickybakkers.service\Quickybakkers.Service.csproj" />
+  </ItemGroup>
+
+</Project>
