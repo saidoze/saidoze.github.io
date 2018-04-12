@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Quickybakkers.Service
+namespace Quickybakkers.Service.Interfaces
 {
     [ServiceRoute("Quickybakkers")]
     [ServiceName("Spelers")]

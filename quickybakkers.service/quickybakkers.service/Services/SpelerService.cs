@@ -11,8 +11,9 @@ using Actemium.BusinessLogic;
 using Quickybakkers.Service.Config;
 using Actemium.DataAccess;
 using Quickybakkers.Service.BusinessLogic;
+using Quickybakkers.Service.Interfaces;
 
-namespace Quickybakkers.Service
+namespace Quickybakkers.Service.Services
 {
     [Export(typeof(ISpelerService))]
     public class SpelerService : ISpelerService
