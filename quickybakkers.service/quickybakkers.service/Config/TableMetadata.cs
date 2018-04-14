@@ -9,7 +9,8 @@ namespace Quickybakkers.Service.Config
     public static class TableMetadata
     {
         public const string TBL_SPELERS = "spelers";
-        public const string TBL_SPEELDAG = "speeldagen";
+        public const string TBL_SPEELDAGEN = "speeldagen";
+        public const string TBL_MATCHEN = "matchen";
 
         public const string COL_LASTUPDATEDATE = "LastUpdateDate";
     }

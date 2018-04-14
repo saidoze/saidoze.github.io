@@ -51,22 +51,26 @@ namespace Quickybakkers.Service.Services
             return Task.FromResult(new Speeldag());
         }
 
-        public Task<int> UpdateSpeeldagAsync(int id, Speeldag speeldag)
-        {
-            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "UpdateSpeeldagAsync", ""));
+        //public Task<int> UpdateSpeeldagAsync(int id, Speeldag speeldag)
+        //{
+        //    TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "UpdateSpeeldagAsync", ""));
 
-            var bl = new BLSpeeldagen(_context);
-            var rowsAffected = bl.UpdateSpeeldag(speeldag);
+        //    var bl = new BLSpeeldagen(_context);
+        //    var rowsAffected = bl.UpdateSpeeldag(speeldag);
 
-            return Task.FromResult(rowsAffected);
-        }
+        //    return Task.FromResult(rowsAffected);
+        //}
 
         public Task<int> SaveSpeeldagAsync(Speeldag speeldag)
         {
             TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "SaveSpeeldagAsync", ""));
 
             var bl = new BLSpeeldagen(_context);
-            var rowsAffected = bl.CreateSpeeldag(speeldag);
+            var rowsAffected = 0;
+            if (speeldag.Id > 0)
+                rowsAffected = bl.UpdateSpeeldag(speeldag);
+            else
+                rowsAffected = bl.CreateSpeeldag(speeldag);
 
             return Task.FromResult(rowsAffected);
         }

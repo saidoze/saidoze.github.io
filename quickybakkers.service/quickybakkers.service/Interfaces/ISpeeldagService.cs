@@ -17,8 +17,8 @@ namespace Quickybakkers.Service.Interfaces
         [ServiceMethod("GET", "GetSpeeldag/{id}")]
         Task<Speeldag> GetSpeeldagByIdAsync(int id);
         
-        [ServiceMethod("PUT", "UpdateSpeeldag/{id}")]
-        Task<int> UpdateSpeeldagAsync(int id, Speeldag speeldag);
+        //[ServiceMethod("PUT", "UpdateSpeeldag/{id}")]
+        //Task<int> UpdateSpeeldagAsync(int id, Speeldag speeldag);
 
         [ServiceMethod("POST", "SaveSpeeldag")]
         Task<int> SaveSpeeldagAsync(Speeldag speeldag);

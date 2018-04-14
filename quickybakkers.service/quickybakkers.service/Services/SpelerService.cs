@@ -51,22 +51,26 @@ namespace Quickybakkers.Service.Services
             return Task.FromResult(spelers);
         }
 
-        public Task<int> UpdateSpelerAsync(int id, Speler speler)
-        {
-            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "UpdateSpelerAsync", ""));
+        //public Task<int> UpdateSpelerAsync(int id, Speler speler)
+        //{
+        //    TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "UpdateSpelerAsync", ""));
 
-            var bl = new BLSpelers(_context);
-            var rowsAffected = bl.UpdateSpeler(speler);
+        //    var bl = new BLSpelers(_context);
+        //    var rowsAffected = bl.UpdateSpeler(speler);
 
-            return Task.FromResult(rowsAffected);
-        }
+        //    return Task.FromResult(rowsAffected);
+        //}
 
         public Task<int> SaveSpelerAsync(Speler speler)
         {
             TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "SaveSpelerAsync", ""));
 
             var bl = new BLSpelers(_context);
-            var rowsAffected = bl.CreateSpeler(speler);
+            var rowsAffected = 0;
+            if (speler.Id > 0)
+                rowsAffected = bl.UpdateSpeler(speler);
+            else
+                rowsAffected = bl.CreateSpeler(speler);
 
             return Task.FromResult(rowsAffected);
         }

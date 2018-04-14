@@ -34,7 +34,6 @@ namespace Quickybakkers.Service.DataAccess
         {
             SQLHelper s = new SQLHelper();
             var mySqlParameters = new List<MySqlParameter>() {
-                new MySqlParameter("@Id", speler.Id),
                 new MySqlParameter("@Naam", speler.Naam)
             };
             var l = s.Create(context.ConnectionString, TableMetadata.TBL_SPELERS, mySqlParameters);

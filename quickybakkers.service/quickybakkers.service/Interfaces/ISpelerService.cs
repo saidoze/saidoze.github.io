@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Quickybakkers.Service.Interfaces
 {
     [ServiceRoute("Quickybakkers")]
-    [ServiceName("Spelers")]
+    [ServiceName("Speler")]
     public interface ISpelerService : IRestService
     {
         [ServiceMethod("GET", "GetSpelers")]
@@ -17,8 +17,8 @@ namespace Quickybakkers.Service.Interfaces
         [ServiceMethod("GET", "GetSpeler/{id}")]
         Task<Speler> GetSpelerByIdAsync(int id);
         
-        [ServiceMethod("PUT", "UpdateSpeler/{id}")]
-        Task<int> UpdateSpelerAsync(int id, Speler speler);
+        //[ServiceMethod("PUT", "UpdateSpeler/{id}")]
+        //Task<int> UpdateSpelerAsync(int id, Speler speler);
 
         [ServiceMethod("POST", "SaveSpeler")]
         Task<int> SaveSpelerAsync(Speler speler);

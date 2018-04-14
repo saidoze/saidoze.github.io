@@ -26,7 +26,7 @@ namespace Quickybakkers.Service.DataAccess
         public virtual IEnumerable<Speeldag> EnumerateAll()
         {
             SQLHelper s = new SQLHelper();
-            var l = s.EnumerateAll<Speeldag>(context.ConnectionString, TableMetadata.TBL_SPEELDAG);
+            var l = s.EnumerateAll<Speeldag>(context.ConnectionString, TableMetadata.TBL_SPEELDAGEN);
             return l;
         }
         
@@ -34,11 +34,10 @@ namespace Quickybakkers.Service.DataAccess
         {
             SQLHelper s = new SQLHelper();
             var mySqlParameters = new List<MySqlParameter>() {
-                new MySqlParameter("@Id", speeldag.Id),
                 new MySqlParameter("@Datum", speeldag.Datum),
                 new MySqlParameter("@Gesloten", speeldag.Gesloten)
             };
-            var l = s.Create(context.ConnectionString, TableMetadata.TBL_SPEELDAG, mySqlParameters);
+            var l = s.Create(context.ConnectionString, TableMetadata.TBL_SPEELDAGEN, mySqlParameters);
             return l;
         }
 
@@ -49,7 +48,7 @@ namespace Quickybakkers.Service.DataAccess
                 new MySqlParameter("@Datum", speeldag.Datum),
                 new MySqlParameter("@Gesloten", speeldag.Gesloten)
             };
-            var l = s.Update(context.ConnectionString, TableMetadata.TBL_SPEELDAG, speeldag.Id, mySqlParameters);
+            var l = s.Update(context.ConnectionString, TableMetadata.TBL_SPEELDAGEN, speeldag.Id, mySqlParameters);
             return l;
         }
 
@@ -59,7 +58,7 @@ namespace Quickybakkers.Service.DataAccess
             var ids = new List<int>() {
                 id
             };
-            var l = s.Delete(context.ConnectionString, TableMetadata.TBL_SPEELDAG, ids);
+            var l = s.Delete(context.ConnectionString, TableMetadata.TBL_SPEELDAGEN, ids);
             return l;
         }
     }

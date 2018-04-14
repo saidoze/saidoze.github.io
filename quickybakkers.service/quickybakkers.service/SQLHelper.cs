@@ -46,7 +46,6 @@ namespace Quickybakkers.Service
         public virtual int Create(string connectionstring, string tableName, IEnumerable<MySqlParameter> mySqlParameters)
         {
             mySqlParameters = mySqlParameters.AddFixedColumns();
-            mySqlParameters = mySqlParameters.Where(m => m.ParameterName != string.Format("@{0}", TableMetadata.COL_LASTUPDATEDATE)).ToList();
 
             int rowsAffected = 0;
             string statement;
@@ -164,7 +163,6 @@ namespace Quickybakkers.Service
                 return rowsAffected;
             }
         }
-
     }
 
 }
