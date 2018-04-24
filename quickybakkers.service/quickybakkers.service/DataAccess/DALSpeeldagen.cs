@@ -52,6 +52,16 @@ namespace Quickybakkers.Service.DataAccess
             return l;
         }
 
+        public virtual bool SluitSpeeldag(int speeldagId)
+        {
+            SQLHelper s = new SQLHelper();
+            var mySqlParameters = new List<MySqlParameter>() {
+                new MySqlParameter("@Gesloten", true)
+            };
+            var l = s.Update(context.ConnectionString, TableMetadata.TBL_SPEELDAGEN, speeldagId, mySqlParameters);
+            return l > 0;
+        }
+
         public virtual int Delete(int id)
         {
             SQLHelper s = new SQLHelper();

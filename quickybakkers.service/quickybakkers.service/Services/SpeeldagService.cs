@@ -84,5 +84,15 @@ namespace Quickybakkers.Service.Services
 
             return Task.FromResult(rowsAffected);
         }
+
+        public Task<bool> SluitSpeeldagAsync(int speeldagId, List<int> spelerIds)
+        {
+            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "SluitSpeeldagAsync", ""));
+
+            var bl = new BLSpeeldagen(_context);
+            var succes = bl.SluitSpeeldag(speeldagId, spelerIds);
+
+            return Task.FromResult(succes);
+        }
     }
 }

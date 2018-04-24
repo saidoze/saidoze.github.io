@@ -45,42 +45,54 @@ namespace Quickybakkers.Service
 
         public virtual int Create(string connectionstring, string tableName, IEnumerable<MySqlParameter> mySqlParameters)
         {
+            return Create(connectionstring, tableName, mySqlParameters, false);
+        }
+
+        public virtual int Create(string connectionstring, string tableName, IEnumerable<MySqlParameter> mySqlParameters, bool returnLastInsertedRowId)
+        {
             mySqlParameters = mySqlParameters.AddFixedColumns();
 
-            int rowsAffected = 0;
+            int returnValue = 0;
             string statement;
             var valuesToUpdate = string.Join(",", mySqlParameters.Select(x => x.ParameterName.ToString()).ToArray());
 
-            statement = string.Format("INSERT INTO {0} ({1}) values ({2})", tableName, valuesToUpdate.Replace("@", ""), valuesToUpdate);
+            statement = string.Format("INSERT INTO {0} ({1}) values ({2});", tableName, valuesToUpdate.Replace("@", ""), valuesToUpdate);
+
+            if (returnLastInsertedRowId)
+                statement += "SELECT LAST_INSERT_ID();";
+
             Connection = new MySqlConnection(connectionstring);
 
             using (MySqlCommand cmd = new MySqlCommand(statement, Connection))
             {
                 cmd.CommandType = CommandType.Text;
                 mySqlParameters.ToList().ForEach(p => cmd.Parameters.AddWithValue(p.ParameterName, p.Value));
-
+                
                 try
                 {
                     Connection.Open();
-                    rowsAffected = cmd.ExecuteNonQuery();
+                    if (returnLastInsertedRowId)
+                        returnValue = Convert.ToInt32(cmd.ExecuteScalar());
+                    else
+                        returnValue = cmd.ExecuteNonQuery();
                 }
                 catch (MySqlException sx)
                 {
-                    rowsAffected = -1;
+                    returnValue = -1;
                     Console.Write(sx); // your SQL error handling
                 }
                 catch (Exception ex)
                 {
-                    rowsAffected = -2;
+                    returnValue = -2;
                     Console.Write(ex); // other exception handling
                 }
                 finally
                 {
                     // your cleanup routines
                     Connection.Close();
-                    Console.Write("Rows Added = " + rowsAffected);
+                    Console.Write("Rows Added = " + returnValue);
                 }
-                return rowsAffected;
+                return returnValue;
             }
         }
 
@@ -91,7 +103,7 @@ namespace Quickybakkers.Service
             string statement;
             var valuesToUpdate = string.Join(",", mySqlParameters.Select(x => string.Format("{0} = {1}", x.ParameterName.Replace("@", ""), x.ParameterName)).ToArray());
 
-            statement = string.Format("UPDATE {0} SET {1} WHERE Id = {2}", tableName, valuesToUpdate, id);
+            statement = string.Format("UPDATE {0} SET {1} WHERE Id = {2};", tableName, valuesToUpdate, id);
             Connection = new MySqlConnection(connectionstring);
 
             using (MySqlCommand cmd = new MySqlCommand(statement, Connection))

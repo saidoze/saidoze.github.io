@@ -11,6 +11,7 @@ namespace Quickybakkers.Service.BusinessLogic
 {
     public class BLSpeeldagen
     {
+        public readonly BLSpeeldagenSpelers _blSpeeldagenSpelers;
         public readonly DALSpeeldagen _dal;
         public readonly BusinessLogicContext _context;
 
@@ -18,6 +19,7 @@ namespace Quickybakkers.Service.BusinessLogic
         {
             this._context = context;
             this._dal = new DALSpeeldagen(context?.DataAccessContext);
+            this._blSpeeldagenSpelers = new BLSpeeldagenSpelers(context);
         }
 
         public virtual List<Speeldag> GetAll()
@@ -38,6 +40,15 @@ namespace Quickybakkers.Service.BusinessLogic
         public virtual int DeleteSpeeldag(int id)
         {
             return _dal.Delete(id);
+        }
+
+        public virtual bool SluitSpeeldag(int speeldagId, List<int> spelerIds)
+        {
+            //save speler ids
+            var rowsAffected = this._blSpeeldagenSpelers.CreateSpeeldagenSpelers(speeldagId, spelerIds);
+
+            //update speeldag
+            return _dal.SluitSpeeldag(speeldagId);
         }
     }
 }
