@@ -6,7 +6,6 @@ using Quickybakkers.Service.Extensions;
 using Quickybakkers.Service.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +35,7 @@ namespace Quickybakkers.Service.DataAccess
             var mySqlParameters = new List<MySqlParameter>() {
                 new MySqlParameter("@Naam", speler.Naam)
             };
-            var l = s.Create(context.ConnectionString, TableMetadata.TBL_SPELERS, mySqlParameters);
+            var l = s.Create(context.ConnectionString, TableMetadata.TBL_SPELERS, mySqlParameters, true);
             return l;
         }
 

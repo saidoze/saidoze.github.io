@@ -7,15 +7,13 @@
   <ItemGroup>
     <PackageReference Include="Actemium.BusinessEntities" Version="1.2.13407" />
     <PackageReference Include="Actemium.BusinessLogic" Version="1.2.13407" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.0.1" />
     <PackageReference Include="Radius.Service" Version="2.0.12997" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Actemium.Tracing">
       <HintPath>..\..\quicky.bakkers\ThirdParty\Tracing\Actemium.Tracing.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.10.6\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
 

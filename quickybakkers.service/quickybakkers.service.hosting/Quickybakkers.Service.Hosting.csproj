@@ -10,7 +10,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Radius.Service.Hosting" Version="2.0.12997" />
+    <PackageReference Include="Radius.Service.Hosting" Version="2.0.14340" />
+    <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="2.6.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
+    <PackageReference Include="Serilog.Sinks.Loggly" Version="5.2.0" />
   </ItemGroup>
 
   <ItemGroup>

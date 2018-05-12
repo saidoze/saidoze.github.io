@@ -37,6 +37,7 @@ namespace Quickybakkers.Service.BusinessLogic
 
         public virtual int DeleteSpeler(int id)
         {
+            //TODO check if speler has played matches
             return _dal.Delete(id);
         }
     }

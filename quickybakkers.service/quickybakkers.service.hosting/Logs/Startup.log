@@ -1,0 +1,62 @@
+{
+  "TimeStamp": "2018-05-02T19:24:29.3676001+02:00",
+  "Message": "Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.",
+  "Context": [
+    {
+      "Exception": "ReflectionTypeLoadException",
+      "Message": "Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.",
+      "StackTrace": [
+        "at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)",
+        "at System.Reflection.RuntimeAssembly.get_DefinedTypes()",
+        "at System.Composition.Hosting.ContainerConfiguration.<>c.<WithAssemblies>b__16_0(Assembly a)",
+        "at System.Linq.Enumerable.SelectManySingleSelectorIterator`2.MoveNext()",
+        "at System.Composition.TypedParts.TypedPartExportDescriptorProvider..ctor(IEnumerable`1 types, AttributedModelProvider attributeContext)",
+        "at System.Composition.Hosting.ContainerConfiguration.CreateContainer()",
+        "at RA.Core.Composition.ServiceLocation.MefServiceLocator.Create(ContainerConfiguration configuration)",
+        "at RA.Services.Hosting.Startup.SetupServiceLocator(IEnumerable`1 serviceAssemblies, IEnumerable`1 coreAssemblies)",
+        "at RA.Services.Hosting.Startup.ConfigureServices(IServiceCollection services)"
+      ],
+      "Data": null,
+      "InnerExceptions": [
+        {
+          "Exception": "FileNotFoundException",
+          "Message": "Could not load file or assembly 'System.Data.SqlClient, Version=4.2.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'. The system cannot find the file specified.",
+          "StackTrace": null,
+          "Data": null,
+          "InnerExceptions": null
+        }
+      ]
+    }
+  ]
+},
+{
+  "TimeStamp": "2018-05-02T19:24:59.8166001+02:00",
+  "Message": "Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.",
+  "Context": [
+    {
+      "Exception": "ReflectionTypeLoadException",
+      "Message": "Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.",
+      "StackTrace": [
+        "at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)",
+        "at System.Reflection.RuntimeAssembly.get_DefinedTypes()",
+        "at System.Composition.Hosting.ContainerConfiguration.<>c.<WithAssemblies>b__16_0(Assembly a)",
+        "at System.Linq.Enumerable.SelectManySingleSelectorIterator`2.MoveNext()",
+        "at System.Composition.TypedParts.TypedPartExportDescriptorProvider..ctor(IEnumerable`1 types, AttributedModelProvider attributeContext)",
+        "at System.Composition.Hosting.ContainerConfiguration.CreateContainer()",
+        "at RA.Core.Composition.ServiceLocation.MefServiceLocator.Create(ContainerConfiguration configuration)",
+        "at RA.Services.Hosting.Startup.SetupServiceLocator(IEnumerable`1 serviceAssemblies, IEnumerable`1 coreAssemblies)",
+        "at RA.Services.Hosting.Startup.ConfigureServices(IServiceCollection services)"
+      ],
+      "Data": null,
+      "InnerExceptions": [
+        {
+          "Exception": "FileNotFoundException",
+          "Message": "Could not load file or assembly 'System.Data.SqlClient, Version=4.2.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'. The system cannot find the file specified.",
+          "StackTrace": null,
+          "Data": null,
+          "InnerExceptions": null
+        }
+      ]
+    }
+  ]
+}

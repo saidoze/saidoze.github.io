@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Radius.Core</id>
+    <version>2.0.14417-ci-TraceContextFactoryUsername</version>
+    <authors>Stijn Tallon</authors>
+    <owners>Stijn Tallon</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Core libraries for Radius 2.0</description>
+    <copyright>Copyright 2017 (c) Actemium. All rights reserved.</copyright>
+    <tags>radius2 core framework</tags>
+    <repository type="git" url="https://industry-tfs-server.veibe.net/tfs/DefaultCollection/Radius 2.0/_git/Core" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Earl" version="0.1.4.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.SignalR.Client" version="1.0.0-alpha2-final" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyModel" version="2.0.4" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+        <dependency id="Polly" version="5.9.0" exclude="Build,Analyzers" />
+        <dependency id="System.Composition" version="1.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.FileVersionInfo" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.Process" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.TraceSource" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Drawing.Primitives" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.3" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.Emit.ILGeneration" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.Emit.Lightweight" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Security.Claims" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Security.Principal" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Security.Principal.Windows" version="4.4.1" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XmlSerializer" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

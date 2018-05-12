@@ -6,7 +6,6 @@ using Quickybakkers.Service.Extensions;
 using Quickybakkers.Service.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +36,7 @@ namespace Quickybakkers.Service.DataAccess
                 new MySqlParameter("@Datum", speeldag.Datum),
                 new MySqlParameter("@Gesloten", speeldag.Gesloten)
             };
-            var l = s.Create(context.ConnectionString, TableMetadata.TBL_SPEELDAGEN, mySqlParameters);
+            var l = s.Create(context.ConnectionString, TableMetadata.TBL_SPEELDAGEN, mySqlParameters, true);
             return l;
         }
 

@@ -12,40 +12,38 @@ using Quickybakkers.Service.Config;
 using Actemium.DataAccess;
 using Quickybakkers.Service.BusinessLogic;
 using Quickybakkers.Service.Interfaces;
+using Microsoft.Extensions.Logging;
+using RA.Services.Composition;
+using Microsoft.Extensions.Configuration;
+using Quickybakkers.Service.Extensions;
 
 namespace Quickybakkers.Service.Services
 {
     [Export(typeof(ISpelerService))]
     public class SpelerService : ISpelerService
     {
-        private BusinessLogicContext _context;
-        private IAppConfiguration _config;
-        private const string LOG_SERVICE_CALL = "Call to SpelerService {0}, Params {1}";
+        private readonly IConfiguration _settings;
+        private readonly ILogger<SpelerService> _logger;
 
         [ImportingConstructor]
-        public SpelerService(IAppConfiguration config)
+        public SpelerService(IAspNetService<IConfiguration> settings, IAspNetService<ILogger<SpelerService>> logger)
         {
-            _config = config;
-            _context = new BusinessLogicContext()
-            {
-                DataAccessContext = new DataAccessContext(_config.ConnectionString)
-            };
-
-            TraceUtils.TraceFilePath = @"C:\temp\";
-            TraceUtils.DefaultSwitch = new System.Diagnostics.TraceSwitch("logger1", "logger1") { Level = TraceLevel.Verbose };
+            _settings = settings.Value;
+            _logger = logger.Value;
         }
 
         public Task<Speler> GetSpelerByIdAsync(int id)
         {
-            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "GetSpelerByIdAsync", id));
+            var context = _settings.GetBusinessLogicContext();
+
             return Task.FromResult(new Speler());
         }
 
         public Task<List<Speler>> GetSpelersAsync()
         {
-            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "GetSpelersAsync", ""));
+            var context = _settings.GetBusinessLogicContext();
 
-            var bl = new BLSpelers(_context);
+            var bl = new BLSpelers(context);
             var spelers = bl.GetAll();
 
             return Task.FromResult(spelers);
@@ -53,7 +51,6 @@ namespace Quickybakkers.Service.Services
 
         //public Task<int> UpdateSpelerAsync(int id, Speler speler)
         //{
-        //    TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "UpdateSpelerAsync", ""));
 
         //    var bl = new BLSpelers(_context);
         //    var rowsAffected = bl.UpdateSpeler(speler);
@@ -63,9 +60,9 @@ namespace Quickybakkers.Service.Services
 
         public Task<int> SaveSpelerAsync(Speler speler)
         {
-            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "SaveSpelerAsync", ""));
-
-            var bl = new BLSpelers(_context);
+            var context = _settings.GetBusinessLogicContext();
+            
+            var bl = new BLSpelers(context);
             var rowsAffected = 0;
             if (speler.Id > 0)
                 rowsAffected = bl.UpdateSpeler(speler);
@@ -77,9 +74,9 @@ namespace Quickybakkers.Service.Services
 
         public Task<int> DeleteSpelerAsync(int id)
         {
-            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "DeleteSpelerAsync", ""));
+            var context = _settings.GetBusinessLogicContext();
 
-            var bl = new BLSpelers(_context);
+            var bl = new BLSpelers(context);
             var rowsAffected = bl.DeleteSpeler(id);
 
             return Task.FromResult(rowsAffected);

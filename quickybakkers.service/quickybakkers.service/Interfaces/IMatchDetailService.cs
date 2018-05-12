@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace Quickybakkers.Service.Interfaces
 {
     [ServiceRoute("Quickybakkers")]
-    [ServiceName("Klassement")]
-    public interface IKlassementService : IRestService
+    [ServiceName("MatchDetail")]
+    public interface IMatchDetailService : IRestService
     {
-        [ServiceMethod("GET", "GetKlassement")]
-        Task<List<Klassement>> GetKlassementAsync();
+        [ServiceMethod("GET", "GetMatchDetails/{SpeeldagId}")]
+        Task<List<MatchDetail>> GetMatchDetails(int? SpeeldagId);
     }
 }

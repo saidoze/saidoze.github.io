@@ -1,7 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using Quickybakkers.Service.Config;
 using Quickybakkers.Service.Extensions;
-using Quickybakkers.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,27 +14,46 @@ namespace Quickybakkers.Service
     {
         public MySqlConnection Connection { get; private set; }
 
-        public MySqlDataReader ExecuteReader(string connectionstring, string statement)
+        public MySqlDataReader ExecuteReader(string connectionstring, string statement, params MySqlParameter[] mysqlParameters)
         {
             Connection = new MySqlConnection(connectionstring);
 
             Connection.Open();
             System.Diagnostics.Trace.Write(String.Format("Start query '{0}'", statement));
             MySqlCommand cmd = new MySqlCommand(statement, Connection);
+            if(mysqlParameters != null && mysqlParameters.Count() > 0)
+                mysqlParameters.ToList().ForEach(p => { if (p != null) { cmd.Parameters.AddWithValue(p.ParameterName, p.Value); } });
             return cmd.ExecuteReader();
+        }
+
+        public virtual IEnumerable<TEnt> EnumerateAllBy<TEnt>(string connectionstring, string tablename, string propertyName, object propertyValue) where TEnt : class
+        {
+            var where = string.Format(" WHERE {0} = @{1}", propertyName, propertyName);
+            return EnumerateAll<TEnt>(connectionstring, tablename, new MySqlParameter() { ParameterName = propertyName, Value = propertyValue });
         }
 
         public virtual IEnumerable<TEnt> EnumerateAll<TEnt>(string connectionstring, string tablename) where TEnt : class
         {
-            string statement = string.Format("SELECT * FROM {0}", tablename);
-            using (var reader = this.ExecuteReader(connectionstring, statement))
+            return EnumerateAll<TEnt>(connectionstring, tablename, null);
+        }
+
+        public virtual IEnumerable<TEnt> EnumerateAll<TEnt>(string connectionstring, string tablename, MySqlParameter mysqlParameter) where TEnt : class
+        {
+            var where = "";
+            if (mysqlParameter != null)
+                where = string.Format( " WHERE {0} = @{0}", mysqlParameter.ParameterName);
+                
+            string statement = string.Format("SELECT * FROM {0}{1}", tablename, where);
+
+            using (var reader = this.ExecuteReader(connectionstring, statement, mysqlParameter))
             {
                 while (reader.Read())
                 {
                     TEnt entity = (TEnt)Activator.CreateInstance(typeof(TEnt));
                     List<PropertyInfo> modelProperties = entity.GetType().GetProperties().OrderBy(p => p.MetadataToken).ToList();
                     for (int i = 0; i < modelProperties.Count; i++)
-                        modelProperties[i].SetValue(entity, Convert.ChangeType(reader.GetValue(i), modelProperties[i].PropertyType), null);
+                        if (modelProperties[i].SetMethod != null)
+                            modelProperties[i].SetValue(entity, Convert.ChangeType(reader.GetValue(i), modelProperties[i].PropertyType), null);
 
                     yield return entity;
                 }
@@ -67,7 +84,7 @@ namespace Quickybakkers.Service
             {
                 cmd.CommandType = CommandType.Text;
                 mySqlParameters.ToList().ForEach(p => cmd.Parameters.AddWithValue(p.ParameterName, p.Value));
-                
+
                 try
                 {
                     Connection.Open();
@@ -115,6 +132,7 @@ namespace Quickybakkers.Service
                 {
                     Connection.Open();
                     rowsAffected = cmd.ExecuteNonQuery();
+                    rowsAffected = id;
                 }
                 catch (MySqlException sx)
                 {

@@ -19,31 +19,27 @@ using Quickybakkers.Service.Extensions;
 
 namespace Quickybakkers.Service.Services
 {
-    [Export(typeof(IMatchService))]
-    public class MatchService : IMatchService
+    [Export(typeof(IKlassementService))]
+    public class KlassementService : IKlassementService
     {
         private readonly IConfiguration _settings;
-        private readonly ILogger<MatchService> _logger;
+        private readonly ILogger<KlassementService> _logger;
 
         [ImportingConstructor]
-        public MatchService(IAspNetService<IConfiguration> settings, ILogger<MatchService> logger)
+        public KlassementService(IAspNetService<IConfiguration> settings, IAspNetService<ILogger<KlassementService>> logger)
         {
             _settings = settings.Value;
-            _logger = logger;
+            _logger = logger.Value;
         }
-        
-        public Task<int> SaveMatchAsync(Match match)
+
+        public Task<List<Klassement>> GetKlassementAsync()
         {
             var context = _settings.GetBusinessLogicContext();
 
-            var bl = new BLMatchen(context);
-            var rowsAffected = 0;
-            /*if (match.Id > 0)
-                rowsAffected = bl.UpdateSpeler(match);
-            else*/
-                rowsAffected = bl.CreateMatch(match);
+            var bl = new BLKlassement(context);
+            var klassement = bl.GetAll();
 
-            return Task.FromResult(rowsAffected);
+            return Task.FromResult(klassement);
         }
     }
 }

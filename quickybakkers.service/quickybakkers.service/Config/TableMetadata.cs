@@ -14,6 +14,9 @@ namespace Quickybakkers.Service.Config
         public const string TBL_MATCHEN = "matchen";
         public const string TBL_TEAMS = "teams";
 
+        public const string VW_MATCHDETAILS = "vwresultatenoverzicht";
+        public const string VW_KLASSEMENT = "vwklassement";
+
         public const string COL_LASTUPDATEDATE = "LastUpdateDate";
     }
 }

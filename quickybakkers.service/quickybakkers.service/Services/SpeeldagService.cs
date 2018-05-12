@@ -12,34 +12,28 @@ using Quickybakkers.Service.Config;
 using Actemium.DataAccess;
 using Quickybakkers.Service.BusinessLogic;
 using Quickybakkers.Service.Interfaces;
+using RA.Services.Composition;
+using Microsoft.Extensions.Configuration;
+using Quickybakkers.Service.Extensions;
 
 namespace Quickybakkers.Service.Services
 {
     [Export(typeof(ISpeeldagService))]
     public class SpeeldagService : ISpeeldagService
     {
-        private BusinessLogicContext _context;
-        private IAppConfiguration _config;
-        private const string LOG_SERVICE_CALL = "Call to SpelerService {0}, Params {1}";
+        private readonly IConfiguration _settings;
 
         [ImportingConstructor]
-        public SpeeldagService(IAppConfiguration config)
+        public SpeeldagService(IAspNetService<IConfiguration> settings)
         {
-            _config = config;
-            _context = new BusinessLogicContext()
-            {
-                DataAccessContext = new DataAccessContext(_config.ConnectionString)
-            };
-
-            TraceUtils.TraceFilePath = @"C:\temp\";
-            TraceUtils.DefaultSwitch = new System.Diagnostics.TraceSwitch("logger1", "logger1") { Level = TraceLevel.Verbose };
+            _settings = settings.Value;
         }
 
         public Task<List<Speeldag>> GetSpeeldagenAsync()
         {
-            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "GetSpeeldagenAsync", ""));
+            var context = _settings.GetBusinessLogicContext();
 
-            var bl = new BLSpeeldagen(_context);
+            var bl = new BLSpeeldagen(context);
             var speeldagen = bl.GetAll();
 
             return Task.FromResult(speeldagen);
@@ -47,7 +41,8 @@ namespace Quickybakkers.Service.Services
 
         public Task<Speeldag> GetSpeeldagByIdAsync(int id)
         {
-            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "GetSpeeldagByIdAsync", id));
+            var context = _settings.GetBusinessLogicContext();
+
             return Task.FromResult(new Speeldag());
         }
 
@@ -63,9 +58,9 @@ namespace Quickybakkers.Service.Services
 
         public Task<int> SaveSpeeldagAsync(Speeldag speeldag)
         {
-            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "SaveSpeeldagAsync", ""));
+            var context = _settings.GetBusinessLogicContext();
 
-            var bl = new BLSpeeldagen(_context);
+            var bl = new BLSpeeldagen(context);
             var rowsAffected = 0;
             if (speeldag.Id > 0)
                 rowsAffected = bl.UpdateSpeeldag(speeldag);
@@ -77,9 +72,9 @@ namespace Quickybakkers.Service.Services
 
         public Task<int> DeleteSpeeldagAsync(int id)
         {
-            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "DeleteSpeeldagAsync", ""));
-
-            var bl = new BLSpeeldagen(_context);
+            var context = _settings.GetBusinessLogicContext();
+            
+            var bl = new BLSpeeldagen(context);
             var rowsAffected = bl.DeleteSpeeldag(id);
 
             return Task.FromResult(rowsAffected);
@@ -87,9 +82,9 @@ namespace Quickybakkers.Service.Services
 
         public Task<bool> SluitSpeeldagAsync(int speeldagId, List<int> spelerIds)
         {
-            TraceUtils.WriteVerbose(string.Format(LOG_SERVICE_CALL, "SluitSpeeldagAsync", ""));
+            var context = _settings.GetBusinessLogicContext();
 
-            var bl = new BLSpeeldagen(_context);
+            var bl = new BLSpeeldagen(context);
             var succes = bl.SluitSpeeldag(speeldagId, spelerIds);
 
             return Task.FromResult(succes);
